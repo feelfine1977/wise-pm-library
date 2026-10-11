@@ -1047,11 +1047,26 @@ def further_checks(data: Data = None) -> pd.DataFrame:
 
 
 # ----------------------------------------------------------------------------- input identity and calculation record
+def _source_identity(name: str, source: Any) -> dict[str, Any]:
+    """The identity of the input that an adapter read: the catalogued file name, size and SHA-256, the counts the
+    adapter found, and ``file_as_found``, the name of the file in the data folder.
+
+    A log is found by its name without regard to letter case and is verified by size and checksum, so the name
+    of the file that was read can differ from the catalogued one in letter case. The identity is the catalogued one.
+    """
+    catalogued = _data.entry(name)["file"]
+    if (source["bytes"], source["sha256"]) != (catalogued["bytes"], catalogued["sha256"]):
+        raise _data.DataMismatch(f"the input read for {name!r} does not have the size and SHA-256 of the input catalogue")
+    identity = {"file": catalogued["name"], "bytes": catalogued["bytes"], "sha256": catalogued["sha256"]}
+    identity.update({key: value for key, value in source.items() if key not in identity})
+    identity["file_as_found"] = str(source["file"])
+    return identity
+
+
 def input_identity(name: str = BPIC19, data: Data = None) -> pd.Series:
-    """Identity of the input that was read for an application: file name, events, cases, bytes and SHA-256."""
-    source = application(name, data).assessment.source
-    keys = ("file", "events", "cases", "documents", "bytes", "sha256")
-    return pd.Series({key: source[key] for key in keys if key in source}, name=name)
+    """Identity of the input that was read for an application: the catalogued file name, size and SHA-256, the
+    numbers of events and cases, and the name of the file as it was found in the data folder."""
+    return pd.Series(_source_identity(name, application(name, data).assessment.source), name=name)
 
 
 def configuration_sha256(configuration: Any) -> str:
@@ -1080,7 +1095,8 @@ def calculation_record(name: str, data: Data = None) -> dict[str, Any]:
 
     A JSON-serialisable mapping that identifies
 
-    * ``source_export``: the file that was read, its size and SHA-256, and its numbers of events and cases;
+    * ``source_export``: the catalogued name, size and SHA-256 of the file that was read, its numbers of events
+      and cases, and the name of the file as found in the data folder (it may differ in letter case);
     * ``adapter_configuration``: identifier, version, file and SHA-256 (canonical form) of the configuration;
     * ``norm``: name, version, file and fingerprint of the native norm, and its criteria with their layers;
     * ``tested_settings``: views with their raw weights, scoring modes, values of γ, grouping, scale,
@@ -1139,7 +1155,7 @@ def calculation_record(name: str, data: Data = None) -> dict[str, Any]:
             "numpy": np.__version__,
             "pandas": pd.__version__,
         },
-        "source_export": dict(a.source),
+        "source_export": _source_identity(name, a.source),
         "adapter_configuration": {
             "id": str(a.configuration["id"]),
             "version": str(a.configuration.get("version", "1")),

@@ -35,7 +35,60 @@ PYSETUP
 "$notebook_folder/.venv/bin/python" - <<'PYCHECK'
 import wise
 from wise.evaluation import paper
-if wise.__version__ != "1.0.0" or set(paper.ITEMS) != set(range(1, 35)):
-    raise SystemExit("The installed package does not provide the frozen 34-item API.")
-print("Frozen package installed; all 34 paper entry points are available.")
+if wise.__version__ != "1.0.1":
+    raise SystemExit("The installed package is not version 1.0.1.")
+required_functions = (
+    "item_01_table_4",
+    "item_02_worked_arithmetic",
+    "item_03_log_size",
+    "item_04_flow_categories",
+    "item_05_slices",
+    "item_06_scored_cases",
+    "item_07_mean_coverage",
+    "item_08_c04_evaluable",
+    "item_09_lag_medians",
+    "item_10_lag_medians_df2",
+    "item_11_figure_5",
+    "item_12_worked_po_item",
+    "item_13_population_mean_penalty",
+    "item_14_packaging",
+    "item_15_logistics",
+    "item_16_slice_coverage",
+    "item_17_layer_contributions",
+    "item_18_figure_4",
+    "item_19_logistics_absences",
+    "item_20_vendor_concentration",
+    "item_21_document_shortlists",
+    "item_22_first_two_slices",
+    "item_24_ranking_policies",
+    "item_25_figure_6",
+    "item_26_incident_log_size",
+    "item_29_prod542",
+    "item_30_prod424",
+    "item_31_lending_log_size",
+    "item_32_lending_first_slices",
+    "item_33_consistency_check",
+    "item_35_c04_endpoints",
+    "item_36_first_documents",
+    "item_37_prod424_layers",
+    "item_38_incident_adjustment",
+    "item_39_lending_adjustment",
+    "item_40_view_weights",
+    "item_41_illustration",
+    "item_42_constructed_checks",
+    "table_3",
+    "table_b1",
+    "incident_criteria",
+    "lending_criteria",
+    "figure_4",
+    "figure_5",
+    "figure_6",
+    "compare",
+    "summary",
+    "further_checks",
+    "input_identity",
+)
+if any(not callable(getattr(paper, name, None)) for name in required_functions):
+    raise SystemExit("The installed package lacks a required evaluation function.")
+print("Frozen package 1.0.1 installed; functions for all 38 result items are available.")
 PYCHECK

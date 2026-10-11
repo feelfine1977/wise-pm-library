@@ -105,6 +105,19 @@ def test_agreement_is_judged_at_the_printed_precision():
     assert not agrees("order", 1.73e-11, 1.2e-13, None) and not agrees("order", 1.73e-11, 3e-9, None)
 
 
+def test_input_identity_is_the_catalogued_one_whatever_the_letter_case_of_the_file():
+    """A log is found by name without regard to letter case; the record names it as the catalogue does."""
+    catalogued = data.entry("bpic2013_incidents")["file"]
+    found = {"file": catalogued["name"].lower(), "bytes": catalogued["bytes"], "sha256": catalogued["sha256"], "events": 65533, "cases": 7554}
+    assert found["file"] != catalogued["name"]
+    identity = paper._source_identity("bpic2013_incidents", found)
+    assert (identity["file"], identity["bytes"], identity["sha256"]) == (catalogued["name"], catalogued["bytes"], catalogued["sha256"])
+    assert identity["file_as_found"] == found["file"] and (identity["events"], identity["cases"]) == (65533, 7554)
+    assert list(identity) == ["file", "bytes", "sha256", "events", "cases", "file_as_found"]
+    with pytest.raises(data.DataMismatch):
+        paper._source_identity("bpic2013_incidents", {**found, "sha256": "0" * 64})
+
+
 def test_configuration_checksum_is_of_the_canonical_form():
     import hashlib
 

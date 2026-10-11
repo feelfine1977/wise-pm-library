@@ -103,10 +103,13 @@ def test_calculation_record_identifies_what_appendix_b_names(application, tmp_pa
     record = paper.calculation_record(application)
     assert set(paper.RECORD_PARTS) <= set(record)
     assert (record["kind"], record["application"]) == ("calculation record", application)
+    # the identity of the input is the catalogued one; the file is found by name without regard to letter case
     catalogued = data.entry(application)["file"]
     source = record["source_export"]
     assert (source["file"], source["bytes"], source["sha256"]) == (catalogued["name"], catalogued["bytes"], catalogued["sha256"])
+    assert source["file_as_found"].lower() == catalogued["name"].lower() == data.locate(application).name.lower()
     assert source["events"] > source["cases"] > 0
+    assert paper.input_identity(application).to_dict() == source
     app = paper.application(application)
     configuration = record["adapter_configuration"]
     assert configuration["sha256"] == paper.configuration_sha256(app.assessment.configuration)

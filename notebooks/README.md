@@ -17,7 +17,7 @@ bash start_jupyter.sh DATA_FOLDER
 
 ## Process evaluation
 
-[WISE_Evaluation.ipynb](WISE_Evaluation.ipynb) calls the library for the 34 result items and draws Figures 3–5 from the verified purchase-to-pay dataset. Its comparison tables distinguish agreement, numerical differences, historical records and values that could not be computed.
+[WISE_Evaluation.ipynb](WISE_Evaluation.ipynb) calls the library for the 38 result items and draws Figures 4–6 from the verified purchase-to-pay dataset. Its comparison tables distinguish agreement, numerical differences and values that could not be computed.
 
 ## BPIC challenge analyses
 
@@ -49,6 +49,6 @@ Each dataset has its own norm; its scores and priorities should be interpreted w
 
 ## Sharing and outputs
 
-Run all cells to obtain current tables, figures and the execution journal from the supplied data. Existing saved outputs are preserved; compare their source fingerprint and norm with the current run before using them. Exports are optional. In the current saved configuration, `WISE_Evaluation.ipynb` enables figure export (`SAVE_FIGURES = True`), and the BPIC 2013, 2017 and 2019 notebooks enable result export (`SAVE_OUTPUTS = True`). Export is disabled in the BPIC 2011, 2012, 2014, 2015, 2018 and 2020 notebooks (`SAVE_OUTPUTS = False` or `EXPORT_RESULTS = False`). Set the relevant flag to `False` to display results without writing exports, or to `True` to create the local output folder declared by that notebook and save computed evidence there. Exported files are created when the notebook runs. Review saved case evidence and clear outputs as appropriate before sharing or committing.
+Run all cells to obtain current tables, figures and the execution journal from the supplied data. The evaluation notebook contains saved results from a verified run; the nine challenge notebooks are saved without outputs. Compare source identity and norm with your current run before using saved results. Exports are optional. In the current saved configuration, `WISE_Evaluation.ipynb` enables figure export (`SAVE_FIGURES = True`), and the BPIC 2013, 2017 and 2019 notebooks enable result export (`SAVE_OUTPUTS = True`). Export is disabled in the BPIC 2011, 2012, 2014, 2015, 2018 and 2020 notebooks (`SAVE_OUTPUTS = False` or `EXPORT_RESULTS = False`). Set the relevant flag to `False` to display results without writing exports, or to `True` to create the local output folder declared by that notebook and save computed evidence there. Exported files are created when the notebook runs. Review saved case evidence and clear outputs as appropriate before sharing or committing.
 
 Keep raw logs, configured data-folder values, environments, caches, extracted manuscript text and temporary executed notebooks out of version control.

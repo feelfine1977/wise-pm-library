@@ -11,7 +11,7 @@ cd notebooks
 bash setup_environment.sh
 ```
 
-Setup creates or updates `.venv`, installs the package with its notebook dependencies and registers the kernel inside that environment. The final message confirms that the frozen package and its 34 paper entry points are available. The existing environment is ready to use; setup is unnecessary for an ordinary session.
+Setup creates or updates `.venv`, installs the package with its notebook dependencies and registers the kernel inside that environment. The final message confirms that package version 1.0.1 and the functions for its 38 result items are available. The existing environment is ready to use; setup is unnecessary for an ordinary session.
 
 ## Start a session
 

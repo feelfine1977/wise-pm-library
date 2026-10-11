@@ -2,7 +2,7 @@
 
 Every result item of *WISE: Actionable Norm-Based Scoring for Process Mining* (manuscript of 11 October 2026) with its printed value, the value this library computes, and whether the two agree.
 
-The tables were produced by `python scripts/evaluate_paper.py` with version 1.0.0 of this library (Python 3.12.10, NumPy 2.5.4, pandas 3.0.6, macOS, arm64) from the three public logs named in the README. `tests/test_paper_evaluation.py` makes the same comparison.
+The tables were produced by `python scripts/evaluate_paper.py` with version 1.0.1 of this library (Python 3.12.10, NumPy 2.5.4, pandas 3.0.6, macOS, arm64) from the three public logs named in the README. `tests/test_paper_evaluation.py` makes the same comparison.
 
 ## Summary
 
@@ -65,7 +65,7 @@ A case is one record of the prepared assessment, so reordering moves all values 
 
 | Part of the record | What it identifies |
 |---|---|
-| `source_export` | file name, size in bytes, SHA-256, numbers of events and cases (and of documents for BPIC'19) |
+| `source_export` | the catalogued file name, size in bytes and SHA-256; numbers of events and cases (and of documents for BPIC'19); the name of the file as found in the data folder |
 | `adapter_configuration` | identifier, version, file and SHA-256 of the configuration (of its JSON with sorted keys and no white space) |
 | `norm` | name, version, file and fingerprint of the native norm; the criteria with their layers |
 | `tested_settings` | the views with their raw weights, the scoring modes, the values of γ, the grouping, the scale, the comparison reference, the tie order, the whole-case context |

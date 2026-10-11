@@ -1,10 +1,27 @@
 # Changelog
 
-This repository is frozen at the state of the paper *WISE: Actionable Norm-Based Scoring for Process Mining* and changes only as numbered versions. A version is tied to a state of the paper: any change of a printed number, a norm, an adapter configuration or an expected value is a new version, and tags are never moved. Use the version listed below for its documented evaluation settings.
+This repository is frozen at the state of the paper *WISE: Actionable Norm-Based Scoring for Process Mining* and changes only as numbered versions. A version is tied to a state of the paper: any change of a printed number, a norm, an adapter configuration or an expected value is a new version, and tags are never moved. Use the newest version listed below; each entry says what differs from the version before it.
+
+## 1.0.1
+
+The same method, evaluation settings, computed values and expected values as version 1.0.0 (manuscript dated 11 October 2026). The norm files, adapter configurations and scripts are those of 1.0.0.
+
+### Fixed
+
+- A calculation record and `paper.input_identity` name the input by the catalogued file name, size and SHA-256, and state the name of the file as it was found in a field of its own (`file_as_found`). A log is found by its name without regard to letter case and verified by size and checksum; in 1.0.0 the record took the name of the file it had found, so a copy of a log under a name in another letter case gave a record with that name and made one case of the dataset evaluation test fail. No computed value was affected.
+
+### Changed
+
+- The notebooks under `notebooks/` are brought in line with the library of the same version: the paper's notebook (`WISE_Evaluation.ipynb`), the environment script, the notebook guide and the three extended notebooks use the result functions, tables and figures as this library numbers them, and every notebook that checks the library version checks for this one.
+- The version number, where it is stated: `src/wise/_version.py`, `CITATION.cff`, `README.md` and `EVALUATION.md`. `EVALUATION.md` was produced again with this version; its tables are the same as in 1.0.0.
+
+### Evaluation results
+
+As in 1.0.0: 38 result items with 259 printed values, and every computed value agrees with the printed one at the printed precision.
 
 ## 1.0.0
 
-The method and evaluation settings of the October 2026 paper (manuscript dated 11 October 2026). The values printed in that paper are computed with this version: to check them, use the state of the repository tagged 1.0.0.
+The method and evaluation settings of the October 2026 paper (manuscript dated 11 October 2026). The values printed in that paper are computed with this version: to check them, use the state of the repository tagged 1.0.0. The paper's notebook, the environment script and the extended notebooks under `notebooks/` of this tag were written against an earlier list of result functions and do not work with the library of the tag; version 1.0.1 corrects this.
 
 ### Contents
 
