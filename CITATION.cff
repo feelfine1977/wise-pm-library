@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below and the software itself."
+title: "wise-pm-library: norm-based scoring and prioritisation for process mining, with the paper's process evaluation"
+type: software
+authors:
+  - family-names: Jessen
+    given-names: Urszula
+    affiliation: Eindhoven University of Technology
+version: 1.0.0
+license: MIT
+repository-code: https://github.com/feelfine1977/wise-pm-library
+keywords:
+  - process mining
+  - conformance checking
+  - prioritisation
+  - process evaluation
+preferred-citation:
+  type: article
+  title: "WISE: Actionable Norm-Based Scoring for Process Mining"
+  authors:
+    - family-names: Jessen
+      given-names: Urszula
+      affiliation: Eindhoven University of Technology
+    - family-names: Fahland
+      given-names: Dirk
+      affiliation: Eindhoven University of Technology
+    - family-names: Zerbato
+      given-names: Francesca
+      affiliation: Eindhoven University of Technology
+  year: 2026

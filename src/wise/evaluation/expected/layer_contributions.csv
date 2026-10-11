@@ -1,0 +1,964 @@
+application,view,group,layer,contribution
+bpic2019,Balanced,companyID_0000 | Packaging,Completion,-332.42098541657862
+bpic2019,Balanced,companyID_0000 | Packaging,Timing,2365.4363679912699
+bpic2019,Balanced,companyID_0000 | Packaging,Rework,-267.95010842626209
+bpic2019,Balanced,companyID_0000 | Packaging,Effort proxy,11.125765660017041
+bpic2019,Balanced,companyID_0000 | Logistics,Completion,811.13277399701701
+bpic2019,Balanced,companyID_0000 | Logistics,Timing,-154.24829844487056
+bpic2019,Balanced,companyID_0000 | Logistics,Rework,10.535361741542687
+bpic2019,Balanced,companyID_0000 | Logistics,Effort proxy,-2.8126583146281523
+bpic2019,Balanced,companyID_0000 | Trading & End Products,Completion,334.65892855724144
+bpic2019,Balanced,companyID_0000 | Trading & End Products,Timing,-395.13139821809636
+bpic2019,Balanced,companyID_0000 | Trading & End Products,Rework,318.60559922515006
+bpic2019,Balanced,companyID_0000 | Trading & End Products,Effort proxy,-10.141707201390838
+bpic2019,Balanced,companyID_0000 | (missing),Completion,263.21883203497367
+bpic2019,Balanced,companyID_0000 | (missing),Timing,-52.068862525621284
+bpic2019,Balanced,companyID_0000 | (missing),Rework,14.382462349608726
+bpic2019,Balanced,companyID_0000 | (missing),Effort proxy,3.3729963504876213
+bpic2019,Balanced,companyID_0003 | Real Estate,Completion,59.277489299299418
+bpic2019,Balanced,companyID_0003 | Real Estate,Timing,-20.048609471579574
+bpic2019,Balanced,companyID_0003 | Real Estate,Rework,-5.7693537502191665
+bpic2019,Balanced,companyID_0003 | Real Estate,Effort proxy,-0.30035042737225415
+bpic2019,Balanced,companyID_0003 | Others,Completion,33.0496751893943
+bpic2019,Balanced,companyID_0003 | Others,Timing,-8.3159962576700952
+bpic2019,Balanced,companyID_0003 | Others,Rework,-2.1021562794951567
+bpic2019,Balanced,companyID_0003 | Others,Effort proxy,-0.23045605757828783
+bpic2019,Balanced,companyID_0003 | Enterprise Services,Completion,18.503155075129065
+bpic2019,Balanced,companyID_0003 | Enterprise Services,Timing,-4.3462318954354737
+bpic2019,Balanced,companyID_0003 | Enterprise Services,Rework,-1.4916402005005449
+bpic2019,Balanced,companyID_0003 | Enterprise Services,Effort proxy,0.026194740265644455
+bpic2019,Balanced,companyID_0000 | Workforce Services,Completion,2.7308800099021129
+bpic2019,Balanced,companyID_0000 | Workforce Services,Timing,-4.069893107810203
+bpic2019,Balanced,companyID_0000 | Workforce Services,Rework,7.3916714488414188
+bpic2019,Balanced,companyID_0000 | Workforce Services,Effort proxy,-0.09644364859934669
+bpic2019,Balanced,companyID_0003 | (missing),Completion,6.0898205349284664
+bpic2019,Balanced,companyID_0003 | (missing),Timing,-1.1399952512617635
+bpic2019,Balanced,companyID_0003 | (missing),Rework,-0.39124988865588062
+bpic2019,Balanced,companyID_0003 | (missing),Effort proxy,0.11225716840691376
+bpic2019,Balanced,companyID_0003 | CAPEX & SOCS,Completion,4.9449318069552124
+bpic2019,Balanced,companyID_0003 | CAPEX & SOCS,Timing,-1.1501111402380113
+bpic2019,Balanced,companyID_0003 | CAPEX & SOCS,Rework,-0.53796859690183585
+bpic2019,Balanced,companyID_0003 | CAPEX & SOCS,Effort proxy,0.10078217798807784
+bpic2019,Balanced,companyID_0003 | Sales,Completion,1.1132699217276587
+bpic2019,Balanced,companyID_0003 | Sales,Timing,-0.21374910961158067
+bpic2019,Balanced,companyID_0003 | Sales,Rework,0.20441842365480017
+bpic2019,Balanced,companyID_0003 | Sales,Effort proxy,-0.0057374952094179539
+bpic2019,Balanced,companyID_0000 | Spend Area Unidentified,Completion,1.4117623875088103
+bpic2019,Balanced,companyID_0000 | Spend Area Unidentified,Timing,-0.38335444602927227
+bpic2019,Balanced,companyID_0000 | Spend Area Unidentified,Rework,0.022145462563721581
+bpic2019,Balanced,companyID_0000 | Spend Area Unidentified,Effort proxy,0.028075028743492273
+bpic2019,Balanced,companyID_0002 | Marketing,Completion,0.64489949771874344
+bpic2019,Balanced,companyID_0002 | Marketing,Timing,-0.071249703203860218
+bpic2019,Balanced,companyID_0002 | Marketing,Rework,0.05888021529234079
+bpic2019,Balanced,companyID_0002 | Marketing,Effort proxy,-0.001912498403139318
+bpic2019,Balanced,companyID_0003 | Energy,Completion,1.011746232890576
+bpic2019,Balanced,companyID_0003 | Energy,Timing,-0.53437277402895167
+bpic2019,Balanced,companyID_0003 | Energy,Rework,0.10549050358144482
+bpic2019,Balanced,companyID_0003 | Energy,Effort proxy,-0.014343738023544885
+bpic2019,Balanced,companyID_0000 | Commodity Resins,Completion,-2.2430527165169654
+bpic2019,Balanced,companyID_0000 | Commodity Resins,Timing,-0.045012676551849616
+bpic2019,Balanced,companyID_0000 | Commodity Resins,Rework,2.679892916172582
+bpic2019,Balanced,companyID_0000 | Commodity Resins,Effort proxy,-0.11610592344199053
+bpic2019,Balanced,companyID_0001 | Sales,Completion,0.26989949771874344
+bpic2019,Balanced,companyID_0001 | Sales,Timing,-0.071249703203860218
+bpic2019,Balanced,companyID_0001 | Sales,Rework,0.017213548625674126
+bpic2019,Balanced,companyID_0001 | Sales,Effort proxy,-0.001912498403139318
+bpic2019,Balanced,companyID_0000 | Real Estate,Completion,-0.052550251140628279
+bpic2019,Balanced,companyID_0000 | Real Estate,Timing,-0.035624851601930109
+bpic2019,Balanced,companyID_0000 | Real Estate,Rework,0.15444010764617039
+bpic2019,Balanced,companyID_0000 | Real Estate,Effort proxy,-0.00095624920156965902
+bpic2019,Balanced,companyID_0000 | Sales,Completion,-895.747354990232
+bpic2019,Balanced,companyID_0000 | Sales,Timing,-1400.2348315113918
+bpic2019,Balanced,companyID_0000 | Sales,Rework,-150.19094810247958
+bpic2019,Balanced,companyID_0000 | Sales,Effort proxy,-49.199747418571462
+bpic2019,Balanced,companyID_0000 | Additives,Completion,-123.11550039402883
+bpic2019,Balanced,companyID_0000 | Additives,Timing,20.708535361465859
+bpic2019,Balanced,companyID_0000 | Additives,Rework,-5.0276160739586091
+bpic2019,Balanced,companyID_0000 | Additives,Effort proxy,18.195927125646985
+bpic2019,Balanced,companyID_0000 | CAPEX & SOCS,Completion,-14.957978603264873
+bpic2019,Balanced,companyID_0000 | CAPEX & SOCS,Timing,-213.19366286127362
+bpic2019,Balanced,companyID_0000 | CAPEX & SOCS,Rework,4.5819461427181505
+bpic2019,Balanced,companyID_0000 | CAPEX & SOCS,Effort proxy,-4.7432758805559567
+bpic2019,Balanced,companyID_0000 | Latex & Monomers,Completion,-94.595297937316289
+bpic2019,Balanced,companyID_0000 | Latex & Monomers,Timing,0.7545829348898927
+bpic2019,Balanced,companyID_0000 | Latex & Monomers,Rework,32.672492000248191
+bpic2019,Balanced,companyID_0000 | Latex & Monomers,Effort proxy,14.912060247740719
+bpic2019,Balanced,companyID_0000 | Solvents,Completion,-59.231991201092697
+bpic2019,Balanced,companyID_0000 | Solvents,Timing,2.8900350624675442
+bpic2019,Balanced,companyID_0000 | Solvents,Rework,11.402011255750221
+bpic2019,Balanced,companyID_0000 | Solvents,Effort proxy,4.5360208490733669
+bpic2019,Balanced,companyID_0000 | Pigments & Colorants,Completion,6.2610083161603836
+bpic2019,Balanced,companyID_0000 | Pigments & Colorants,Timing,-25.038528274241283
+bpic2019,Balanced,companyID_0000 | Pigments & Colorants,Rework,10.286611824932534
+bpic2019,Balanced,companyID_0000 | Pigments & Colorants,Effort proxy,-0.35455417967012587
+bpic2019,Balanced,companyID_0000 | Specialty Resins,Completion,-45.590666149113545
+bpic2019,Balanced,companyID_0000 | Specialty Resins,Timing,-0.93008462917770962
+bpic2019,Balanced,companyID_0000 | Specialty Resins,Rework,12.656311695098672
+bpic2019,Balanced,companyID_0000 | Specialty Resins,Effort proxy,3.6242644210234007
+bpic2019,Balanced,companyID_0000 | Others,Completion,3.1530321026692509
+bpic2019,Balanced,companyID_0000 | Others,Timing,-41.508391428142382
+bpic2019,Balanced,companyID_0000 | Others,Rework,6.0411256414398675
+bpic2019,Balanced,companyID_0000 | Others,Effort proxy,-1.2392605885577639
+bpic2019,Balanced,companyID_0000 | Titanium Dioxides,Completion,-1.2404035892762102
+bpic2019,Balanced,companyID_0000 | Titanium Dioxides,Timing,-31.370713944448706
+bpic2019,Balanced,companyID_0000 | Titanium Dioxides,Rework,0.033428481323387244
+bpic2019,Balanced,companyID_0000 | Titanium Dioxides,Effort proxy,14.393507737475728
+bpic2019,Balanced,companyID_0000 | Marketing,Completion,17.068949915765216
+bpic2019,Balanced,companyID_0000 | Marketing,Timing,-20.259630969225981
+bpic2019,Balanced,companyID_0000 | Marketing,Rework,1.3859451715914337
+bpic2019,Balanced,companyID_0000 | Marketing,Effort proxy,-1.1357298216081202
+bpic2019,Balanced,companyID_0000 | Enterprise Services,Completion,4.7598273738429651
+bpic2019,Balanced,companyID_0000 | Enterprise Services,Timing,-15.31833247333871
+bpic2019,Balanced,companyID_0000 | Enterprise Services,Rework,0.26804628073229197
+bpic2019,Balanced,companyID_0000 | Enterprise Services,Effort proxy,-0.030787067250755151
+bpic2019,Balanced,companyID_0000 | Chemicals & Intermediates,Completion,-0.052550251140628279
+bpic2019,Balanced,companyID_0000 | Chemicals & Intermediates,Timing,-0.025710830437908939
+bpic2019,Balanced,companyID_0000 | Chemicals & Intermediates,Rework,-0.012226559020496269
+bpic2019,Balanced,companyID_0000 | Chemicals & Intermediates,Effort proxy,-0.00095624920156965902
+bpic2019,Balanced,companyID_0003 | Workforce Services,Completion,-0.052550251140628279
+bpic2019,Balanced,companyID_0003 | Workforce Services,Timing,-0.035624851601930109
+bpic2019,Balanced,companyID_0003 | Workforce Services,Rework,-0.012226559020496269
+bpic2019,Balanced,companyID_0003 | Workforce Services,Effort proxy,-0.00095624920156965902
+bpic2019,Completion,companyID_0000 | Packaging,Completion,-611.15039304913398
+bpic2019,Completion,companyID_0000 | Packaging,Timing,2365.3808568549857
+bpic2019,Completion,companyID_0000 | Packaging,Rework,-130.40644153395436
+bpic2019,Completion,companyID_0000 | Packaging,Effort proxy,12.90350209711675
+bpic2019,Completion,companyID_0000 | Logistics,Completion,1223.8551597999394
+bpic2019,Completion,companyID_0000 | Logistics,Timing,-154.25096320715227
+bpic2019,Completion,companyID_0000 | Logistics,Rework,4.0843141310494762
+bpic2019,Completion,companyID_0000 | Logistics,Effort proxy,-3.0175400861185255
+bpic2019,Completion,companyID_0000 | (missing),Completion,445.13734468247713
+bpic2019,Completion,companyID_0000 | (missing),Timing,-52.07051821634078
+bpic2019,Completion,companyID_0000 | (missing),Rework,6.9642437027675514
+bpic2019,Completion,companyID_0000 | (missing),Effort proxy,1.2654494897417485
+bpic2019,Completion,companyID_0000 | Trading & End Products,Completion,589.75593232740323
+bpic2019,Completion,companyID_0000 | Trading & End Products,Timing,-395.14273032049704
+bpic2019,Completion,companyID_0000 | Trading & End Products,Rework,155.88626297786908
+bpic2019,Completion,companyID_0000 | Trading & End Products,Effort proxy,-11.771268468912609
+bpic2019,Completion,companyID_0003 | Real Estate,Completion,114.53863855063186
+bpic2019,Completion,companyID_0003 | Real Estate,Timing,-19.983389564843712
+bpic2019,Completion,companyID_0003 | Real Estate,Rework,-2.9733340625658999
+bpic2019,Completion,companyID_0003 | Real Estate,Effort proxy,-0.31178144558175652
+bpic2019,Completion,companyID_0003 | Others,Completion,57.476521253348686
+bpic2019,Completion,companyID_0003 | Others,Timing,-8.2916103170516973
+bpic2019,Completion,companyID_0003 | Others,Rework,-1.0768250382399145
+bpic2019,Completion,companyID_0003 | Others,Effort proxy,-0.19652777362189874
+bpic2019,Completion,companyID_0003 | Enterprise Services,Completion,36.367719673831481
+bpic2019,Completion,companyID_0003 | Enterprise Services,Timing,-4.34629391393955
+bpic2019,Completion,companyID_0003 | Enterprise Services,Rework,-0.77862551427951798
+bpic2019,Completion,companyID_0003 | Enterprise Services,Effort proxy,-0.0085779978123681974
+bpic2019,Completion,companyID_0003 | (missing),Completion,11.812298056524105
+bpic2019,Completion,companyID_0003 | (missing),Timing,-1.1400115184103738
+bpic2019,Completion,companyID_0003 | (missing),Rework,-0.20422964308970964
+bpic2019,Completion,companyID_0003 | (missing),Effort proxy,0.064814116818216388
+bpic2019,Completion,companyID_0003 | CAPEX & SOCS,Completion,9.5146371004479171
+bpic2019,Completion,companyID_0003 | CAPEX & SOCS,Timing,-1.1121896593630856
+bpic2019,Completion,companyID_0003 | CAPEX & SOCS,Rework,-0.28081575924835078
+bpic2019,Completion,companyID_0003 | CAPEX & SOCS,Effort proxy,0.055028501534138442
+bpic2019,Completion,companyID_0000 | Marketing,Completion,28.940541469303998
+bpic2019,Completion,companyID_0000 | Marketing,Timing,-20.260540404502979
+bpic2019,Completion,companyID_0000 | Marketing,Rework,0.32137381760322042
+bpic2019,Completion,companyID_0000 | Marketing,Effort proxy,-1.1303007166965251
+bpic2019,Completion,companyID_0000 | Workforce Services,Completion,4.9742137559858843
+bpic2019,Completion,companyID_0000 | Workforce Services,Timing,-4.0699576680562508
+bpic2019,Completion,companyID_0000 | Workforce Services,Rework,3.6795429690670791
+bpic2019,Completion,companyID_0000 | Workforce Services,Effort proxy,-0.089278714137443982
+bpic2019,Completion,companyID_0003 | Sales,Completion,2.2148058855982695
+bpic2019,Completion,companyID_0003 | Sales,Timing,-0.21375215970194511
+bpic2019,Completion,companyID_0003 | Sales,Rework,0.11322209343583096
+bpic2019,Completion,companyID_0003 | Sales,Effort proxy,-0.0048928076420389731
+bpic2019,Completion,companyID_0000 | Spend Area Unidentified,Completion,2.2823418070961119
+bpic2019,Completion,companyID_0000 | Spend Area Unidentified,Timing,-0.38337274657145892
+bpic2019,Completion,companyID_0000 | Spend Area Unidentified,Rework,0.010321016603441716
+bpic2019,Completion,companyID_0000 | Spend Area Unidentified,Effort proxy,0.0063574398620518738
+bpic2019,Completion,companyID_0003 | Energy,Completion,1.7188328958138563
+bpic2019,Completion,companyID_0003 | Energy,Timing,-0.53438039925486269
+bpic2019,Completion,companyID_0003 | Energy,Rework,0.062516513050856842
+bpic2019,Completion,companyID_0003 | Energy,Effort proxy,-0.012232019105097433
+bpic2019,Completion,companyID_0002 | Marketing,Completion,1.1148920051561331
+bpic2019,Completion,companyID_0002 | Marketing,Timing,-0.071250719900648365
+bpic2019,Completion,companyID_0002 | Marketing,Rework,0.03485469492594076
+bpic2019,Completion,companyID_0002 | Marketing,Effort proxy,-0.0016309358806796577
+bpic2019,Completion,companyID_0001 | Sales,Completion,0.47203486229899028
+bpic2019,Completion,companyID_0001 | Sales,Timing,-0.071250719900648365
+bpic2019,Completion,companyID_0001 | Sales,Rework,0.0080689806402264794
+bpic2019,Completion,companyID_0001 | Sales,Effort proxy,-0.0016309358806796577
+bpic2019,Completion,companyID_0000 | Sales,Completion,-1427.755697075989
+bpic2019,Completion,companyID_0000 | Sales,Timing,-1400.2683093032319
+bpic2019,Completion,companyID_0000 | Sales,Rework,-89.703415002431996
+bpic2019,Completion,companyID_0000 | Sales,Effort proxy,-45.532028107591195
+bpic2019,Completion,companyID_0000 | Additives,Completion,-191.09698191783335
+bpic2019,Completion,companyID_0000 | Additives,Timing,20.699223435583217
+bpic2019,Completion,companyID_0000 | Additives,Rework,4.3045873346279846
+bpic2019,Completion,companyID_0000 | Additives,Effort proxy,17.08368684028359
+bpic2019,Completion,companyID_0000 | CAPEX & SOCS,Completion,-2.4345612339307028
+bpic2019,Completion,companyID_0000 | CAPEX & SOCS,Timing,-213.19708150422377
+bpic2019,Completion,companyID_0000 | CAPEX & SOCS,Rework,0.80506248212661746
+bpic2019,Completion,companyID_0000 | CAPEX & SOCS,Effort proxy,-4.5197361844996351
+bpic2019,Completion,companyID_0000 | Latex & Monomers,Completion,-154.72500794876345
+bpic2019,Completion,companyID_0000 | Latex & Monomers,Timing,0.75203763448076533
+bpic2019,Completion,companyID_0000 | Latex & Monomers,Rework,21.296427159791119
+bpic2019,Completion,companyID_0000 | Latex & Monomers,Effort proxy,14.81338059414705
+bpic2019,Completion,companyID_0000 | Solvents,Completion,-96.974459222262922
+bpic2019,Completion,companyID_0000 | Solvents,Timing,2.8886986145395244
+bpic2019,Completion,companyID_0000 | Solvents,Rework,8.2291948928475467
+bpic2019,Completion,companyID_0000 | Solvents,Effort proxy,4.2739919277037322
+bpic2019,Completion,companyID_0000 | Pigments & Colorants,Completion,16.528913256355246
+bpic2019,Completion,companyID_0000 | Pigments & Colorants,Timing,-25.039846421627118
+bpic2019,Completion,companyID_0000 | Pigments & Colorants,Rework,5.6276040349742651
+bpic2019,Completion,companyID_0000 | Pigments & Colorants,Effort proxy,-0.4073655121583189
+bpic2019,Completion,companyID_0000 | Specialty Resins,Completion,-74.534917797171786
+bpic2019,Completion,companyID_0000 | Specialty Resins,Timing,-0.93130771541385104
+bpic2019,Completion,companyID_0000 | Specialty Resins,Rework,7.4371424403511837
+bpic2019,Completion,companyID_0000 | Specialty Resins,Effort proxy,3.5022698498280862
+bpic2019,Completion,companyID_0000 | Others,Completion,6.0257301718914249
+bpic2019,Completion,companyID_0000 | Others,Timing,-41.509608414197793
+bpic2019,Completion,companyID_0000 | Others,Rework,3.6178952231764914
+bpic2019,Completion,companyID_0000 | Others,Effort proxy,-1.0093731063164073
+bpic2019,Completion,companyID_0000 | Titanium Dioxides,Completion,1.1647599457952149
+bpic2019,Completion,companyID_0000 | Titanium Dioxides,Timing,-31.371660997506869
+bpic2019,Completion,companyID_0000 | Titanium Dioxides,Rework,1.5276641965296962
+bpic2019,Completion,companyID_0000 | Titanium Dioxides,Effort proxy,14.387926084289758
+bpic2019,Completion,companyID_0000 | Enterprise Services,Completion,8.4660905401692403
+bpic2019,Completion,companyID_0000 | Enterprise Services,Timing,-15.318607998168298
+bpic2019,Completion,companyID_0000 | Enterprise Services,Rework,0.062685816993439558
+bpic2019,Completion,companyID_0000 | Enterprise Services,Effort proxy,-0.16341219509275864
+bpic2019,Completion,companyID_0000 | Commodity Resins,Completion,-3.4331563741421922
+bpic2019,Completion,companyID_0000 | Commodity Resins,Timing,-0.045220591045025786
+bpic2019,Completion,companyID_0000 | Commodity Resins,Rework,1.2865152710850452
+bpic2019,Completion,companyID_0000 | Commodity Resins,Effort proxy,-0.17638353045613286
+bpic2019,Completion,companyID_0000 | Chemicals & Intermediates,Completion,-0.085411140279076259
+bpic2019,Completion,companyID_0000 | Chemicals & Intermediates,Timing,-0.025711338786303013
+bpic2019,Completion,companyID_0000 | Chemicals & Intermediates,Rework,-0.0063821763465534264
+bpic2019,Completion,companyID_0000 | Chemicals & Intermediates,Effort proxy,-0.00081546794033982885
+bpic2019,Completion,companyID_0000 | Real Estate,Completion,-0.085411140279076259
+bpic2019,Completion,companyID_0000 | Real Estate,Timing,-0.035625359950324183
+bpic2019,Completion,companyID_0000 | Real Estate,Rework,0.076951156986779901
+bpic2019,Completion,companyID_0000 | Real Estate,Effort proxy,-0.00081546794033982885
+bpic2019,Completion,companyID_0003 | Workforce Services,Completion,-0.085411140279076259
+bpic2019,Completion,companyID_0003 | Workforce Services,Timing,-0.035625359950324183
+bpic2019,Completion,companyID_0003 | Workforce Services,Rework,-0.0063821763465534264
+bpic2019,Completion,companyID_0003 | Workforce Services,Effort proxy,-0.00081546794033982885
+bpic2019,Operations,companyID_0000 | Packaging,Completion,-157.87587887081872
+bpic2019,Operations,companyID_0000 | Packaging,Timing,1656.5002872101102
+bpic2019,Operations,companyID_0000 | Packaging,Rework,-375.61948079844962
+bpic2019,Operations,companyID_0000 | Packaging,Effort proxy,11.704412121808831
+bpic2019,Operations,companyID_0000 | Logistics,Completion,536.71438477166805
+bpic2019,Operations,companyID_0000 | Logistics,Timing,-107.25674338186178
+bpic2019,Operations,companyID_0000 | Logistics,Rework,20.012169030524927
+bpic2019,Operations,companyID_0000 | Logistics,Effort proxy,-3.1834411181190121
+bpic2019,Operations,companyID_0000 | Trading & End Products,Completion,167.44623580843268
+bpic2019,Operations,companyID_0000 | Trading & End Products,Timing,-276.74902658396468
+bpic2019,Operations,companyID_0000 | Trading & End Products,Rework,439.14343408166184
+bpic2019,Operations,companyID_0000 | Trading & End Products,Effort proxy,-10.646888478654905
+bpic2019,Operations,companyID_0000 | (missing),Completion,143.98018458416865
+bpic2019,Operations,companyID_0000 | (missing),Timing,-36.508682506352777
+bpic2019,Operations,companyID_0000 | (missing),Rework,18.698368433237786
+bpic2019,Operations,companyID_0000 | (missing),Effort proxy,6.0149660965826754
+bpic2019,Operations,companyID_0003 | Others,Completion,20.132234808258804
+bpic2019,Operations,companyID_0003 | Others,Timing,-5.8359603106318376
+bpic2019,Operations,companyID_0003 | Others,Rework,-2.8833994769660989
+bpic2019,Operations,companyID_0003 | Others,Effort proxy,-0.30818949055068334
+bpic2019,Operations,companyID_0000 | Workforce Services,Completion,1.2831627939721209
+bpic2019,Operations,companyID_0000 | Workforce Services,Timing,-2.8435879877292218
+bpic2019,Operations,companyID_0000 | Workforce Services,Rework,10.771611064005414
+bpic2019,Operations,companyID_0000 | Workforce Services,Effort proxy,-0.12240690995824391
+bpic2019,Operations,companyID_0003 | Real Estate,Completion,30.649688946356957
+bpic2019,Operations,companyID_0003 | Real Estate,Timing,-14.072023115011216
+bpic2019,Operations,companyID_0003 | Real Estate,Rework,-7.9063676078171525
+bpic2019,Operations,companyID_0003 | Real Estate,Effort proxy,-0.35982294661371594
+bpic2019,Operations,companyID_0003 | Enterprise Services,Completion,9.0731645087451209
+bpic2019,Operations,companyID_0003 | Enterprise Services,Timing,-3.0452865289345059
+bpic2019,Operations,companyID_0003 | Enterprise Services,Rework,-2.0268046530085031
+bpic2019,Operations,companyID_0003 | Enterprise Services,Effort proxy,0.05827277716047212
+bpic2019,Operations,companyID_0000 | Latex & Monomers,Completion,-55.320415586381749
+bpic2019,Operations,companyID_0000 | Latex & Monomers,Timing,0.69582711751682502
+bpic2019,Operations,companyID_0000 | Latex & Monomers,Rework,40.580233024473387
+bpic2019,Operations,companyID_0000 | Latex & Monomers,Effort proxy,17.987075605032071
+bpic2019,Operations,companyID_0000 | Commodity Resins,Completion,-1.4856323319235567
+bpic2019,Operations,companyID_0000 | Commodity Resins,Timing,-0.036064548262990881
+bpic2019,Operations,companyID_0000 | Commodity Resins,Rework,3.6712137325467276
+bpic2019,Operations,companyID_0000 | Commodity Resins,Effort proxy,-0.083026977739541402
+bpic2019,Operations,companyID_0003 | (missing),Completion,3.0431953746591418
+bpic2019,Operations,companyID_0003 | (missing),Timing,-0.79876367972052609
+bpic2019,Operations,companyID_0003 | (missing),Rework,-0.5316208925923942
+bpic2019,Operations,companyID_0003 | (missing),Effort proxy,0.17336428815450322
+bpic2019,Operations,companyID_0003 | CAPEX & SOCS,Completion,2.563857925870606
+bpic2019,Operations,companyID_0003 | CAPEX & SOCS,Timing,-0.82004517278444766
+bpic2019,Operations,companyID_0003 | CAPEX & SOCS,Rework,-0.73097872731454205
+bpic2019,Operations,companyID_0003 | CAPEX & SOCS,Effort proxy,0.15801875335529905
+bpic2019,Operations,companyID_0000 | Spend Area Unidentified,Completion,0.85008289172963003
+bpic2019,Operations,companyID_0000 | Spend Area Unidentified,Timing,-0.24787102941623151
+bpic2019,Operations,companyID_0000 | Spend Area Unidentified,Rework,0.0046200985271592221
+bpic2019,Operations,companyID_0000 | Spend Area Unidentified,Effort proxy,0.053963395602387568
+bpic2019,Operations,companyID_0003 | Sales,Completion,0.52818841846287468
+bpic2019,Operations,companyID_0003 | Sales,Timing,-0.14976818994759863
+bpic2019,Operations,companyID_0003 | Sales,Rework,0.27069145300929642
+bpic2019,Operations,companyID_0003 | Sales,Effort proxy,-0.007672767399602075
+bpic2019,Operations,companyID_0003 | Energy,Completion,0.65975676044290132
+bpic2019,Operations,companyID_0003 | Energy,Timing,-0.3744204748689966
+bpic2019,Operations,companyID_0003 | Energy,Rework,0.13043233622694481
+bpic2019,Operations,companyID_0003 | Energy,Effort proxy,-0.019181918499005187
+bpic2019,Operations,companyID_0002 | Marketing,Completion,0.33796756805905354
+bpic2019,Operations,companyID_0002 | Marketing,Timing,-0.04992272998253288
+bpic2019,Operations,companyID_0002 | Marketing,Rework,0.055662583101864241
+bpic2019,Operations,companyID_0002 | Marketing,Effort proxy,-0.0025575891332006917
+bpic2019,Operations,companyID_0000 | Real Estate,Completion,-0.031016215970473243
+bpic2019,Operations,companyID_0000 | Real Estate,Timing,-0.02496136499126644
+bpic2019,Operations,companyID_0000 | Real Estate,Rework,0.22581108953073012
+bpic2019,Operations,companyID_0000 | Real Estate,Effort proxy,-0.0012787945666003458
+bpic2019,Operations,companyID_0001 | Sales,Completion,0.13796756805905352
+bpic2019,Operations,companyID_0001 | Sales,Timing,-0.04992272998253288
+bpic2019,Operations,companyID_0001 | Sales,Rework,0.02737975481903597
+bpic2019,Operations,companyID_0001 | Sales,Effort proxy,-0.0025575891332006917
+bpic2019,Operations,companyID_0000 | Sales,Completion,-549.35808561815247
+bpic2019,Operations,companyID_0000 | Sales,Timing,-981.28913013756994
+bpic2019,Operations,companyID_0000 | Sales,Rework,-189.80584746019778
+bpic2019,Operations,companyID_0000 | Sales,Effort proxy,-62.456294978032368
+bpic2019,Operations,companyID_0000 | Additives,Completion,-79.321710813795548
+bpic2019,Operations,companyID_0000 | Additives,Timing,14.315028169105947
+bpic2019,Operations,companyID_0000 | Additives,Rework,-14.945323928947873
+bpic2019,Operations,companyID_0000 | Additives,Effort proxy,22.875041129014868
+bpic2019,Operations,companyID_0000 | CAPEX & SOCS,Completion,-22.513219068099247
+bpic2019,Operations,companyID_0000 | CAPEX & SOCS,Timing,-149.36163916222642
+bpic2019,Operations,companyID_0000 | CAPEX & SOCS,Rework,8.2661090806919404
+bpic2019,Operations,companyID_0000 | CAPEX & SOCS,Effort proxy,-5.8998934603873252
+bpic2019,Operations,companyID_0000 | Solvents,Completion,-34.61940956415193
+bpic2019,Operations,companyID_0000 | Solvents,Timing,1.9809437022703058
+bpic2019,Operations,companyID_0000 | Solvents,Rework,13.045906564841632
+bpic2019,Operations,companyID_0000 | Solvents,Effort proxy,5.688049084407691
+bpic2019,Operations,companyID_0000 | Pigments & Colorants,Completion,-0.44727023365934199
+bpic2019,Operations,companyID_0000 | Pigments & Colorants,Timing,-17.5479983996266
+bpic2019,Operations,companyID_0000 | Pigments & Colorants,Rework,13.911320136348149
+bpic2019,Operations,companyID_0000 | Pigments & Colorants,Effort proxy,-0.37591431119469654
+bpic2019,Operations,companyID_0000 | Specialty Resins,Completion,-26.747237847180841
+bpic2019,Operations,companyID_0000 | Specialty Resins,Timing,-0.64234036006449269
+bpic2019,Operations,companyID_0000 | Specialty Resins,Rework,16.385656495111718
+bpic2019,Operations,companyID_0000 | Specialty Resins,Effort proxy,4.4632202727595676
+bpic2019,Operations,companyID_0000 | Others,Completion,1.2027345222426171
+bpic2019,Operations,companyID_0000 | Others,Timing,-28.993887734378049
+bpic2019,Operations,companyID_0000 | Others,Rework,7.7587517035712352
+bpic2019,Operations,companyID_0000 | Others,Effort proxy,-1.7014341924412277
+bpic2019,Operations,companyID_0000 | Titanium Dioxides,Completion,-2.8498770196583147
+bpic2019,Operations,companyID_0000 | Titanium Dioxides,Timing,-22.004153765766414
+bpic2019,Operations,companyID_0000 | Titanium Dioxides,Rework,-1.6398661301757393
+bpic2019,Operations,companyID_0000 | Titanium Dioxides,Effort proxy,17.277605722423555
+bpic2019,Operations,companyID_0000 | Marketing,Completion,9.5661562954900372
+bpic2019,Operations,companyID_0000 | Marketing,Timing,-14.049072625941314
+bpic2019,Operations,companyID_0000 | Marketing,Rework,2.7725879920249792
+bpic2019,Operations,companyID_0000 | Marketing,Effort proxy,-1.3677634796480187
+bpic2019,Operations,companyID_0000 | Enterprise Services,Completion,2.4628220551146156
+bpic2019,Operations,companyID_0000 | Enterprise Services,Timing,-10.697830763818599
+bpic2019,Operations,companyID_0000 | Enterprise Services,Rework,0.39095732700251862
+bpic2019,Operations,companyID_0000 | Enterprise Services,Effort proxy,0.086893344902612732
+bpic2019,Operations,companyID_0000 | Chemicals & Intermediates,Completion,-0.031016215970473243
+bpic2019,Operations,companyID_0000 | Chemicals & Intermediates,Timing,-0.018021550176451621
+bpic2019,Operations,companyID_0000 | Chemicals & Intermediates,Rework,-0.016613152893512319
+bpic2019,Operations,companyID_0000 | Chemicals & Intermediates,Effort proxy,-0.0012787945666003458
+bpic2019,Operations,companyID_0003 | Workforce Services,Completion,-0.031016215970473243
+bpic2019,Operations,companyID_0003 | Workforce Services,Timing,-0.02496136499126644
+bpic2019,Operations,companyID_0003 | Workforce Services,Rework,-0.016613152893512319
+bpic2019,Operations,companyID_0003 | Workforce Services,Effort proxy,-0.0012787945666003458
+bpic2013_incidents,Balanced,PROD542,Routing,17.075671829494308
+bpic2013_incidents,Balanced,PROD542,Recorded patterns,10.615625827376222
+bpic2013_incidents,Balanced,PROD542,Timing,9.0715565795635342
+bpic2013_incidents,Balanced,PROD542,Reactivation,0.48279057453005042
+bpic2013_incidents,Balanced,PROD424,Routing,-5.1667659518136109
+bpic2013_incidents,Balanced,PROD424,Recorded patterns,31.776426396611065
+bpic2013_incidents,Balanced,PROD424,Timing,-0.094452672507810934
+bpic2013_incidents,Balanced,PROD424,Reactivation,4.9976171564733942
+bpic2013_incidents,Balanced,PROD455,Routing,3.9617255758538525
+bpic2013_incidents,Balanced,PROD455,Recorded patterns,7.5415425602329895
+bpic2013_incidents,Balanced,PROD455,Timing,4.3131193037278663
+bpic2013_incidents,Balanced,PROD455,Reactivation,1.2480804871591211
+bpic2013_incidents,Balanced,PROD698,Routing,-1.4781903627217368
+bpic2013_incidents,Balanced,PROD698,Recorded patterns,11.542223766657845
+bpic2013_incidents,Balanced,PROD698,Timing,1.5903306744534715
+bpic2013_incidents,Balanced,PROD698,Reactivation,-0.75434648309946151
+bpic2013_incidents,Balanced,PROD236,Routing,5.8279388403494821
+bpic2013_incidents,Balanced,PROD236,Recorded patterns,3.8872231047568615
+bpic2013_incidents,Balanced,PROD236,Timing,1.8666140776035016
+bpic2013_incidents,Balanced,PROD236,Reactivation,-0.90724560939016841
+bpic2013_incidents,Balanced,PROD776,Routing,4.4829891448239332
+bpic2013_incidents,Balanced,PROD776,Recorded patterns,4.8263337304739213
+bpic2013_incidents,Balanced,PROD776,Timing,1.0718098359951131
+bpic2013_incidents,Balanced,PROD776,Reactivation,-0.24159385755890916
+bpic2013_incidents,Balanced,PROD789,Routing,5.1473888006354249
+bpic2013_incidents,Balanced,PROD789,Recorded patterns,4.6797364530932848
+bpic2013_incidents,Balanced,PROD789,Timing,0.23246867249620934
+bpic2013_incidents,Balanced,PROD789,Reactivation,-0.18489100697202362
+bpic2013_incidents,Balanced,PROD697,Routing,5.3052687317977227
+bpic2013_incidents,Balanced,PROD697,Recorded patterns,5.0879169976171577
+bpic2013_incidents,Balanced,PROD697,Timing,-0.52195573639788162
+bpic2013_incidents,Balanced,PROD697,Reactivation,-0.0068837701879798791
+bpic2013_incidents,Balanced,PROD38,Routing,3.8732956049774954
+bpic2013_incidents,Balanced,PROD38,Recorded patterns,2.6758753640455391
+bpic2013_incidents,Balanced,PROD38,Timing,-0.11889226884067577
+bpic2013_incidents,Balanced,PROD38,Reactivation,0.95909451945988877
+bpic2013_incidents,Balanced,PROD215,Routing,2.5932453005030442
+bpic2013_incidents,Balanced,PROD215,Recorded patterns,3.3409314049951466
+bpic2013_incidents,Balanced,PROD215,Timing,0.28578004509728894
+bpic2013_incidents,Balanced,PROD215,Reactivation,0.46010943429529616
+bpic2013_incidents,Balanced,PROD158,Routing,2.7896809637278266
+bpic2013_incidents,Balanced,PROD158,Recorded patterns,2.5563057099991173
+bpic2013_incidents,Balanced,PROD158,Timing,0.77180090661603939
+bpic2013_incidents,Balanced,PROD158,Reactivation,0.5078986850233872
+bpic2013_incidents,Balanced,PROD791,Routing,3.7086146412496688
+bpic2013_incidents,Balanced,PROD791,Recorded patterns,2.8695696540464213
+bpic2013_incidents,Balanced,PROD791,Timing,-0.29897870283191658
+bpic2013_incidents,Balanced,PROD791,Reactivation,-0.215470832230165
+bpic2013_incidents,Balanced,PROD308,Routing,2.3424013767540375
+bpic2013_incidents,Balanced,PROD308,Recorded patterns,1.2738891095225489
+bpic2013_incidents,Balanced,PROD308,Timing,1.0853797002919114
+bpic2013_incidents,Balanced,PROD308,Reactivation,0.10652193098579121
+bpic2013_incidents,Balanced,PROD793,Routing,0.96966838760921337
+bpic2013_incidents,Balanced,PROD793,Recorded patterns,2.7954863869031858
+bpic2013_incidents,Balanced,PROD793,Timing,0.61284561218050926
+bpic2013_incidents,Balanced,PROD793,Reactivation,0.38315241373223896
+bpic2013_incidents,Balanced,PROD350,Routing,3.022388800635424
+bpic2013_incidents,Balanced,PROD350,Recorded patterns,1.6589031197599511
+bpic2013_incidents,Balanced,PROD350,Timing,-0.053089063681997839
+bpic2013_incidents,Balanced,PROD350,Reactivation,-0.018224340305356974
+bpic2013_incidents,Balanced,PROD325,Routing,1.2352561556791102
+bpic2013_incidents,Balanced,PROD325,Recorded patterns,3.2437643411878914
+bpic2013_incidents,Balanced,PROD325,Timing,0.26030273728253017
+bpic2013_incidents,Balanced,PROD325,Reactivation,-0.29829670814579468
+bpic2013_incidents,Balanced,PROD631,Routing,1.116494572411967
+bpic2013_incidents,Balanced,PROD631,Recorded patterns,1.986083531903627
+bpic2013_incidents,Balanced,PROD631,Timing,0.92159227541838318
+bpic2013_incidents,Balanced,PROD631,Reactivation,0.12920307122054542
+bpic2013_incidents,Balanced,PROD790,Routing,1.695575191951284
+bpic2013_incidents,Balanced,PROD790,Recorded patterns,1.7707919645221069
+bpic2013_incidents,Balanced,PROD790,Timing,-0.046338732269634017
+bpic2013_incidents,Balanced,PROD790,Reactivation,0.36047127349748476
+bpic2013_incidents,Balanced,PROD262,Routing,-0.91383703997881915
+bpic2013_incidents,Balanced,PROD262,Recorded patterns,3.7190699188068135
+bpic2013_incidents,Balanced,PROD262,Timing,0.95448217101274091
+bpic2013_incidents,Balanced,PROD262,Reactivation,0.012355484952784445
+bpic2013_incidents,Balanced,PROD611,Routing,0.35997484776277466
+bpic2013_incidents,Balanced,PROD611,Recorded patterns,2.520028020474804
+bpic2013_incidents,Balanced,PROD611,Timing,0.80295016998562219
+bpic2013_incidents,Balanced,PROD611,Reactivation,0.083840790751036981
+bpic2013_incidents,Balanced,PROD604,Routing,-0.39201085517606565
+bpic2013_incidents,Balanced,PROD604,Recorded patterns,3.3055003971405883
+bpic2013_incidents,Balanced,PROD604,Timing,0.96468549018190841
+bpic2013_incidents,Balanced,PROD604,Reactivation,-0.24159385755890916
+bpic2013_incidents,Balanced,PROD597,Routing,0.80952144559173944
+bpic2013_incidents,Balanced,PROD597,Recorded patterns,1.657375231665343
+bpic2013_incidents,Balanced,PROD597,Timing,0.62782485864923376
+bpic2013_incidents,Balanced,PROD597,Reactivation,0.26184802753508074
+bpic2013_incidents,Balanced,PROD305,Routing,3.629815329626688
+bpic2013_incidents,Balanced,PROD305,Recorded patterns,-0.17056912452563741
+bpic2013_incidents,Balanced,PROD305,Timing,-0.11442798479814553
+bpic2013_incidents,Balanced,PROD305,Reactivation,0.0044567999293972614
+bpic2013_incidents,Balanced,PROD401,Routing,1.3911503839025681
+bpic2013_incidents,Balanced,PROD401,Recorded patterns,1.7499172623775483
+bpic2013_incidents,Balanced,PROD401,Timing,0.14586478921811252
+bpic2013_incidents,Balanced,PROD401,Reactivation,0.054275880328302918
+bpic2013_incidents,Balanced,PROD318,Routing,2.0045340217103518
+bpic2013_incidents,Balanced,PROD318,Recorded patterns,1.4390278880946079
+bpic2013_incidents,Balanced,PROD318,Timing,-0.27889332383418386
+bpic2013_incidents,Balanced,PROD318,Reactivation,0.053260965492895607
+bpic2013_incidents,Balanced,PROD279,Routing,-0.089009134233518666
+bpic2013_incidents,Balanced,PROD279,Recorded patterns,1.2468201173771072
+bpic2013_incidents,Balanced,PROD279,Timing,1.3520799650838349
+bpic2013_incidents,Balanced,PROD279,Reactivation,0.30822522283999659
+bpic2013_incidents,Balanced,PROD92,Routing,0.97165409054805385
+bpic2013_incidents,Balanced,PROD92,Recorded patterns,1.2391806769040685
+bpic2013_incidents,Balanced,PROD92,Timing,0.24499020677219915
+bpic2013_incidents,Balanced,PROD92,Reactivation,0.20858706204218513
+bpic2013_incidents,Balanced,PROD805,Routing,0.65192282234577714
+bpic2013_incidents,Balanced,PROD805,Recorded patterns,2.2854310078545592
+bpic2013_incidents,Balanced,PROD805,Timing,0.095856531565943953
+bpic2013_incidents,Balanced,PROD805,Reactivation,-0.46496337481246136
+bpic2013_incidents,Balanced,PROD423,Routing,-0.5102098226105376
+bpic2013_incidents,Balanced,PROD423,Recorded patterns,1.9119588959491667
+bpic2013_incidents,Balanced,PROD423,Timing,0.18811893773712768
+bpic2013_incidents,Balanced,PROD423,Reactivation,0.92163092401376756
+bpic2013_incidents,Balanced,PROD261,Routing,-1.0977958697378871
+bpic2013_incidents,Balanced,PROD261,Recorded patterns,1.5300006619009805
+bpic2013_incidents,Balanced,PROD261,Timing,1.0763011379127712
+bpic2013_incidents,Balanced,PROD261,Reactivation,0.81956579295737375
+bpic2013_incidents,Routing,PROD542,Routing,30.736209293089754
+bpic2013_incidents,Routing,PROD542,Recorded patterns,6.369375496425735
+bpic2013_incidents,Routing,PROD542,Timing,5.4429339477381227
+bpic2013_incidents,Routing,PROD542,Reactivation,0.28967434471803022
+bpic2013_incidents,Routing,PROD455,Routing,7.1311060365369316
+bpic2013_incidents,Routing,PROD455,Recorded patterns,4.5249255361397935
+bpic2013_incidents,Routing,PROD455,Timing,2.5878715822367204
+bpic2013_incidents,Routing,PROD455,Reactivation,0.74884829229547256
+bpic2013_incidents,Routing,PROD236,Routing,10.49028991262907
+bpic2013_incidents,Routing,PROD236,Recorded patterns,2.3323338628541181
+bpic2013_incidents,Routing,PROD236,Timing,1.1199684465621016
+bpic2013_incidents,Routing,PROD236,Reactivation,-0.54434736563410124
+bpic2013_incidents,Routing,PROD424,Routing,-9.3001787132645042
+bpic2013_incidents,Routing,PROD424,Recorded patterns,19.065855837966637
+bpic2013_incidents,Routing,PROD424,Timing,-0.056671603504685336
+bpic2013_incidents,Routing,PROD424,Reactivation,2.9985702938840335
+bpic2013_incidents,Routing,PROD697,Routing,9.5494837172359013
+bpic2013_incidents,Routing,PROD697,Recorded patterns,3.0527501985702941
+bpic2013_incidents,Routing,PROD697,Timing,-0.31317344183872892
+bpic2013_incidents,Routing,PROD697,Reactivation,-0.004130262112787943
+bpic2013_incidents,Routing,PROD789,Routing,9.265299841143765
+bpic2013_incidents,Routing,PROD789,Recorded patterns,2.8078418718559708
+bpic2013_incidents,Routing,PROD789,Timing,0.13948120349772566
+bpic2013_incidents,Routing,PROD789,Reactivation,-0.11093460418321423
+bpic2013_incidents,Routing,PROD776,Routing,8.0693804606830817
+bpic2013_incidents,Routing,PROD776,Recorded patterns,2.8958002382843531
+bpic2013_incidents,Routing,PROD776,Timing,0.64308590159706802
+bpic2013_incidents,Routing,PROD776,Reactivation,-0.14495631453534552
+bpic2013_incidents,Routing,PROD38,Routing,6.9719320889594911
+bpic2013_incidents,Routing,PROD38,Recorded patterns,1.6055252184273232
+bpic2013_incidents,Routing,PROD38,Timing,-0.071335361304405376
+bpic2013_incidents,Routing,PROD38,Reactivation,0.57545671167593326
+bpic2013_incidents,Routing,PROD791,Routing,6.6755063542494044
+bpic2013_incidents,Routing,PROD791,Recorded patterns,1.7217417924278524
+bpic2013_incidents,Routing,PROD791,Timing,-0.17938722169914992
+bpic2013_incidents,Routing,PROD791,Reactivation,-0.12928249933809904
+bpic2013_incidents,Routing,PROD158,Routing,5.0214257347100872
+bpic2013_incidents,Routing,PROD158,Recorded patterns,1.5337834259994707
+bpic2013_incidents,Routing,PROD158,Timing,0.46308054396962384
+bpic2013_incidents,Routing,PROD158,Reactivation,0.30473921101403229
+bpic2013_incidents,Routing,PROD215,Routing,4.6678415409054796
+bpic2013_incidents,Routing,PROD215,Recorded patterns,2.0045588429970884
+bpic2013_incidents,Routing,PROD215,Timing,0.17146802705837341
+bpic2013_incidents,Routing,PROD215,Reactivation,0.27606566057717757
+bpic2013_incidents,Routing,PROD350,Routing,5.440299841143764
+bpic2013_incidents,Routing,PROD350,Recorded patterns,0.99534187185597045
+bpic2013_incidents,Routing,PROD350,Timing,-0.031853438209198698
+bpic2013_incidents,Routing,PROD350,Reactivation,-0.010934604183214222
+bpic2013_incidents,Routing,PROD305,Routing,6.5336675933280386
+bpic2013_incidents,Routing,PROD305,Recorded patterns,-0.10234147471538277
+bpic2013_incidents,Routing,PROD305,Timing,-0.06865679087888725
+bpic2013_incidents,Routing,PROD305,Reactivation,0.0026740799576383317
+bpic2013_incidents,Routing,PROD308,Routing,4.2163224781572666
+bpic2013_incidents,Routing,PROD308,Recorded patterns,0.76433346571352923
+bpic2013_incidents,Routing,PROD308,Timing,0.65122782017514702
+bpic2013_incidents,Routing,PROD308,Reactivation,0.0639131585914747
+bpic2013_incidents,Routing,PROD698,Routing,-2.6607426528991267
+bpic2013_incidents,Routing,PROD698,Recorded patterns,6.9253342599947043
+bpic2013_incidents,Routing,PROD698,Timing,0.95419840467208283
+bpic2013_incidents,Routing,PROD698,Reactivation,-0.45260788985967715
+bpic2013_incidents,Routing,PROD318,Routing,3.6081612390786342
+bpic2013_incidents,Routing,PROD318,Recorded patterns,0.86341673285676446
+bpic2013_incidents,Routing,PROD318,Timing,-0.16733599430051027
+bpic2013_incidents,Routing,PROD318,Reactivation,0.03195657929573735
+bpic2013_incidents,Routing,PROD790,Routing,3.0520353455123104
+bpic2013_incidents,Routing,PROD790,Recorded patterns,1.0624751787132647
+bpic2013_incidents,Routing,PROD790,Timing,-0.027803239361780335
+bpic2013_incidents,Routing,PROD790,Reactivation,0.21628276409849084
+bpic2013_incidents,Routing,PROD325,Routing,2.223461080222398
+bpic2013_incidents,Routing,PROD325,Recorded patterns,1.9462586047127357
+bpic2013_incidents,Routing,PROD325,Timing,0.15618164236951812
+bpic2013_incidents,Routing,PROD325,Reactivation,-0.17897802488747686
+bpic2013_incidents,Routing,PROD793,Routing,1.7454030976965844
+bpic2013_incidents,Routing,PROD793,Recorded patterns,1.6772918321419119
+bpic2013_incidents,Routing,PROD793,Timing,0.3677073673083055
+bpic2013_incidents,Routing,PROD793,Reactivation,0.22989144823934338
+bpic2013_incidents,Routing,PROD631,Routing,2.0096902303415405
+bpic2013_incidents,Routing,PROD631,Recorded patterns,1.1916501191421764
+bpic2013_incidents,Routing,PROD631,Timing,0.55295536525103006
+bpic2013_incidents,Routing,PROD631,Reactivation,0.077521842732327234
+bpic2013_incidents,Routing,PROD401,Routing,2.5040706910246215
+bpic2013_incidents,Routing,PROD401,Recorded patterns,1.0499503574265288
+bpic2013_incidents,Routing,PROD401,Timing,0.087518873530867791
+bpic2013_incidents,Routing,PROD401,Reactivation,0.032565528196981691
+bpic2013_incidents,Routing,PROD235,Routing,3.9260027799841128
+bpic2013_incidents,Routing,PROD235,Recorded patterns,-0.30702442414614828
+bpic2013_incidents,Routing,PROD235,Timing,0.28023564588185668
+bpic2013_incidents,Routing,PROD235,Reactivation,-0.29197776012708504
+bpic2013_incidents,Routing,PROD597,Routing,1.4571386020651305
+bpic2013_incidents,Routing,PROD597,Recorded patterns,0.9944251389992057
+bpic2013_incidents,Routing,PROD597,Timing,0.37669491518954035
+bpic2013_incidents,Routing,PROD597,Reactivation,0.15710881652104847
+bpic2013_incidents,Routing,PROD736,Routing,2.1632644956314535
+bpic2013_incidents,Routing,PROD736,Recorded patterns,0.57036669314270583
+bpic2013_incidents,Routing,PROD736,Timing,0.11682575727174437
+bpic2013_incidents,Routing,PROD736,Reactivation,-0.027217368281705061
+bpic2013_incidents,Routing,PROD92,Routing,1.7489773629864969
+bpic2013_incidents,Routing,PROD92,Recorded patterns,0.74350840614244107
+bpic2013_incidents,Routing,PROD92,Timing,0.14699412406331949
+bpic2013_incidents,Routing,PROD92,Reactivation,0.1251522372253111
+bpic2013_incidents,Routing,PROD611,Routing,0.64795472597299442
+bpic2013_incidents,Routing,PROD611,Recorded patterns,1.5120168122848825
+bpic2013_incidents,Routing,PROD611,Timing,0.48177010199137343
+bpic2013_incidents,Routing,PROD611,Reactivation,0.050304474450622194
+bpic2013_incidents,Routing,PROD209,Routing,1.835712867355044
+bpic2013_incidents,Routing,PROD209,Recorded patterns,0.56064171299973531
+bpic2013_incidents,Routing,PROD209,Timing,0.08435370294294392
+bpic2013_incidents,Routing,PROD209,Reactivation,0.052369605507016151
+bpic2013_incidents,Routing,PROD582,Routing,1.8515289912629067
+bpic2013_incidents,Routing,PROD582,Recorded patterns,0.040733386285411677
+bpic2013_incidents,Routing,PROD582,Timing,0.45847548797344051
+bpic2013_incidents,Routing,PROD582,Reactivation,0.045565263436589884
+bpic2013_incidents,Routing,PROD805,Routing,1.1734610802223988
+bpic2013_incidents,Routing,PROD805,Recorded patterns,1.3712586047127346
+bpic2013_incidents,Routing,PROD805,Timing,0.057513918939566429
+bpic2013_incidents,Routing,PROD805,Reactivation,-0.27897802488747686
+bpic2013_incidents,Routing,PROD258,Routing,2.5749900714853053
+bpic2013_incidents,Routing,PROD258,Recorded patterns,0.42449199099814661
+bpic2013_incidents,Routing,PROD258,Timing,-0.62292142239456172
+bpic2013_incidents,Routing,PROD258,Reactivation,-0.13341276145088699
+bpic2013_incidents,Timing,PROD542,Routing,11.383781219662872
+bpic2013_incidents,Timing,PROD542,Recorded patterns,7.0770838849174824
+bpic2013_incidents,Timing,PROD542,Timing,18.143113159127068
+bpic2013_incidents,Timing,PROD542,Reactivation,0.64372076604006701
+bpic2013_incidents,Timing,PROD424,Routing,-3.444510634542405
+bpic2013_incidents,Timing,PROD424,Recorded patterns,21.18428426440736
+bpic2013_incidents,Timing,PROD424,Timing,-0.18890534501562187
+bpic2013_incidents,Timing,PROD424,Reactivation,6.6634895419645215
+bpic2013_incidents,Timing,PROD455,Routing,2.6411503839025681
+bpic2013_incidents,Timing,PROD455,Recorded patterns,5.0276950401553249
+bpic2013_incidents,Timing,PROD455,Timing,8.6262386074557327
+bpic2013_incidents,Timing,PROD455,Reactivation,1.6641073162121613
+bpic2013_incidents,Timing,PROD236,Routing,3.8852925602329891
+bpic2013_incidents,Timing,PROD236,Recorded patterns,2.5914820698379062
+bpic2013_incidents,Timing,PROD236,Timing,3.7332281552070032
+bpic2013_incidents,Timing,PROD236,Reactivation,-1.2096608125202248
+bpic2013_incidents,Timing,PROD698,Routing,-0.9854602418144911
+bpic2013_incidents,Timing,PROD698,Recorded patterns,7.6948158444385584
+bpic2013_incidents,Timing,PROD698,Timing,3.1806613489069431
+bpic2013_incidents,Timing,PROD698,Reactivation,-1.0057953107992823
+bpic2013_incidents,Timing,PROD776,Routing,2.9886594298826226
+bpic2013_incidents,Timing,PROD776,Recorded patterns,3.2175558203159462
+bpic2013_incidents,Timing,PROD776,Timing,2.1436196719902263
+bpic2013_incidents,Timing,PROD776,Reactivation,-0.32212514341187892
+bpic2013_incidents,Timing,PROD789,Routing,3.4315925337569491
+bpic2013_incidents,Timing,PROD789,Recorded patterns,3.119824302062189
+bpic2013_incidents,Timing,PROD789,Timing,0.46493734499241868
+bpic2013_incidents,Timing,PROD789,Reactivation,-0.24652134262936487
+bpic2013_incidents,Timing,PROD697,Routing,3.5368458211984817
+bpic2013_incidents,Timing,PROD697,Recorded patterns,3.3919446650781038
+bpic2013_incidents,Timing,PROD697,Timing,-1.0439114727957632
+bpic2013_incidents,Timing,PROD697,Reactivation,-0.0091783602506398734
+bpic2013_incidents,Timing,PROD158,Routing,1.8597873091518839
+bpic2013_incidents,Timing,PROD158,Recorded patterns,1.7042038066660778
+bpic2013_incidents,Timing,PROD158,Timing,1.5436018132320788
+bpic2013_incidents,Timing,PROD158,Reactivation,0.67719824669784956
+bpic2013_incidents,Timing,PROD38,Routing,2.5821970699849963
+bpic2013_incidents,Timing,PROD38,Recorded patterns,1.7839169093636922
+bpic2013_incidents,Timing,PROD38,Timing,-0.23778453768135155
+bpic2013_incidents,Timing,PROD38,Reactivation,1.278792692613185
+bpic2013_incidents,Timing,PROD215,Routing,1.7288302003353631
+bpic2013_incidents,Timing,PROD215,Recorded patterns,2.2272876033300957
+bpic2013_incidents,Timing,PROD215,Timing,0.57156009019457787
+bpic2013_incidents,Timing,PROD215,Reactivation,0.61347924572706147
+bpic2013_incidents,Timing,PROD308,Routing,1.5616009178360248
+bpic2013_incidents,Timing,PROD308,Recorded patterns,0.8492594063483655
+bpic2013_incidents,Timing,PROD308,Timing,2.1707594005838229
+bpic2013_incidents,Timing,PROD308,Reactivation,0.14202924131438821
+bpic2013_incidents,Timing,PROD793,Routing,0.64644559173947591
+bpic2013_incidents,Timing,PROD793,Recorded patterns,1.8636575912687896
+bpic2013_incidents,Timing,PROD793,Timing,1.2256912243610185
+bpic2013_incidents,Timing,PROD793,Reactivation,0.51086988497631869
+bpic2013_incidents,Timing,PROD631,Routing,0.7443297149413115
+bpic2013_incidents,Timing,PROD631,Recorded patterns,1.3240556879357512
+bpic2013_incidents,Timing,PROD631,Timing,1.8431845508367664
+bpic2013_incidents,Timing,PROD631,Reactivation,0.17227076162739385
+bpic2013_incidents,Timing,PROD279,Routing,-0.059339422822345708
+bpic2013_incidents,Timing,PROD279,Recorded patterns,0.8312134115847376
+bpic2013_incidents,Timing,PROD279,Timing,2.7041599301676698
+bpic2013_incidents,Timing,PROD279,Reactivation,0.41096696378666198
+bpic2013_incidents,Timing,PROD262,Routing,-0.6092246933192127
+bpic2013_incidents,Timing,PROD262,Recorded patterns,2.4793799458712082
+bpic2013_incidents,Timing,PROD262,Timing,1.9089643420254818
+bpic2013_incidents,Timing,PROD262,Reactivation,0.01647397993704585
+bpic2013_incidents,Timing,PROD611,Routing,0.23998323184184978
+bpic2013_incidents,Timing,PROD611,Recorded patterns,1.6800186803165351
+bpic2013_incidents,Timing,PROD611,Timing,1.6059003399712444
+bpic2013_incidents,Timing,PROD611,Reactivation,0.1117877210013826
+bpic2013_incidents,Timing,PROD604,Routing,-0.26134057011737694
+bpic2013_incidents,Timing,PROD604,Recorded patterns,2.2036669314270578
+bpic2013_incidents,Timing,PROD604,Timing,1.9293709803638168
+bpic2013_incidents,Timing,PROD604,Reactivation,-0.32212514341187892
+bpic2013_incidents,Timing,PROD261,Routing,-0.73186391315859123
+bpic2013_incidents,Timing,PROD261,Recorded patterns,1.0200004412673187
+bpic2013_incidents,Timing,PROD261,Timing,2.1526022758255423
+bpic2013_incidents,Timing,PROD261,Reactivation,1.0927543906098316
+bpic2013_incidents,Timing,PROD791,Routing,2.4724097608331124
+bpic2013_incidents,Timing,PROD791,Recorded patterns,1.9130464360309476
+bpic2013_incidents,Timing,PROD791,Timing,-0.59795740566383315
+bpic2013_incidents,Timing,PROD791,Reactivation,-0.28729444297355339
+bpic2013_incidents,Timing,PROD597,Routing,0.53968096372782637
+bpic2013_incidents,Timing,PROD597,Recorded patterns,1.104916821110228
+bpic2013_incidents,Timing,PROD597,Timing,1.2556497172984675
+bpic2013_incidents,Timing,PROD597,Reactivation,0.34913070338010765
+bpic2013_incidents,Timing,PROD325,Routing,0.82350410378607375
+bpic2013_incidents,Timing,PROD325,Recorded patterns,2.1625095607919271
+bpic2013_incidents,Timing,PROD325,Timing,0.52060547456506034
+bpic2013_incidents,Timing,PROD325,Reactivation,-0.39772894419439297
+bpic2013_incidents,Timing,PROD350,Routing,2.014925867090283
+bpic2013_incidents,Timing,PROD350,Recorded patterns,1.1059354131732997
+bpic2013_incidents,Timing,PROD350,Timing,-0.10617812736399568
+bpic2013_incidents,Timing,PROD350,Reactivation,-0.024299120407142646
+bpic2013_incidents,Timing,PROD609,Routing,-0.27324375606742562
+bpic2013_incidents,Timing,PROD609,Recorded patterns,0.90430566587238503
+bpic2013_incidents,Timing,PROD609,Timing,1.8659666334357201
+bpic2013_incidents,Timing,PROD609,Reactivation,0.21763304209690226
+bpic2013_incidents,Timing,PROD337,Routing,-0.61375871502956481
+bpic2013_incidents,Timing,PROD337,Recorded patterns,-1.1471479422233992
+bpic2013_incidents,Timing,PROD337,Timing,4.8913560352134864
+bpic2013_incidents,Timing,PROD337,Reactivation,-0.42338128438207867
+bpic2013_incidents,Timing,PROD790,Routing,1.1303834613008561
+bpic2013_incidents,Timing,PROD790,Recorded patterns,1.1805279763480712
+bpic2013_incidents,Timing,PROD790,Timing,-0.092677464539268034
+bpic2013_incidents,Timing,PROD790,Reactivation,0.48062836466331299
+bpic2013_incidents,Timing,PROD617,Routing,0.25906804342070433
+bpic2013_incidents,Timing,PROD617,Recorded patterns,0.71138910952254819
+bpic2013_incidents,Timing,PROD617,Timing,1.7019486989702053
+bpic2013_incidents,Timing,PROD617,Reactivation,-0.0091783602506398734
+bpic2013_incidents,Timing,PROD423,Routing,-0.34013988174035814
+bpic2013_incidents,Timing,PROD423,Recorded patterns,1.2746392639661099
+bpic2013_incidents,Timing,PROD423,Timing,0.37623787547425536
+bpic2013_incidents,Timing,PROD423,Reactivation,1.2288412320183568
+bpic2013_incidents,Timing,PROD401,Routing,0.92743358926837904
+bpic2013_incidents,Timing,PROD401,Recorded patterns,1.1666115082516972
+bpic2013_incidents,Timing,PROD401,Timing,0.29172957843622505
+bpic2013_incidents,Timing,PROD401,Reactivation,0.072367840437737072
+bpic2013_incidents,Timing,PROD582,Routing,0.68575147824552107
+bpic2013_incidents,Timing,PROD582,Recorded patterns,0.045259318094901801
+bpic2013_incidents,Timing,PROD582,Timing,1.5282516265781347
+bpic2013_incidents,Timing,PROD582,Reactivation,0.10125614097019973
+bpic2017,Balanced,New credit | Existing loan takeover,Timing,17.306377200071303
+bpic2017,Balanced,New credit | Existing loan takeover,Interaction,95.479666550297978
+bpic2017,Balanced,New credit | Existing loan takeover,Offer,17.002206776899722
+bpic2017,Balanced,New credit | Remaining debt home,Timing,18.45593862077742
+bpic2017,Balanced,New credit | Remaining debt home,Interaction,97.639459625292261
+bpic2017,Balanced,New credit | Remaining debt home,Offer,12.011105821617104
+bpic2017,Balanced,New credit | Home improvement,Timing,7.9437111119196704
+bpic2017,Balanced,New credit | Home improvement,Interaction,44.371681741724736
+bpic2017,Balanced,New credit | Home improvement,Offer,11.726243295566336
+bpic2017,Balanced,Limit raise | Remaining debt home,Timing,0.067788218139019335
+bpic2017,Balanced,Limit raise | Remaining debt home,Interaction,2.0217453214425514
+bpic2017,Balanced,Limit raise | Remaining debt home,Offer,-0.44915632570588299
+bpic2017,Balanced,New credit | Car,Timing,-12.722560129205529
+bpic2017,Balanced,New credit | Car,Interaction,-130.24004908650429
+bpic2017,Balanced,New credit | Car,Offer,5.1793434680038413
+bpic2017,Balanced,"New credit | Other, see explanation",Timing,0.60090073009627609
+bpic2017,Balanced,"New credit | Other, see explanation",Interaction,-15.624173833930978
+bpic2017,Balanced,"New credit | Other, see explanation",Offer,-0.85499169549441278
+bpic2017,Balanced,New credit | Unknown,Timing,-7.8376864240442128
+bpic2017,Balanced,New credit | Unknown,Interaction,5.1365802363345985
+bpic2017,Balanced,New credit | Unknown,Offer,-0.15490600569150401
+bpic2017,Balanced,Limit raise | Home improvement,Timing,-6.6957707206815034
+bpic2017,Balanced,Limit raise | Home improvement,Interaction,-12.092828927184804
+bpic2017,Balanced,Limit raise | Home improvement,Offer,-15.219920234430376
+bpic2017,Balanced,New credit | Not speficied,Timing,3.9135288476214454
+bpic2017,Balanced,New credit | Not speficied,Interaction,-17.321341838839672
+bpic2017,Balanced,New credit | Not speficied,Offer,8.2037195721857277
+bpic2017,Balanced,Limit raise | Car,Timing,-7.1129525453070954
+bpic2017,Balanced,Limit raise | Car,Interaction,-21.484844330191361
+bpic2017,Balanced,Limit raise | Car,Offer,-11.691459582976295
+bpic2017,Balanced,Limit raise | Unknown,Timing,-4.6839954453019601
+bpic2017,Balanced,Limit raise | Unknown,Interaction,-13.983544172564443
+bpic2017,Balanced,Limit raise | Unknown,Offer,-7.5532366413828855
+bpic2017,Balanced,New credit | Extra spending limit,Timing,-1.0119820571948805
+bpic2017,Balanced,New credit | Extra spending limit,Interaction,-2.0095993737239031
+bpic2017,Balanced,New credit | Extra spending limit,Offer,-2.6700582902239574
+bpic2017,Balanced,"Limit raise | Other, see explanation",Timing,-2.3075898032897126
+bpic2017,Balanced,"Limit raise | Other, see explanation",Interaction,-9.9047848762787325
+bpic2017,Balanced,"Limit raise | Other, see explanation",Offer,-7.3098310535614157
+bpic2017,Balanced,New credit | Caravan / Camper,Timing,-0.91497429547878317
+bpic2017,Balanced,New credit | Caravan / Camper,Interaction,-6.8455091137981672
+bpic2017,Balanced,New credit | Caravan / Camper,Offer,1.1213156029494209
+bpic2017,Balanced,Limit raise | Existing loan takeover,Timing,-2.0873336344136026
+bpic2017,Balanced,Limit raise | Existing loan takeover,Interaction,1.9011516286352064
+bpic2017,Balanced,Limit raise | Existing loan takeover,Offer,-3.0087636336708035
+bpic2017,Balanced,New credit | Motorcycle,Timing,-0.89145623978060951
+bpic2017,Balanced,New credit | Motorcycle,Interaction,-1.9784387529488863
+bpic2017,Balanced,New credit | Motorcycle,Offer,-1.2432849873581091
+bpic2017,Balanced,New credit | Boat,Timing,-0.49980170826549564
+bpic2017,Balanced,New credit | Boat,Interaction,-2.294342568789868
+bpic2017,Balanced,New credit | Boat,Offer,0.14483480910216132
+bpic2017,Balanced,Limit raise | Extra spending limit,Timing,-1.3428611587689896
+bpic2017,Balanced,Limit raise | Extra spending limit,Interaction,-3.8231641753149859
+bpic2017,Balanced,Limit raise | Extra spending limit,Offer,-2.4381541781713167
+bpic2017,Balanced,New credit | Tax payments,Timing,0.58373655879748654
+bpic2017,Balanced,New credit | Tax payments,Interaction,-2.4873731314862395
+bpic2017,Balanced,New credit | Tax payments,Offer,-0.24528230029515372
+bpic2017,Balanced,Limit raise | Caravan / Camper,Timing,-0.34886250182813727
+bpic2017,Balanced,Limit raise | Caravan / Camper,Interaction,-1.3132264855543911
+bpic2017,Balanced,Limit raise | Caravan / Camper,Offer,-0.84440424428999139
+bpic2017,Balanced,Limit raise | Not speficied,Timing,-0.051495919506596037
+bpic2017,Balanced,Limit raise | Not speficied,Interaction,-0.819073915389253
+bpic2017,Balanced,Limit raise | Not speficied,Offer,-0.71344695166460381
+bpic2017,Balanced,Limit raise | Tax payments,Timing,-0.19383988413286238
+bpic2017,Balanced,Limit raise | Tax payments,Interaction,-0.32533096364001779
+bpic2017,Balanced,Limit raise | Tax payments,Offer,-0.2146349720185767
+bpic2017,Balanced,Limit raise | Motorcycle,Timing,-0.24252556305213507
+bpic2017,Balanced,Limit raise | Motorcycle,Interaction,-1.2471772086282225
+bpic2017,Balanced,Limit raise | Motorcycle,Offer,-0.39099516540247764
+bpic2017,Balanced,New credit | Business goal,Timing,0.14877522846021071
+bpic2017,Balanced,New credit | Business goal,Interaction,-1.1138438752948887
+bpic2017,Balanced,New credit | Business goal,Offer,0.075671501264188992
+bpic2017,Balanced,Limit raise | Boat,Timing,0.0019009806843547118
+bpic2017,Balanced,Limit raise | Boat,Interaction,-1.0945621885810399
+bpic2017,Balanced,Limit raise | Boat,Offer,-0.29643593893808118
+bpic2017,Balanced,Limit raise | Business goal,Timing,-0.066211042132031953
+bpic2017,Balanced,Limit raise | Business goal,Interaction,-0.28410210839231109
+bpic2017,Balanced,Limit raise | Business goal,Offer,-0.11819903308049552
+bpic2017,Balanced,New credit | Debt restructuring,Timing,-0.010758424183059705
+bpic2017,Balanced,New credit | Debt restructuring,Interaction,-0.2629741766902578
+bpic2017,Balanced,New credit | Debt restructuring,Offer,-0.04727961323219821
+bpic2017,Timeliness,New credit | Remaining debt home,Timing,46.139846551943542
+bpic2017,Timeliness,New credit | Remaining debt home,Interaction,61.024662265807656
+bpic2017,Timeliness,New credit | Remaining debt home,Offer,7.5069411385106877
+bpic2017,Timeliness,New credit | Existing loan takeover,Timing,43.265943000178289
+bpic2017,Timeliness,New credit | Existing loan takeover,Interaction,59.674791593936142
+bpic2017,Timeliness,New credit | Existing loan takeover,Offer,10.626379235562338
+bpic2017,Timeliness,New credit | Home improvement,Timing,19.859277779799275
+bpic2017,Timeliness,New credit | Home improvement,Interaction,27.732301088577891
+bpic2017,Timeliness,New credit | Home improvement,Offer,7.3289020597289687
+bpic2017,Timeliness,New credit | Not speficied,Timing,9.7838221190536281
+bpic2017,Timeliness,New credit | Not speficied,Interaction,-10.825838649274806
+bpic2017,Timeliness,New credit | Not speficied,Offer,5.1273247326160796
+bpic2017,Timeliness,Limit raise | Remaining debt home,Timing,0.16947054534754855
+bpic2017,Timeliness,Limit raise | Remaining debt home,Interaction,1.2635908259015947
+bpic2017,Timeliness,Limit raise | Remaining debt home,Offer,-0.28072270356617685
+bpic2017,Timeliness,New credit | Car,Timing,-31.806400323013733
+bpic2017,Timeliness,New credit | Car,Interaction,-81.400030679065196
+bpic2017,Timeliness,New credit | Car,Offer,3.2370896675024157
+bpic2017,Timeliness,"New credit | Other, see explanation",Timing,1.5022518252406991
+bpic2017,Timeliness,"New credit | Other, see explanation",Interaction,-9.7651086462068974
+bpic2017,Timeliness,"New credit | Other, see explanation",Offer,-0.53436980968400349
+bpic2017,Timeliness,New credit | Unknown,Timing,-19.594216060110512
+bpic2017,Timeliness,New credit | Unknown,Interaction,3.2103626477091178
+bpic2017,Timeliness,New credit | Unknown,Offer,-0.09681625355718354
+bpic2017,Timeliness,Limit raise | Home improvement,Timing,-16.739426801703747
+bpic2017,Timeliness,Limit raise | Home improvement,Interaction,-7.5580180794905187
+bpic2017,Timeliness,Limit raise | Home improvement,Offer,-9.512450146518983
+bpic2017,Timeliness,Limit raise | Car,Timing,-17.782381363267731
+bpic2017,Timeliness,Limit raise | Car,Interaction,-13.428027706369603
+bpic2017,Timeliness,Limit raise | Car,Offer,-7.3071622393601814
+bpic2017,Timeliness,Limit raise | Unknown,Timing,-11.709988613254895
+bpic2017,Timeliness,Limit raise | Unknown,Interaction,-8.7397151078527777
+bpic2017,Timeliness,Limit raise | Unknown,Offer,-4.7207729008643033
+bpic2017,Timeliness,New credit | Extra spending limit,Timing,-2.5299551429871969
+bpic2017,Timeliness,New credit | Extra spending limit,Interaction,-1.2559996085774459
+bpic2017,Timeliness,New credit | Extra spending limit,Offer,-1.6687864313899727
+bpic2017,Timeliness,"Limit raise | Other, see explanation",Timing,-5.7689745082242787
+bpic2017,Timeliness,"Limit raise | Other, see explanation",Interaction,-6.1904905476742105
+bpic2017,Timeliness,"Limit raise | Other, see explanation",Offer,-4.568644408475885
+bpic2017,Timeliness,New credit | Caravan / Camper,Timing,-2.2874357386969533
+bpic2017,Timeliness,New credit | Caravan / Camper,Interaction,-4.2784431961238569
+bpic2017,Timeliness,New credit | Caravan / Camper,Offer,0.70082225184338864
+bpic2017,Timeliness,Limit raise | Existing loan takeover,Timing,-5.2183340860340035
+bpic2017,Timeliness,Limit raise | Existing loan takeover,Interaction,1.188219767897003
+bpic2017,Timeliness,Limit raise | Existing loan takeover,Offer,-1.8804772710442517
+bpic2017,Timeliness,New credit | Motorcycle,Timing,-2.2286405994515208
+bpic2017,Timeliness,New credit | Motorcycle,Interaction,-1.2365242205930569
+bpic2017,Timeliness,New credit | Motorcycle,Offer,-0.7770531170988183
+bpic2017,Timeliness,New credit | Boat,Timing,-1.2495042706637374
+bpic2017,Timeliness,New credit | Boat,Interaction,-1.4339641054936698
+bpic2017,Timeliness,New credit | Boat,Offer,0.090521755688850986
+bpic2017,Timeliness,Limit raise | Extra spending limit,Timing,-3.357152896922472
+bpic2017,Timeliness,Limit raise | Extra spending limit,Interaction,-2.3894776095718688
+bpic2017,Timeliness,Limit raise | Extra spending limit,Offer,-1.5238463613570723
+bpic2017,Timeliness,New credit | Tax payments,Timing,1.4593413969937166
+bpic2017,Timeliness,New credit | Tax payments,Interaction,-1.5546082071789007
+bpic2017,Timeliness,New credit | Tax payments,Offer,-0.15330143768447102
+bpic2017,Timeliness,Limit raise | Caravan / Camper,Timing,-0.87215625457034285
+bpic2017,Timeliness,Limit raise | Caravan / Camper,Interaction,-0.82076655347149496
+bpic2017,Timeliness,Limit raise | Caravan / Camper,Offer,-0.52775265268124449
+bpic2017,Timeliness,Limit raise | Not speficied,Timing,-0.12873979876648967
+bpic2017,Timeliness,Limit raise | Not speficied,Interaction,-0.51192119711828399
+bpic2017,Timeliness,Limit raise | Not speficied,Offer,-0.44590434479037733
+bpic2017,Timeliness,Limit raise | Tax payments,Timing,-0.4845997103321556
+bpic2017,Timeliness,Limit raise | Tax payments,Interaction,-0.2033318522750113
+bpic2017,Timeliness,Limit raise | Tax payments,Offer,-0.13414685751161037
+bpic2017,Timeliness,Limit raise | Motorcycle,Timing,-0.60631390763033732
+bpic2017,Timeliness,Limit raise | Motorcycle,Interaction,-0.77948575539263909
+bpic2017,Timeliness,Limit raise | Motorcycle,Offer,-0.24437197837654845
+bpic2017,Timeliness,New credit | Business goal,Timing,0.37193807115052691
+bpic2017,Timeliness,New credit | Business goal,Interaction,-0.69615242205930561
+bpic2017,Timeliness,New credit | Business goal,Offer,0.047294688290118195
+bpic2017,Timeliness,Limit raise | Boat,Timing,0.0047524517108868888
+bpic2017,Timeliness,Limit raise | Boat,Interaction,-0.68410136786315001
+bpic2017,Timeliness,Limit raise | Boat,Offer,-0.18527246183630072
+bpic2017,Timeliness,Limit raise | Business goal,Timing,-0.16552760533007982
+bpic2017,Timeliness,Limit raise | Business goal,Interaction,-0.1775638177451945
+bpic2017,Timeliness,Limit raise | Business goal,Offer,-0.073874395675309693
+bpic2017,Timeliness,New credit | Debt restructuring,Timing,-0.026896060457649237
+bpic2017,Timeliness,New credit | Debt restructuring,Interaction,-0.16435886043141112
+bpic2017,Timeliness,New credit | Debt restructuring,Offer,-0.029549758270123877
+bpic2017,Interaction,New credit | Remaining debt home,Timing,8.389063009444282
+bpic2017,Interaction,New credit | Remaining debt home,Interaction,133.14471767085305
+bpic2017,Interaction,New credit | Remaining debt home,Offer,5.4595935552805006
+bpic2017,Interaction,New credit | Existing loan takeover,Timing,7.8665350909414995
+bpic2017,Interaction,New credit | Existing loan takeover,Interaction,130.1995452958607
+bpic2017,Interaction,New credit | Existing loan takeover,Offer,7.728275807681694
+bpic2017,Interaction,New credit | Home improvement,Timing,3.6107777781453083
+bpic2017,Interaction,New credit | Home improvement,Interaction,60.506838738715516
+bpic2017,Interaction,New credit | Home improvement,Offer,5.3301105888937999
+bpic2017,Interaction,New credit | Unknown,Timing,-3.5625847382019131
+bpic2017,Interaction,New credit | Unknown,Interaction,7.0044275950017258
+bpic2017,Interaction,New credit | Unknown,Offer,-0.070411820768862224
+bpic2017,Interaction,Limit raise | Remaining debt home,Timing,0.030812826426826954
+bpic2017,Interaction,Limit raise | Remaining debt home,Interaction,2.7569254383307515
+bpic2017,Interaction,Limit raise | Remaining debt home,Offer,-0.20416196622994681
+bpic2017,Interaction,Limit raise | Existing loan takeover,Timing,-0.94878801564254645
+bpic2017,Interaction,Limit raise | Existing loan takeover,Interaction,2.5924794935934625
+bpic2017,Interaction,Limit raise | Existing loan takeover,Offer,-1.3676198334867287
+bpic2017,Interaction,New credit | Car,Timing,-5.7829818769115988
+bpic2017,Interaction,New credit | Car,Interaction,-177.60006693614227
+bpic2017,Interaction,New credit | Car,Offer,2.354247030910849
+bpic2017,Interaction,"New credit | Other, see explanation",Timing,0.27313669549830855
+bpic2017,Interaction,"New credit | Other, see explanation",Interaction,-21.305691591724138
+bpic2017,Interaction,"New credit | Other, see explanation",Offer,-0.38863258886109797
+bpic2017,Interaction,Limit raise | Home improvement,Timing,-3.0435321457643192
+bpic2017,Interaction,Limit raise | Home improvement,Interaction,-16.490221264342914
+bpic2017,Interaction,Limit raise | Home improvement,Offer,-6.9181455611047156
+bpic2017,Interaction,New credit | Not speficied,Timing,1.7788767489188397
+bpic2017,Interaction,New credit | Not speficied,Interaction,-23.620011598417751
+bpic2017,Interaction,New credit | Not speficied,Offer,3.7289634419026019
+bpic2017,Interaction,Limit raise | Car,Timing,-3.2331602478668611
+bpic2017,Interaction,Limit raise | Car,Interaction,-29.297514995715503
+bpic2017,Interaction,Limit raise | Car,Offer,-5.31429981044377
+bpic2017,Interaction,Limit raise | Unknown,Timing,-2.1290888387736175
+bpic2017,Interaction,Limit raise | Unknown,Interaction,-19.068469326224246
+bpic2017,Interaction,Limit raise | Unknown,Offer,-3.4332893824467661
+bpic2017,Interaction,New credit | Extra spending limit,Timing,-0.45999184417949057
+bpic2017,Interaction,New credit | Extra spending limit,Interaction,-2.740362782350783
+bpic2017,Interaction,New credit | Extra spending limit,Offer,-1.2136628591927079
+bpic2017,Interaction,"Limit raise | Other, see explanation",Timing,-1.0489044560407783
+bpic2017,Interaction,"Limit raise | Other, see explanation",Interaction,-13.506524831289175
+bpic2017,Interaction,"Limit raise | Other, see explanation",Offer,-3.3226504788915534
+bpic2017,Interaction,New credit | Caravan / Camper,Timing,-0.4158974070358103
+bpic2017,Interaction,New credit | Caravan / Camper,Interaction,-9.3347851551793202
+bpic2017,Interaction,New credit | Caravan / Camper,Offer,0.50968891043155551
+bpic2017,Interaction,New credit | Motorcycle,Timing,-0.4052073817184586
+bpic2017,Interaction,New credit | Motorcycle,Interaction,-2.6978710267484827
+bpic2017,Interaction,New credit | Motorcycle,Offer,-0.56512953970823177
+bpic2017,Interaction,New credit | Boat,Timing,-0.22718259466613436
+bpic2017,Interaction,New credit | Boat,Interaction,-3.128648957440729
+bpic2017,Interaction,New credit | Boat,Offer,0.065834004137346053
+bpic2017,Interaction,Limit raise | Extra spending limit,Timing,-0.61039143580408606
+bpic2017,Interaction,Limit raise | Extra spending limit,Interaction,-5.2134056936113495
+bpic2017,Interaction,Limit raise | Extra spending limit,Offer,-1.10825189916878
+bpic2017,Interaction,New credit | Tax payments,Timing,0.26533479945340305
+bpic2017,Interaction,New credit | Tax payments,Interaction,-3.3918724520266923
+bpic2017,Interaction,New credit | Tax payments,Offer,-0.1114919546796153
+bpic2017,Interaction,Limit raise | Caravan / Camper,Timing,-0.1585738644673351
+bpic2017,Interaction,Limit raise | Caravan / Camper,Interaction,-1.790763389392352
+bpic2017,Interaction,Limit raise | Caravan / Camper,Offer,-0.38382011104090513
+bpic2017,Interaction,Limit raise | Not speficied,Timing,-0.023407236139361836
+bpic2017,Interaction,Limit raise | Not speficied,Interaction,-1.1169189755308002
+bpic2017,Interaction,Limit raise | Not speficied,Offer,-0.3242940689384563
+bpic2017,Interaction,Limit raise | Tax payments,Timing,-0.088109038242210155
+bpic2017,Interaction,Limit raise | Tax payments,Interaction,-0.44363313223638789
+bpic2017,Interaction,Limit raise | Tax payments,Offer,-0.097561350917534873
+bpic2017,Interaction,Limit raise | Motorcycle,Timing,-0.11023889229642501
+bpic2017,Interaction,Limit raise | Motorcycle,Interaction,-1.7006961935839393
+bpic2017,Interaction,Limit raise | Motorcycle,Offer,-0.17772507518294436
+bpic2017,Interaction,New credit | Business goal,Timing,0.067625103845550344
+bpic2017,Interaction,New credit | Business goal,Interaction,-1.5188780117657577
+bpic2017,Interaction,New credit | Business goal,Offer,0.034396136938267749
+bpic2017,Interaction,Limit raise | Boat,Timing,0.0008640821292521467
+bpic2017,Interaction,Limit raise | Boat,Interaction,-1.4925848026105093
+bpic2017,Interaction,Limit raise | Boat,Offer,-0.13474360860821874
+bpic2017,Interaction,Limit raise | Business goal,Timing,-0.030095928241832701
+bpic2017,Interaction,Limit raise | Business goal,Interaction,-0.38741196598951522
+bpic2017,Interaction,Limit raise | Business goal,Offer,-0.053726833218407058
+bpic2017,Interaction,New credit | Debt restructuring,Timing,-0.0048901928104816833
+bpic2017,Interaction,New credit | Debt restructuring,Interaction,-0.35860115003216969
+bpic2017,Interaction,New credit | Debt restructuring,Offer,-0.021490733287362822

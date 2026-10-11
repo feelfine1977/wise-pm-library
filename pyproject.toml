@@ -1,0 +1,67 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "wise-pm-library"
+dynamic = ["version"]
+description = "WISE: norm-based scoring and prioritisation for process mining. The method and evaluation used in the WISE paper."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+authors = [{ name = "Urszula Jessen" }]
+keywords = ["process mining", "conformance checking", "prioritisation", "event log", "decision support", "process evaluation"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Science/Research",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Information Analysis",
+  "Typing :: Typed",
+]
+dependencies = [
+  "numpy>=1.26",
+  "pandas>=2.2",
+]
+
+[project.optional-dependencies]
+figures = ["matplotlib>=3.8"]
+notebook = ["matplotlib>=3.8", "notebook>=7", "nbconvert>=7", "ipykernel>=6"]
+test = ["pytest>=8"]
+
+[project.urls]
+Homepage = "https://github.com/feelfine1977/wise-pm-library"
+Repository = "https://github.com/feelfine1977/wise-pm-library"
+Issues = "https://github.com/feelfine1977/wise-pm-library/issues"
+Changelog = "https://github.com/feelfine1977/wise-pm-library/blob/main/CHANGELOG.md"
+
+[tool.hatch.version]
+path = "src/wise/_version.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/wise"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "src/wise",
+  "tests",
+  "scripts",
+  "/README.md",
+  "/EVALUATION.md",
+  "/CHANGELOG.md",
+  "/CITATION.cff",
+  "/LICENSE",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = [
+  "paper: a worked example or printed value taken from the paper",
+  "data: needs the public logs in the folder named by WISE_PAPER_DATA; skipped without them",
+]
+filterwarnings = ["error"]

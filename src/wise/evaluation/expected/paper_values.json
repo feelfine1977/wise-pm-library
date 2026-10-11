@@ -1,0 +1,2340 @@
+{
+  "schema_version": 1,
+  "paper": "WISE: Actionable Norm-Based Scoring for Process Mining (Jessen, Fahland, Zerbato), manuscript of 11 October 2026",
+  "description": "Every result item of the paper with its printed values and where they appear. 'value' is the printed value as a number, count, text or flag. Item numbers are stable: the numbers 23, 27, 28 and 34 belonged to results that the manuscript no longer prints and are not reused. A value marked 'input_check' is also enforced by the adapter before anything is computed.",
+  "kinds": {
+    "number": "agrees when |computed - value| <= half a unit of the last printed decimal",
+    "count": "agrees when equal",
+    "text": "agrees when equal",
+    "flag": "agrees when equal",
+    "order": "agrees when the computed value has the order of magnitude of the printed one (within a factor of ten)"
+  },
+  "items": [
+    {
+      "item": 1,
+      "place": "Table 4, p. 23; computations pp. 23-24",
+      "title": "Scores of the five illustrative cases under the Finance and Logistics views",
+      "data": null,
+      "kind": "result",
+      "values": [
+        {
+          "key": "A.violation.c2",
+          "quantity": "case A: violation of c2",
+          "printed": "0.75",
+          "value": 0.75,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "B.violation.c5",
+          "quantity": "case B: violation of c5",
+          "printed": "2/3 ≈ 0.67",
+          "value": 0.67,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "C.violation.c3",
+          "quantity": "case C: violation of c3",
+          "printed": "0.65",
+          "value": 0.65,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "D.violation.c6",
+          "quantity": "case D: violation of c6",
+          "printed": "1",
+          "value": 1.0,
+          "kind": "number",
+          "decimals": 0
+        },
+        {
+          "key": "E.violation.c1",
+          "quantity": "case E: violation of c1",
+          "printed": "1",
+          "value": 1.0,
+          "kind": "number",
+          "decimals": 0
+        },
+        {
+          "key": "E.violation.c2",
+          "quantity": "case E: violation of c2",
+          "printed": "1",
+          "value": 1.0,
+          "kind": "number",
+          "decimals": 0
+        },
+        {
+          "key": "E.violation.c3",
+          "quantity": "case E: violation of c3",
+          "printed": "1",
+          "value": 1.0,
+          "kind": "number",
+          "decimals": 0
+        },
+        {
+          "key": "A.Finance",
+          "quantity": "case A: score under Finance",
+          "printed": "0.6625",
+          "value": 0.6625,
+          "kind": "number",
+          "decimals": 4
+        },
+        {
+          "key": "A.Logistics",
+          "quantity": "case A: score under Logistics",
+          "printed": "0.8875",
+          "value": 0.8875,
+          "kind": "number",
+          "decimals": 4
+        },
+        {
+          "key": "B.Finance",
+          "quantity": "case B: score under Finance",
+          "printed": "0.9667",
+          "value": 0.9667,
+          "kind": "number",
+          "decimals": 4
+        },
+        {
+          "key": "B.Logistics",
+          "quantity": "case B: score under Logistics",
+          "printed": "0.7000",
+          "value": 0.7,
+          "kind": "number",
+          "decimals": 4
+        },
+        {
+          "key": "C.Finance",
+          "quantity": "case C: score under Finance",
+          "printed": "0.8700",
+          "value": 0.87,
+          "kind": "number",
+          "decimals": 4
+        },
+        {
+          "key": "C.Logistics",
+          "quantity": "case C: score under Logistics",
+          "printed": "0.9675",
+          "value": 0.9675,
+          "kind": "number",
+          "decimals": 4
+        },
+        {
+          "key": "D.Finance",
+          "quantity": "case D: score under Finance",
+          "printed": "0.9000",
+          "value": 0.9,
+          "kind": "number",
+          "decimals": 4
+        },
+        {
+          "key": "D.Logistics",
+          "quantity": "case D: score under Logistics",
+          "printed": "0.9000",
+          "value": 0.9,
+          "kind": "number",
+          "decimals": 4
+        },
+        {
+          "key": "E.Finance",
+          "quantity": "case E: score under Finance",
+          "printed": "0.1500",
+          "value": 0.15,
+          "kind": "number",
+          "decimals": 4
+        },
+        {
+          "key": "E.Logistics",
+          "quantity": "case E: score under Logistics",
+          "printed": "0.5500",
+          "value": 0.55,
+          "kind": "number",
+          "decimals": 4
+        }
+      ]
+    },
+    {
+      "item": 2,
+      "place": "Section 4.2, pp. 16-18; Section 4.5, p. 25",
+      "title": "Worked arithmetic of the method section",
+      "data": null,
+      "kind": "result",
+      "values": [
+        {
+          "key": "sat.8",
+          "quantity": "sat(8; 10, 20)",
+          "printed": "0",
+          "value": 0.0,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "sat.15",
+          "quantity": "sat(15; 10, 20)",
+          "printed": "0.25",
+          "value": 0.25,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "sat.20",
+          "quantity": "sat(20; 10, 20)",
+          "printed": "0.5",
+          "value": 0.5,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "sat.30",
+          "quantity": "sat(30; 10, 20)",
+          "printed": "1",
+          "value": 1.0,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "lag.10",
+          "quantity": "lag constraint c2 at a lag of 10 days",
+          "printed": "0",
+          "value": 0.0,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "lag.20",
+          "quantity": "lag constraint c2 at a lag of 20 days",
+          "printed": "0.5",
+          "value": 0.5,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "lag.30",
+          "quantity": "lag constraint c2 at a lag of 30 days",
+          "printed": "1",
+          "value": 1.0,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "occurrence.3",
+          "quantity": "occurrence limit c5 at three goods receipts",
+          "printed": "≈ 0.33",
+          "value": 0.33,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "occurrence.4",
+          "quantity": "occurrence limit c5 at four goods receipts",
+          "printed": "≈ 0.67",
+          "value": 0.67,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "occurrence.5",
+          "quantity": "occurrence limit c5 at five goods receipts",
+          "printed": "1",
+          "value": 1.0,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "pi.gap",
+          "quantity": "illustration: gap of a slice with mean 0.80 against the reference 0.94",
+          "printed": "0.14",
+          "value": 0.14,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "pi.value",
+          "quantity": "illustration: Priority Index of that slice with 240 scored cases",
+          "printed": "33.6",
+          "value": 33.6,
+          "kind": "number",
+          "decimals": 1
+        }
+      ]
+    },
+    {
+      "item": 3,
+      "place": "Section 5.1, p. 27; Appendix B.1, p. 37",
+      "title": "Size of the BPIC'19 export",
+      "data": "bpic2019",
+      "kind": "result",
+      "values": [
+        {
+          "key": "events",
+          "quantity": "events",
+          "printed": "1,595,923",
+          "value": 1595923,
+          "kind": "count",
+          "input_check": true,
+          "note": "Input check: the adapter stops if the file it reads does not have this count, and the file is read only if its size and SHA-256 match the input catalogue. The value therefore cannot differ."
+        },
+        {
+          "key": "po_items",
+          "quantity": "purchase-order items (scored cases)",
+          "printed": "251,734",
+          "value": 251734,
+          "kind": "count",
+          "input_check": true,
+          "note": "Input check: the adapter stops if the file it reads does not have this count, and the file is read only if its size and SHA-256 match the input catalogue. The value therefore cannot differ."
+        },
+        {
+          "key": "documents",
+          "quantity": "purchasing documents",
+          "printed": "76,349",
+          "value": 76349,
+          "kind": "count",
+          "input_check": true,
+          "note": "Input check: the adapter stops if the file it reads does not have this count, and the file is read only if its size and SHA-256 match the input catalogue. The value therefore cannot differ."
+        }
+      ]
+    },
+    {
+      "item": 4,
+      "place": "Appendix B.1, p. 37",
+      "title": "Matching flows of the purchase-order items",
+      "data": "bpic2019",
+      "kind": "result",
+      "values": [
+        {
+          "key": "DF2",
+          "quantity": "DF2 items",
+          "printed": "221,010",
+          "value": 221010,
+          "kind": "count"
+        },
+        {
+          "key": "DF1",
+          "quantity": "DF1 items",
+          "printed": "15,182",
+          "value": 15182,
+          "kind": "count"
+        },
+        {
+          "key": "Consignment",
+          "quantity": "Consignment items",
+          "printed": "14,498",
+          "value": 14498,
+          "kind": "count"
+        },
+        {
+          "key": "two_way",
+          "quantity": "two-way items",
+          "printed": "1,044",
+          "value": 1044,
+          "kind": "count"
+        }
+      ]
+    },
+    {
+      "item": 5,
+      "place": "Section 5.1, p. 27; Appendix B.1, p. 37",
+      "title": "Company-by-spend-area groups",
+      "data": "bpic2019",
+      "kind": "result",
+      "values": [
+        {
+          "key": "groups",
+          "quantity": "groups, missing labels kept as explicit categories",
+          "printed": "30",
+          "value": 30,
+          "kind": "count"
+        }
+      ]
+    },
+    {
+      "item": 6,
+      "place": "Section 5.1, p. 28; Appendix B.1, p. 38",
+      "title": "All purchase-order items receive a score under the primary flat assessment",
+      "data": "bpic2019",
+      "kind": "result",
+      "values": [
+        {
+          "key": "scored.Balanced",
+          "quantity": "scored items under Balanced",
+          "printed": "251,734",
+          "value": 251734,
+          "kind": "count"
+        },
+        {
+          "key": "scored.Completion",
+          "quantity": "scored items under Completion",
+          "printed": "251,734",
+          "value": 251734,
+          "kind": "count"
+        },
+        {
+          "key": "scored.Operations",
+          "quantity": "scored items under Operations",
+          "printed": "251,734",
+          "value": 251734,
+          "kind": "count"
+        }
+      ]
+    },
+    {
+      "item": 7,
+      "place": "Section 5.1, p. 28",
+      "title": "Mean weighted coverage per view",
+      "data": "bpic2019",
+      "kind": "result",
+      "values": [
+        {
+          "key": "coverage.Balanced",
+          "quantity": "mean coverage under Balanced",
+          "printed": "0.787570",
+          "value": 0.78757,
+          "kind": "number",
+          "decimals": 6
+        },
+        {
+          "key": "coverage.Completion",
+          "quantity": "mean coverage under Completion",
+          "printed": "0.866370",
+          "value": 0.86637,
+          "kind": "number",
+          "decimals": 6
+        },
+        {
+          "key": "coverage.Operations",
+          "quantity": "mean coverage under Operations",
+          "printed": "0.669052",
+          "value": 0.669052,
+          "kind": "number",
+          "decimals": 6
+        }
+      ]
+    },
+    {
+      "item": 8,
+      "place": "Section 5.3, p. 29",
+      "title": "C04 in Packaging",
+      "data": "bpic2019",
+      "kind": "result",
+      "values": [
+        {
+          "key": "evaluable",
+          "quantity": "Packaging items for which C04 can be evaluated",
+          "printed": "76,608",
+          "value": 76608,
+          "kind": "count"
+        },
+        {
+          "key": "positive",
+          "quantity": "of which with a positive C04 deviation",
+          "printed": "64,068",
+          "value": 64068,
+          "kind": "count"
+        }
+      ]
+    },
+    {
+      "item": 9,
+      "place": "Section 5.3, p. 29",
+      "title": "Median selected invoice-to-clearing interval",
+      "data": "bpic2019",
+      "kind": "result",
+      "values": [
+        {
+          "key": "packaging.n",
+          "quantity": "Packaging: C04-evaluable items",
+          "printed": "76,608",
+          "value": 76608,
+          "kind": "count"
+        },
+        {
+          "key": "packaging.median",
+          "quantity": "Packaging: median interval in days",
+          "printed": "69.04",
+          "value": 69.04,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "remaining.n",
+          "quantity": "outside Packaging: C04-evaluable items",
+          "printed": "106,661",
+          "value": 106661,
+          "kind": "count"
+        },
+        {
+          "key": "remaining.median",
+          "quantity": "outside Packaging: median interval in days",
+          "printed": "28.93",
+          "value": 28.93,
+          "kind": "number",
+          "decimals": 2
+        }
+      ]
+    },
+    {
+      "item": 10,
+      "place": "Section 5.3, p. 29",
+      "title": "The same medians within the DF2 flow",
+      "data": "bpic2019",
+      "kind": "result",
+      "values": [
+        {
+          "key": "packaging.median",
+          "quantity": "Packaging, DF2: median interval in days",
+          "printed": "70.14",
+          "value": 70.14,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "remaining.median",
+          "quantity": "outside Packaging, DF2: median interval in days",
+          "printed": "29.10",
+          "value": 29.1,
+          "kind": "number",
+          "decimals": 2
+        }
+      ]
+    },
+    {
+      "item": 11,
+      "place": "Fig. 5, p. 30",
+      "title": "Empirical cumulative distributions of the selected invoice-to-clearing interval, Packaging and remaining groups",
+      "data": "bpic2019",
+      "kind": "figure",
+      "values": [
+        {
+          "key": "packaging.n",
+          "quantity": "legend: Packaging n",
+          "printed": "76,608",
+          "value": 76608,
+          "kind": "count"
+        },
+        {
+          "key": "packaging.median",
+          "quantity": "legend: Packaging median in days",
+          "printed": "69.04",
+          "value": 69.04,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "remaining.n",
+          "quantity": "legend: remaining groups n",
+          "printed": "106,661",
+          "value": 106661,
+          "kind": "count"
+        },
+        {
+          "key": "remaining.median",
+          "quantity": "legend: remaining groups median in days",
+          "printed": "28.93",
+          "value": 28.93,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "marker.threshold",
+          "quantity": "first dashed marker: C04 threshold in days",
+          "printed": "30",
+          "value": 30.0,
+          "kind": "number",
+          "decimals": 0
+        },
+        {
+          "key": "marker.saturation",
+          "quantity": "second dashed marker: deviation value 1 in days",
+          "printed": "90",
+          "value": 90.0,
+          "kind": "number",
+          "decimals": 0
+        }
+      ]
+    },
+    {
+      "item": 12,
+      "place": "Section 5.3, pp. 29-30",
+      "title": "Worked purchase-order item",
+      "data": "bpic2019",
+      "kind": "result",
+      "values": [
+        {
+          "key": "item",
+          "quantity": "selected item (positive C04 deviation, interval nearest the Packaging median, ties by identifier)",
+          "printed": "4507005472_00040",
+          "value": "4507005472_00040",
+          "kind": "text"
+        },
+        {
+          "key": "first_invoice_receipt",
+          "quantity": "selected invoice receipt",
+          "printed": "2018-02-16 10:15",
+          "value": "2018-02-16 10:15",
+          "kind": "text"
+        },
+        {
+          "key": "first_clearing",
+          "quantity": "selected clearing",
+          "printed": "2018-04-26 11:14",
+          "value": "2018-04-26 11:14",
+          "kind": "text"
+        },
+        {
+          "key": "lag_days",
+          "quantity": "interval in days",
+          "printed": "69.040972",
+          "value": 69.040972,
+          "kind": "number",
+          "decimals": 6
+        },
+        {
+          "key": "deviation",
+          "quantity": "C04 deviation",
+          "printed": "≈ 0.650683",
+          "value": 0.650683,
+          "kind": "number",
+          "decimals": 6
+        },
+        {
+          "key": "evaluable_criteria",
+          "quantity": "criteria evaluable under Balanced",
+          "printed": "seven",
+          "value": 7,
+          "kind": "count"
+        },
+        {
+          "key": "contribution",
+          "quantity": "contribution of C04 to the penalty",
+          "printed": "≈ 0.092955",
+          "value": 0.092955,
+          "kind": "number",
+          "decimals": 6
+        },
+        {
+          "key": "other_nonzero",
+          "quantity": "other evaluated criteria that contribute",
+          "printed": "none (the other six contribute zero)",
+          "value": 0,
+          "kind": "count"
+        },
+        {
+          "key": "score",
+          "quantity": "score under Balanced",
+          "printed": "0.907045",
+          "value": 0.907045,
+          "kind": "number",
+          "decimals": 6
+        },
+        {
+          "key": "state.C05",
+          "quantity": "state of C05",
+          "printed": "outside scope",
+          "value": "out_of_scope",
+          "kind": "text"
+        },
+        {
+          "key": "state.C09",
+          "quantity": "state of C09",
+          "printed": "unavailable",
+          "value": "missing_resource_evidence",
+          "kind": "text"
+        },
+        {
+          "key": "state.C10",
+          "quantity": "state of C10",
+          "printed": "unavailable",
+          "value": "missing_resource_evidence",
+          "kind": "text"
+        },
+        {
+          "key": "coverage",
+          "quantity": "coverage under Balanced",
+          "printed": "seven ninths",
+          "value": 0.777778,
+          "kind": "number",
+          "decimals": 6
+        }
+      ]
+    },
+    {
+      "item": 13,
+      "place": "Section 5.2, p. 28",
+      "title": "Population mean penalty under Balanced",
+      "data": "bpic2019",
+      "kind": "result",
+      "values": [
+        {
+          "key": "mean_penalty",
+          "quantity": "mean penalty of all scored items",
+          "printed": "0.101358",
+          "value": 0.101358,
+          "kind": "number",
+          "decimals": 6
+        }
+      ]
+    },
+    {
+      "item": 14,
+      "place": "Section 5.2, p. 28",
+      "title": "Packaging under Balanced",
+      "data": "bpic2019",
+      "kind": "result",
+      "values": [
+        {
+          "key": "mean_penalty",
+          "quantity": "mean penalty",
+          "printed": "0.117624",
+          "value": 0.117624,
+          "kind": "number",
+          "decimals": 6
+        },
+        {
+          "key": "scored",
+          "quantity": "scored items",
+          "printed": "109,199",
+          "value": 109199,
+          "kind": "count"
+        },
+        {
+          "key": "pi",
+          "quantity": "Priority Index",
+          "printed": "1,776.19",
+          "value": 1776.19,
+          "kind": "number",
+          "decimals": 2
+        }
+      ]
+    },
+    {
+      "item": 15,
+      "place": "Section 5.2, p. 28",
+      "title": "Logistics under Balanced",
+      "data": "bpic2019",
+      "kind": "result",
+      "values": [
+        {
+          "key": "mean_penalty",
+          "quantity": "mean penalty",
+          "printed": "0.228143",
+          "value": 0.228143,
+          "kind": "number",
+          "decimals": 6
+        },
+        {
+          "key": "scored",
+          "quantity": "scored items",
+          "printed": "5,242",
+          "value": 5242,
+          "kind": "count"
+        },
+        {
+          "key": "pi",
+          "quantity": "Priority Index",
+          "printed": "664.61",
+          "value": 664.61,
+          "kind": "number",
+          "decimals": 2
+        }
+      ]
+    },
+    {
+      "item": 16,
+      "place": "Section 5.2, p. 28",
+      "title": "Mean Balanced coverage of the two groups",
+      "data": "bpic2019",
+      "kind": "result",
+      "values": [
+        {
+          "key": "packaging",
+          "quantity": "Packaging",
+          "printed": "0.7888",
+          "value": 0.7888,
+          "kind": "number",
+          "decimals": 4
+        },
+        {
+          "key": "logistics",
+          "quantity": "Logistics",
+          "printed": "0.7067",
+          "value": 0.7067,
+          "kind": "number",
+          "decimals": 4
+        }
+      ]
+    },
+    {
+      "item": 17,
+      "place": "Section 5.2, p. 28",
+      "title": "Signed layer contributions under Balanced",
+      "data": "bpic2019",
+      "kind": "result",
+      "values": [
+        {
+          "key": "packaging.Completion",
+          "quantity": "Packaging: Completion",
+          "printed": "-332.42",
+          "value": -332.42,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "packaging.Timing",
+          "quantity": "Packaging: Timing",
+          "printed": "+2,365.44",
+          "value": 2365.44,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "packaging.Rework",
+          "quantity": "Packaging: Rework",
+          "printed": "-267.95",
+          "value": -267.95,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "packaging.Effort proxy",
+          "quantity": "Packaging: Effort proxy",
+          "printed": "+11.13",
+          "value": 11.13,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "logistics.Completion",
+          "quantity": "Logistics: Completion",
+          "printed": "+811.13",
+          "value": 811.13,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "logistics.Timing",
+          "quantity": "Logistics: Timing",
+          "printed": "-154.25",
+          "value": -154.25,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "logistics.Rework",
+          "quantity": "Logistics: Rework",
+          "printed": "+10.54",
+          "value": 10.54,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "logistics.Effort proxy",
+          "quantity": "Logistics: Effort proxy",
+          "printed": "-2.81",
+          "value": -2.81,
+          "kind": "number",
+          "decimals": 2
+        }
+      ]
+    },
+    {
+      "item": 18,
+      "place": "Fig. 4, p. 29",
+      "title": "Bars of the signed layer contributions for Packaging and Logistics on a common scale",
+      "data": "bpic2019",
+      "kind": "figure",
+      "values": [
+        {
+          "key": "packaging.Completion",
+          "quantity": "panel A bar label: Completion",
+          "printed": "-332.42",
+          "value": -332.42,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "packaging.Timing",
+          "quantity": "panel A bar label: Timing",
+          "printed": "+2,365.44",
+          "value": 2365.44,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "packaging.Rework",
+          "quantity": "panel A bar label: Rework",
+          "printed": "-267.95",
+          "value": -267.95,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "packaging.Effort proxy",
+          "quantity": "panel A bar label: Effort proxy",
+          "printed": "+11.13",
+          "value": 11.13,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "packaging.scored",
+          "quantity": "panel A header: scored PO items",
+          "printed": "109,199",
+          "value": 109199,
+          "kind": "count"
+        },
+        {
+          "key": "packaging.pi",
+          "quantity": "panel A header: Priority Index",
+          "printed": "1,776.19",
+          "value": 1776.19,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "logistics.Completion",
+          "quantity": "panel B bar label: Completion",
+          "printed": "+811.13",
+          "value": 811.13,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "logistics.Timing",
+          "quantity": "panel B bar label: Timing",
+          "printed": "-154.25",
+          "value": -154.25,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "logistics.Rework",
+          "quantity": "panel B bar label: Rework",
+          "printed": "+10.54",
+          "value": 10.54,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "logistics.Effort proxy",
+          "quantity": "panel B bar label: Effort proxy",
+          "printed": "-2.81",
+          "value": -2.81,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "logistics.scored",
+          "quantity": "panel B header: scored PO items",
+          "printed": "5,242",
+          "value": 5242,
+          "kind": "count"
+        },
+        {
+          "key": "logistics.pi",
+          "quantity": "panel B header: Priority Index",
+          "printed": "664.61",
+          "value": 664.61,
+          "kind": "number",
+          "decimals": 2
+        }
+      ]
+    },
+    {
+      "item": 19,
+      "place": "Section 5.2, p. 28",
+      "title": "Recorded absences in Logistics",
+      "data": "bpic2019",
+      "kind": "result",
+      "values": [
+        {
+          "key": "no_invoice_receipt",
+          "quantity": "items without recorded invoice receipt",
+          "printed": "3,260",
+          "value": 3260,
+          "kind": "count"
+        },
+        {
+          "key": "no_clearing",
+          "quantity": "items without recorded clearing",
+          "printed": "3,507",
+          "value": 3507,
+          "kind": "count"
+        }
+      ]
+    },
+    {
+      "item": 20,
+      "place": "Section 5.2, p. 28",
+      "title": "Vendor concentration of the case penalty in Packaging",
+      "data": "bpic2019",
+      "kind": "result",
+      "values": [
+        {
+          "key": "vendors",
+          "quantity": "vendors of the group",
+          "printed": "266",
+          "value": 266,
+          "kind": "count"
+        },
+        {
+          "key": "vendors_for_80_percent",
+          "quantity": "vendors that account for at least 80% of the total Balanced case penalty",
+          "printed": "16",
+          "value": 16,
+          "kind": "count"
+        }
+      ]
+    },
+    {
+      "item": 21,
+      "place": "Section 5.4, p. 30",
+      "title": "Top-20 positive-priority purchasing documents shared between views",
+      "data": "bpic2019",
+      "kind": "result",
+      "values": [
+        {
+          "key": "shared.Balanced-Completion",
+          "quantity": "Balanced and Completion: shared documents in the top 20",
+          "printed": "18",
+          "value": 18,
+          "kind": "count"
+        },
+        {
+          "key": "jaccard.Balanced-Completion",
+          "quantity": "Balanced and Completion: Jaccard similarity",
+          "printed": "0.818",
+          "value": 0.818,
+          "kind": "number",
+          "decimals": 3
+        },
+        {
+          "key": "shared.Balanced-Operations",
+          "quantity": "Balanced and Operations: shared documents in the top 20",
+          "printed": "ten",
+          "value": 10,
+          "kind": "count"
+        },
+        {
+          "key": "jaccard.Balanced-Operations",
+          "quantity": "Balanced and Operations: Jaccard similarity",
+          "printed": "0.333",
+          "value": 0.333,
+          "kind": "number",
+          "decimals": 3
+        },
+        {
+          "key": "shared.Completion-Operations",
+          "quantity": "Completion and Operations: shared documents in the top 20",
+          "printed": "eight",
+          "value": 8,
+          "kind": "count"
+        },
+        {
+          "key": "jaccard.Completion-Operations",
+          "quantity": "Completion and Operations: Jaccard similarity",
+          "printed": "0.250",
+          "value": 0.25,
+          "kind": "number",
+          "decimals": 3
+        },
+        {
+          "key": "list_length.Balanced",
+          "quantity": "Balanced: documents in the list",
+          "printed": "twenty",
+          "value": 20,
+          "kind": "count"
+        },
+        {
+          "key": "tie_across_cut.Balanced",
+          "quantity": "Balanced: a tie across the selection boundary",
+          "printed": "no",
+          "value": false,
+          "kind": "flag"
+        },
+        {
+          "key": "list_length.Completion",
+          "quantity": "Completion: documents in the list",
+          "printed": "twenty",
+          "value": 20,
+          "kind": "count"
+        },
+        {
+          "key": "tie_across_cut.Completion",
+          "quantity": "Completion: a tie across the selection boundary",
+          "printed": "no",
+          "value": false,
+          "kind": "flag"
+        },
+        {
+          "key": "list_length.Operations",
+          "quantity": "Operations: documents in the list",
+          "printed": "twenty",
+          "value": 20,
+          "kind": "count"
+        },
+        {
+          "key": "tie_across_cut.Operations",
+          "quantity": "Operations: a tie across the selection boundary",
+          "printed": "no",
+          "value": false,
+          "kind": "flag"
+        }
+      ]
+    },
+    {
+      "item": 22,
+      "place": "Section 5.4, p. 31",
+      "title": "First two company-by-spend-area groups under every view",
+      "data": "bpic2019",
+      "kind": "result",
+      "values": [
+        {
+          "key": "first.Balanced",
+          "quantity": "Balanced: first group",
+          "printed": "Packaging",
+          "value": "companyID_0000 / Packaging",
+          "kind": "text"
+        },
+        {
+          "key": "second.Balanced",
+          "quantity": "Balanced: second group",
+          "printed": "Logistics",
+          "value": "companyID_0000 / Logistics",
+          "kind": "text"
+        },
+        {
+          "key": "first.Completion",
+          "quantity": "Completion: first group",
+          "printed": "Packaging",
+          "value": "companyID_0000 / Packaging",
+          "kind": "text"
+        },
+        {
+          "key": "second.Completion",
+          "quantity": "Completion: second group",
+          "printed": "Logistics",
+          "value": "companyID_0000 / Logistics",
+          "kind": "text"
+        },
+        {
+          "key": "first.Operations",
+          "quantity": "Operations: first group",
+          "printed": "Packaging",
+          "value": "companyID_0000 / Packaging",
+          "kind": "text"
+        },
+        {
+          "key": "second.Operations",
+          "quantity": "Operations: second group",
+          "printed": "Logistics",
+          "value": "companyID_0000 / Logistics",
+          "kind": "text"
+        }
+      ]
+    },
+    {
+      "item": 24,
+      "place": "Section 5.4, p. 31",
+      "title": "Ranking policies on fixed Balanced case penalties: members shared with the primary PI top ten",
+      "data": "bpic2019",
+      "kind": "result",
+      "values": [
+        {
+          "key": "mean_penalty",
+          "quantity": "ranking by mean penalty",
+          "printed": "six",
+          "value": 6,
+          "kind": "count"
+        },
+        {
+          "key": "total_penalty",
+          "quantity": "ranking by total penalty",
+          "printed": "four",
+          "value": 4,
+          "kind": "count"
+        },
+        {
+          "key": "gamma20",
+          "quantity": "PI with the small-group adjustment at γ = 20",
+          "printed": "all ten",
+          "value": 10,
+          "kind": "count"
+        }
+      ]
+    },
+    {
+      "item": 25,
+      "place": "Fig. 6, p. 32",
+      "title": "Shortlist membership under declared assessment choices",
+      "data": "bpic2019",
+      "kind": "figure",
+      "values": [
+        {
+          "key": "A.Balanced-Completion",
+          "quantity": "panel A: Balanced / Completion",
+          "printed": "18/20",
+          "value": 18,
+          "kind": "count"
+        },
+        {
+          "key": "A.Balanced-Operations",
+          "quantity": "panel A: Balanced / Operations",
+          "printed": "10/20",
+          "value": 10,
+          "kind": "count"
+        },
+        {
+          "key": "A.Completion-Operations",
+          "quantity": "panel A: Completion / Operations",
+          "printed": "8/20",
+          "value": 8,
+          "kind": "count"
+        },
+        {
+          "key": "B.mean_penalty",
+          "quantity": "panel B: mean case penalty",
+          "printed": "6/10",
+          "value": 6,
+          "kind": "count"
+        },
+        {
+          "key": "B.total_penalty",
+          "quantity": "panel B: total case penalty",
+          "printed": "4/10",
+          "value": 4,
+          "kind": "count"
+        },
+        {
+          "key": "B.gamma20",
+          "quantity": "panel B: PI with small-slice adjustment (γ = 20)",
+          "printed": "10/10",
+          "value": 10,
+          "kind": "count"
+        }
+      ]
+    },
+    {
+      "item": 26,
+      "place": "Section 5.5, p. 32",
+      "title": "Size of the BPIC'13 incident application",
+      "data": "bpic2013_incidents",
+      "kind": "result",
+      "values": [
+        {
+          "key": "events",
+          "quantity": "events",
+          "printed": "65,533",
+          "value": 65533,
+          "kind": "count",
+          "input_check": true,
+          "note": "Input check: the adapter stops if the file it reads does not have this count, and the file is read only if its size and SHA-256 match the input catalogue. The value therefore cannot differ."
+        },
+        {
+          "key": "incidents",
+          "quantity": "incidents (scored cases)",
+          "printed": "7,554",
+          "value": 7554,
+          "kind": "count",
+          "input_check": true,
+          "note": "Input check: the adapter stops if the file it reads does not have this count, and the file is read only if its size and SHA-256 match the input catalogue. The value therefore cannot differ."
+        },
+        {
+          "key": "groups",
+          "quantity": "product groups",
+          "printed": "704",
+          "value": 704,
+          "kind": "count"
+        },
+        {
+          "key": "criteria",
+          "quantity": "criteria of the incident norm",
+          "printed": "six",
+          "value": 6,
+          "kind": "count"
+        }
+      ]
+    },
+    {
+      "item": 29,
+      "place": "Section 5.5, p. 32",
+      "title": "Product group PROD542 under Balanced",
+      "data": "bpic2013_incidents",
+      "kind": "result",
+      "values": [
+        {
+          "key": "scored",
+          "quantity": "incidents",
+          "printed": "75",
+          "value": 75,
+          "kind": "count"
+        },
+        {
+          "key": "mean_penalty",
+          "quantity": "mean penalty",
+          "printed": "0.665994",
+          "value": 0.665994,
+          "kind": "number",
+          "decimals": 6
+        },
+        {
+          "key": "pi",
+          "quantity": "Priority Index",
+          "printed": "37.245645",
+          "value": 37.245645,
+          "kind": "number",
+          "decimals": 6
+        },
+        {
+          "key": "layer.Routing",
+          "quantity": "signed contribution of Routing to the gap",
+          "printed": "+17.075672",
+          "value": 17.075672,
+          "kind": "number",
+          "decimals": 6
+        }
+      ]
+    },
+    {
+      "item": 30,
+      "place": "Section 5.5, p. 32",
+      "title": "Product group PROD424 under Balanced",
+      "data": "bpic2013_incidents",
+      "kind": "result",
+      "values": [
+        {
+          "key": "scored",
+          "quantity": "incidents",
+          "printed": "882",
+          "value": 882,
+          "kind": "count"
+        },
+        {
+          "key": "mean_penalty",
+          "quantity": "mean penalty",
+          "printed": "0.205114",
+          "value": 0.205114,
+          "kind": "number",
+          "decimals": 6
+        },
+        {
+          "key": "pi",
+          "quantity": "Priority Index",
+          "printed": "31.512825",
+          "value": 31.512825,
+          "kind": "number",
+          "decimals": 6
+        }
+      ]
+    },
+    {
+      "item": 31,
+      "place": "Section 5.5, p. 33",
+      "title": "Size and evidence of the BPIC'17 lending application",
+      "data": "bpic2017",
+      "kind": "result",
+      "values": [
+        {
+          "key": "applications",
+          "quantity": "loan applications (scored cases)",
+          "printed": "31,509",
+          "value": 31509,
+          "kind": "count",
+          "input_check": true,
+          "note": "Input check: the adapter stops if the file it reads does not have this count, and the file is read only if its size and SHA-256 match the input catalogue. The value therefore cannot differ."
+        },
+        {
+          "key": "groups",
+          "quantity": "application-type-by-loan-goal combinations",
+          "printed": "27",
+          "value": 27,
+          "kind": "count"
+        },
+        {
+          "key": "unavailable_in_scope",
+          "quantity": "in-scope criteria that are not evaluable, over all applications",
+          "printed": "none (all in-scope criteria are evaluable)",
+          "value": 0,
+          "kind": "count"
+        }
+      ]
+    },
+    {
+      "item": 32,
+      "place": "Section 5.5, p. 33",
+      "title": "Group selected first per view",
+      "data": "bpic2017",
+      "kind": "result",
+      "values": [
+        {
+          "key": "first.Balanced",
+          "quantity": "Balanced",
+          "printed": "New credit / Existing loan takeover",
+          "value": "New credit / Existing loan takeover",
+          "kind": "text"
+        },
+        {
+          "key": "first.Timeliness",
+          "quantity": "Timeliness",
+          "printed": "New credit / Remaining debt home",
+          "value": "New credit / Remaining debt home",
+          "kind": "text"
+        },
+        {
+          "key": "first.Interaction",
+          "quantity": "Interaction",
+          "printed": "New credit / Remaining debt home",
+          "value": "New credit / Remaining debt home",
+          "kind": "text"
+        }
+      ]
+    },
+    {
+      "item": 33,
+      "place": "Section 5.6, p. 33",
+      "title": "Numerical check of the library's scoring and aggregation against the reference arithmetic on the same prepared criterion assessments",
+      "data": "all",
+      "kind": "result",
+      "values": [
+        {
+          "key": "applications",
+          "quantity": "applications covered",
+          "printed": "three",
+          "value": 3,
+          "kind": "count"
+        },
+        {
+          "key": "views_per_application",
+          "quantity": "views in each application",
+          "printed": "three",
+          "value": 3,
+          "kind": "count"
+        },
+        {
+          "key": "primary_views",
+          "quantity": "primary view evaluations",
+          "printed": "nine",
+          "value": 9,
+          "kind": "count"
+        },
+        {
+          "key": "mode_view_combinations",
+          "quantity": "mode-view combinations across flat and layer-balanced scoring",
+          "printed": "eighteen",
+          "value": 18,
+          "kind": "count"
+        },
+        {
+          "key": "gammas",
+          "quantity": "values of γ at which each combination is checked",
+          "printed": "0 and 20",
+          "value": "0 and 20",
+          "kind": "text"
+        },
+        {
+          "key": "largest_difference",
+          "quantity": "largest absolute difference",
+          "printed": "approximately 1.73 × 10^-11",
+          "value": 1.73e-11,
+          "kind": "order",
+          "note": "A floating-point residual: its digits depend on the machine and on the versions of NumPy and pandas. It is compared by its order of magnitude (within a factor of ten of the printed value); that it is below the tolerance is a value of its own."
+        },
+        {
+          "key": "tolerance",
+          "quantity": "declared tolerance",
+          "printed": "10^-8",
+          "value": 1e-08,
+          "kind": "number",
+          "decimals": 8
+        },
+        {
+          "key": "below_tolerance",
+          "quantity": "largest absolute difference is below the tolerance",
+          "printed": "yes",
+          "value": true,
+          "kind": "flag"
+        },
+        {
+          "key": "scope_and_evidence_identical",
+          "quantity": "scope and evidence states match exactly",
+          "printed": "yes",
+          "value": true,
+          "kind": "flag"
+        }
+      ]
+    },
+    {
+      "item": 35,
+      "place": "Section 5.2, p. 28",
+      "title": "Usable C04 endpoints among the applicable items of Logistics and Packaging",
+      "data": "bpic2019",
+      "kind": "result",
+      "values": [
+        {
+          "key": "logistics.evaluable",
+          "quantity": "Logistics: items with usable C04 endpoints",
+          "printed": "1,734",
+          "value": 1734,
+          "kind": "count"
+        },
+        {
+          "key": "logistics.applicable",
+          "quantity": "Logistics: items to which C04 applies",
+          "printed": "5,242",
+          "value": 5242,
+          "kind": "count"
+        },
+        {
+          "key": "packaging.evaluable",
+          "quantity": "Packaging: items with usable C04 endpoints",
+          "printed": "76,608",
+          "value": 76608,
+          "kind": "count"
+        },
+        {
+          "key": "packaging.applicable",
+          "quantity": "Packaging: items to which C04 applies",
+          "printed": "100,635",
+          "value": 100635,
+          "kind": "count"
+        }
+      ]
+    },
+    {
+      "item": 36,
+      "place": "Section 5.4, pp. 30-31",
+      "title": "Purchasing document that leads each view",
+      "data": "bpic2019",
+      "kind": "result",
+      "values": [
+        {
+          "key": "first.Balanced",
+          "quantity": "Balanced",
+          "printed": "4508073932",
+          "value": "4508073932",
+          "kind": "text"
+        },
+        {
+          "key": "first.Completion",
+          "quantity": "Completion",
+          "printed": "4508073932",
+          "value": "4508073932",
+          "kind": "text"
+        },
+        {
+          "key": "first.Operations",
+          "quantity": "Operations",
+          "printed": "4507021416",
+          "value": "4507021416",
+          "kind": "text"
+        }
+      ]
+    },
+    {
+      "item": 37,
+      "place": "Section 5.5, p. 32",
+      "title": "Signed layer contributions of PROD424 under Balanced",
+      "data": "bpic2013_incidents",
+      "kind": "result",
+      "values": [
+        {
+          "key": "layer.Recorded patterns",
+          "quantity": "Recorded patterns",
+          "printed": "+31.776426",
+          "value": 31.776426,
+          "kind": "number",
+          "decimals": 6
+        },
+        {
+          "key": "layer.Routing",
+          "quantity": "Routing",
+          "printed": "-5.166766",
+          "value": -5.166766,
+          "kind": "number",
+          "decimals": 6
+        }
+      ]
+    },
+    {
+      "item": 38,
+      "place": "Section 5.5, p. 33",
+      "title": "Incident products under Balanced with the small-slice adjustment at γ = 20",
+      "data": "bpic2013_incidents",
+      "kind": "result",
+      "values": [
+        {
+          "key": "first.gamma20",
+          "quantity": "first group at γ = 20",
+          "printed": "PROD424",
+          "value": "PROD424",
+          "kind": "text"
+        },
+        {
+          "key": "pi.gamma20.PROD424",
+          "quantity": "adjusted Priority Index of PROD424",
+          "printed": "30.814093",
+          "value": 30.814093,
+          "kind": "number",
+          "decimals": 6
+        },
+        {
+          "key": "pi.gamma20.PROD542",
+          "quantity": "adjusted Priority Index of PROD542",
+          "printed": "29.404456",
+          "value": 29.404456,
+          "kind": "number",
+          "decimals": 6
+        },
+        {
+          "key": "first.gamma0",
+          "quantity": "first group without the adjustment (the first-priority group changes)",
+          "printed": "PROD542",
+          "value": "PROD542",
+          "kind": "text"
+        },
+        {
+          "key": "shared_top_ten",
+          "quantity": "products of the positive-priority shortlist retained",
+          "printed": "the same ten",
+          "value": 10,
+          "kind": "count"
+        },
+        {
+          "key": "jaccard",
+          "quantity": "Jaccard similarity of the two top-ten lists",
+          "printed": "one",
+          "value": 1.0,
+          "kind": "number",
+          "decimals": 6
+        }
+      ]
+    },
+    {
+      "item": 39,
+      "place": "Section 5.5, p. 33",
+      "title": "Lending groups with the small-slice adjustment at γ = 20 and at capacity ten",
+      "data": "bpic2017",
+      "kind": "result",
+      "values": [
+        {
+          "key": "first.gamma20.Timeliness",
+          "quantity": "Timeliness: first group at γ = 20",
+          "printed": "Existing loan takeover",
+          "value": "New credit / Existing loan takeover",
+          "kind": "text"
+        },
+        {
+          "key": "first.gamma20.Interaction",
+          "quantity": "Interaction: first group at γ = 20",
+          "printed": "Existing loan takeover",
+          "value": "New credit / Existing loan takeover",
+          "kind": "text"
+        },
+        {
+          "key": "membership_retained.Balanced",
+          "quantity": "Balanced: positive-priority membership retained at γ = 20",
+          "printed": "yes",
+          "value": true,
+          "kind": "flag"
+        },
+        {
+          "key": "membership_retained.Timeliness",
+          "quantity": "Timeliness: positive-priority membership retained at γ = 20",
+          "printed": "yes",
+          "value": true,
+          "kind": "flag"
+        },
+        {
+          "key": "membership_retained.Interaction",
+          "quantity": "Interaction: positive-priority membership retained at γ = 20",
+          "printed": "yes",
+          "value": true,
+          "kind": "flag"
+        },
+        {
+          "key": "positive_at_ten.Timeliness",
+          "quantity": "Timeliness: positive groups at requested capacity ten",
+          "printed": "five",
+          "value": 5,
+          "kind": "count"
+        },
+        {
+          "key": "positive_at_ten.Interaction",
+          "quantity": "Interaction: positive groups at requested capacity ten",
+          "printed": "six",
+          "value": 6,
+          "kind": "count"
+        },
+        {
+          "key": "criteria",
+          "quantity": "criteria of the lending norm",
+          "printed": "five",
+          "value": 5,
+          "kind": "count"
+        },
+        {
+          "key": "criteria.Interaction",
+          "quantity": "criteria that belong to Interaction",
+          "printed": "three",
+          "value": 3,
+          "kind": "count"
+        }
+      ]
+    },
+    {
+      "item": 40,
+      "place": "Section 5.1, pp. 27-28; Appendix B.1, p. 38",
+      "title": "Criteria and weights of the purchase-to-pay norm per layer",
+      "data": null,
+      "kind": "result",
+      "values": [
+        {
+          "key": "criteria",
+          "quantity": "criteria of the norm",
+          "printed": "ten",
+          "value": 10,
+          "kind": "count"
+        },
+        {
+          "key": "share.Balanced.Completion",
+          "quantity": "Balanced: share of the total weight allocated to Completion, all ten criteria in scope and evaluable",
+          "printed": "0.3",
+          "value": 0.3,
+          "kind": "number",
+          "decimals": 1
+        },
+        {
+          "key": "share.Balanced.Timing",
+          "quantity": "Balanced: share of the total weight allocated to Timing, all ten criteria in scope and evaluable",
+          "printed": "0.2",
+          "value": 0.2,
+          "kind": "number",
+          "decimals": 1
+        },
+        {
+          "key": "share.Balanced.Rework",
+          "quantity": "Balanced: share of the total weight allocated to Rework, all ten criteria in scope and evaluable",
+          "printed": "0.3",
+          "value": 0.3,
+          "kind": "number",
+          "decimals": 1
+        },
+        {
+          "key": "share.Balanced.Effort proxy",
+          "quantity": "Balanced: share of the total weight allocated to Effort proxy, all ten criteria in scope and evaluable",
+          "printed": "0.2",
+          "value": 0.2,
+          "kind": "number",
+          "decimals": 1
+        },
+        {
+          "key": "raw.Balanced.Completion",
+          "quantity": "Balanced: raw weight of each criterion of Completion",
+          "printed": "1",
+          "value": 1.0,
+          "kind": "number",
+          "decimals": 0
+        },
+        {
+          "key": "raw.Balanced.Timing",
+          "quantity": "Balanced: raw weight of each criterion of Timing",
+          "printed": "1",
+          "value": 1.0,
+          "kind": "number",
+          "decimals": 0
+        },
+        {
+          "key": "raw.Balanced.Rework",
+          "quantity": "Balanced: raw weight of each criterion of Rework",
+          "printed": "1",
+          "value": 1.0,
+          "kind": "number",
+          "decimals": 0
+        },
+        {
+          "key": "raw.Balanced.Effort proxy",
+          "quantity": "Balanced: raw weight of each criterion of Effort proxy",
+          "printed": "1",
+          "value": 1.0,
+          "kind": "number",
+          "decimals": 0
+        },
+        {
+          "key": "raw.Completion.Completion",
+          "quantity": "Completion: raw weight of each criterion of Completion",
+          "printed": "3",
+          "value": 3.0,
+          "kind": "number",
+          "decimals": 0
+        },
+        {
+          "key": "raw.Completion.Timing",
+          "quantity": "Completion: raw weight of each criterion of Timing",
+          "printed": "2",
+          "value": 2.0,
+          "kind": "number",
+          "decimals": 0
+        },
+        {
+          "key": "raw.Completion.Rework",
+          "quantity": "Completion: raw weight of each criterion of Rework",
+          "printed": "1",
+          "value": 1.0,
+          "kind": "number",
+          "decimals": 0
+        },
+        {
+          "key": "raw.Completion.Effort proxy",
+          "quantity": "Completion: raw weight of each criterion of Effort proxy",
+          "printed": "1",
+          "value": 1.0,
+          "kind": "number",
+          "decimals": 0
+        },
+        {
+          "key": "raw.Operations.Completion",
+          "quantity": "Operations: raw weight of each criterion of Completion",
+          "printed": "1",
+          "value": 1.0,
+          "kind": "number",
+          "decimals": 0
+        },
+        {
+          "key": "raw.Operations.Timing",
+          "quantity": "Operations: raw weight of each criterion of Timing",
+          "printed": "1",
+          "value": 1.0,
+          "kind": "number",
+          "decimals": 0
+        },
+        {
+          "key": "raw.Operations.Rework",
+          "quantity": "Operations: raw weight of each criterion of Rework",
+          "printed": "2",
+          "value": 2.0,
+          "kind": "number",
+          "decimals": 0
+        },
+        {
+          "key": "raw.Operations.Effort proxy",
+          "quantity": "Operations: raw weight of each criterion of Effort proxy",
+          "printed": "3",
+          "value": 3.0,
+          "kind": "number",
+          "decimals": 0
+        }
+      ]
+    },
+    {
+      "item": 41,
+      "place": "Section 3, pp. 9-10; Fig. 2, p. 11",
+      "title": "Illustrative assessment of four invoice cases under two views",
+      "data": null,
+      "kind": "result",
+      "values": [
+        {
+          "key": "deviation.A1.release_limit",
+          "quantity": "case A1: deviation, release limit",
+          "printed": "1",
+          "value": 1.0,
+          "kind": "number",
+          "decimals": 0
+        },
+        {
+          "key": "deviation.A1.no_forwarding",
+          "quantity": "case A1: deviation, no forwarding",
+          "printed": "1",
+          "value": 1.0,
+          "kind": "number",
+          "decimals": 0
+        },
+        {
+          "key": "deviation.A1.release_record",
+          "quantity": "case A1: deviation, required release record",
+          "printed": "0",
+          "value": 0.0,
+          "kind": "number",
+          "decimals": 0
+        },
+        {
+          "key": "deviation.A2.release_limit",
+          "quantity": "case A2: deviation, release limit",
+          "printed": "1",
+          "value": 1.0,
+          "kind": "number",
+          "decimals": 0
+        },
+        {
+          "key": "deviation.A2.no_forwarding",
+          "quantity": "case A2: deviation, no forwarding",
+          "printed": "0",
+          "value": 0.0,
+          "kind": "number",
+          "decimals": 0
+        },
+        {
+          "key": "deviation.A2.release_record",
+          "quantity": "case A2: deviation, required release record",
+          "printed": "0",
+          "value": 0.0,
+          "kind": "number",
+          "decimals": 0
+        },
+        {
+          "key": "deviation.B1.release_limit",
+          "quantity": "case B1: deviation, release limit",
+          "printed": "0",
+          "value": 0.0,
+          "kind": "number",
+          "decimals": 0
+        },
+        {
+          "key": "deviation.B1.no_forwarding",
+          "quantity": "case B1: deviation, no forwarding",
+          "printed": "0",
+          "value": 0.0,
+          "kind": "number",
+          "decimals": 0
+        },
+        {
+          "key": "deviation.B1.release_record",
+          "quantity": "case B1: deviation, required release record",
+          "printed": "1",
+          "value": 1.0,
+          "kind": "number",
+          "decimals": 0
+        },
+        {
+          "key": "deviation.B2.release_limit",
+          "quantity": "case B2: deviation, release limit",
+          "printed": "0",
+          "value": 0.0,
+          "kind": "number",
+          "decimals": 0
+        },
+        {
+          "key": "deviation.B2.no_forwarding",
+          "quantity": "case B2: deviation, no forwarding",
+          "printed": "0",
+          "value": 0.0,
+          "kind": "number",
+          "decimals": 0
+        },
+        {
+          "key": "deviation.B2.release_record",
+          "quantity": "case B2: deviation, required release record",
+          "printed": "1",
+          "value": 1.0,
+          "kind": "number",
+          "decimals": 0
+        },
+        {
+          "key": "weight.Processing effort.release_limit",
+          "quantity": "Processing effort: weight of release limit",
+          "printed": "0.40",
+          "value": 0.4,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weight.Processing effort.no_forwarding",
+          "quantity": "Processing effort: weight of no forwarding",
+          "printed": "0.40",
+          "value": 0.4,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weight.Processing effort.release_record",
+          "quantity": "Processing effort: weight of required release record",
+          "printed": "0.20",
+          "value": 0.2,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weighted.Processing effort.A1.release_limit",
+          "quantity": "Processing effort, case A1: weighted deviation, release limit",
+          "printed": "0.40",
+          "value": 0.4,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weighted.Processing effort.A1.no_forwarding",
+          "quantity": "Processing effort, case A1: weighted deviation, no forwarding",
+          "printed": "0.40",
+          "value": 0.4,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weighted.Processing effort.A1.release_record",
+          "quantity": "Processing effort, case A1: weighted deviation, required release record",
+          "printed": "0.00",
+          "value": 0.0,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weighted.Processing effort.A2.release_limit",
+          "quantity": "Processing effort, case A2: weighted deviation, release limit",
+          "printed": "0.40",
+          "value": 0.4,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weighted.Processing effort.A2.no_forwarding",
+          "quantity": "Processing effort, case A2: weighted deviation, no forwarding",
+          "printed": "0.00",
+          "value": 0.0,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weighted.Processing effort.A2.release_record",
+          "quantity": "Processing effort, case A2: weighted deviation, required release record",
+          "printed": "0.00",
+          "value": 0.0,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weighted.Processing effort.B1.release_limit",
+          "quantity": "Processing effort, case B1: weighted deviation, release limit",
+          "printed": "0.00",
+          "value": 0.0,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weighted.Processing effort.B1.no_forwarding",
+          "quantity": "Processing effort, case B1: weighted deviation, no forwarding",
+          "printed": "0.00",
+          "value": 0.0,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weighted.Processing effort.B1.release_record",
+          "quantity": "Processing effort, case B1: weighted deviation, required release record",
+          "printed": "0.20",
+          "value": 0.2,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weighted.Processing effort.B2.release_limit",
+          "quantity": "Processing effort, case B2: weighted deviation, release limit",
+          "printed": "0.00",
+          "value": 0.0,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weighted.Processing effort.B2.no_forwarding",
+          "quantity": "Processing effort, case B2: weighted deviation, no forwarding",
+          "printed": "0.00",
+          "value": 0.0,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weighted.Processing effort.B2.release_record",
+          "quantity": "Processing effort, case B2: weighted deviation, required release record",
+          "printed": "0.20",
+          "value": 0.2,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "score.Processing effort.A1",
+          "quantity": "Processing effort: score of case A1",
+          "printed": "0.20",
+          "value": 0.2,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "score.Processing effort.A2",
+          "quantity": "Processing effort: score of case A2",
+          "printed": "0.60",
+          "value": 0.6,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "score.Processing effort.B1",
+          "quantity": "Processing effort: score of case B1",
+          "printed": "0.80",
+          "value": 0.8,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "score.Processing effort.B2",
+          "quantity": "Processing effort: score of case B2",
+          "printed": "0.80",
+          "value": 0.8,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weight.Financial control.release_limit",
+          "quantity": "Financial control: weight of release limit",
+          "printed": "0.10",
+          "value": 0.1,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weight.Financial control.no_forwarding",
+          "quantity": "Financial control: weight of no forwarding",
+          "printed": "0.10",
+          "value": 0.1,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weight.Financial control.release_record",
+          "quantity": "Financial control: weight of required release record",
+          "printed": "0.80",
+          "value": 0.8,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weighted.Financial control.A1.release_limit",
+          "quantity": "Financial control, case A1: weighted deviation, release limit",
+          "printed": "0.10",
+          "value": 0.1,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weighted.Financial control.A1.no_forwarding",
+          "quantity": "Financial control, case A1: weighted deviation, no forwarding",
+          "printed": "0.10",
+          "value": 0.1,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weighted.Financial control.A1.release_record",
+          "quantity": "Financial control, case A1: weighted deviation, required release record",
+          "printed": "0.00",
+          "value": 0.0,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weighted.Financial control.A2.release_limit",
+          "quantity": "Financial control, case A2: weighted deviation, release limit",
+          "printed": "0.10",
+          "value": 0.1,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weighted.Financial control.A2.no_forwarding",
+          "quantity": "Financial control, case A2: weighted deviation, no forwarding",
+          "printed": "0.00",
+          "value": 0.0,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weighted.Financial control.A2.release_record",
+          "quantity": "Financial control, case A2: weighted deviation, required release record",
+          "printed": "0.00",
+          "value": 0.0,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weighted.Financial control.B1.release_limit",
+          "quantity": "Financial control, case B1: weighted deviation, release limit",
+          "printed": "0.00",
+          "value": 0.0,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weighted.Financial control.B1.no_forwarding",
+          "quantity": "Financial control, case B1: weighted deviation, no forwarding",
+          "printed": "0.00",
+          "value": 0.0,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weighted.Financial control.B1.release_record",
+          "quantity": "Financial control, case B1: weighted deviation, required release record",
+          "printed": "0.80",
+          "value": 0.8,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weighted.Financial control.B2.release_limit",
+          "quantity": "Financial control, case B2: weighted deviation, release limit",
+          "printed": "0.00",
+          "value": 0.0,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weighted.Financial control.B2.no_forwarding",
+          "quantity": "Financial control, case B2: weighted deviation, no forwarding",
+          "printed": "0.00",
+          "value": 0.0,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "weighted.Financial control.B2.release_record",
+          "quantity": "Financial control, case B2: weighted deviation, required release record",
+          "printed": "0.80",
+          "value": 0.8,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "score.Financial control.A1",
+          "quantity": "Financial control: score of case A1",
+          "printed": "0.80",
+          "value": 0.8,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "score.Financial control.A2",
+          "quantity": "Financial control: score of case A2",
+          "printed": "0.90",
+          "value": 0.9,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "score.Financial control.B1",
+          "quantity": "Financial control: score of case B1",
+          "printed": "0.20",
+          "value": 0.2,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "score.Financial control.B2",
+          "quantity": "Financial control: score of case B2",
+          "printed": "0.20",
+          "value": 0.2,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "reference.Processing effort",
+          "quantity": "Processing effort: reference mean (all four scored cases)",
+          "printed": "0.600",
+          "value": 0.6,
+          "kind": "number",
+          "decimals": 3
+        },
+        {
+          "key": "mean.Processing effort.Plant A",
+          "quantity": "Processing effort: mean score of the Plant A slice",
+          "printed": "0.40",
+          "value": 0.4,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "pi.Processing effort.Plant A",
+          "quantity": "Processing effort: Priority Index of Plant A",
+          "printed": "0.40",
+          "value": 0.4,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "pi.Processing effort.Plant B",
+          "quantity": "Processing effort: Priority Index of Plant B",
+          "printed": "0",
+          "value": 0.0,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "first.Processing effort",
+          "quantity": "Processing effort: first priority",
+          "printed": "Plant A",
+          "value": "Plant A",
+          "kind": "text"
+        },
+        {
+          "key": "reference.Financial control",
+          "quantity": "Financial control: reference mean (all four scored cases)",
+          "printed": "0.525",
+          "value": 0.525,
+          "kind": "number",
+          "decimals": 3
+        },
+        {
+          "key": "mean.Financial control.Plant B",
+          "quantity": "Financial control: mean score of the Plant B slice",
+          "printed": "0.20",
+          "value": 0.2,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "pi.Financial control.Plant A",
+          "quantity": "Financial control: Priority Index of Plant A",
+          "printed": "0",
+          "value": 0.0,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "pi.Financial control.Plant B",
+          "quantity": "Financial control: Priority Index of Plant B",
+          "printed": "0.65",
+          "value": 0.65,
+          "kind": "number",
+          "decimals": 2
+        },
+        {
+          "key": "first.Financial control",
+          "quantity": "Financial control: first priority",
+          "printed": "Plant B",
+          "value": "Plant B",
+          "kind": "text"
+        }
+      ]
+    },
+    {
+      "item": 42,
+      "place": "Section 5.6, p. 33",
+      "title": "Constructed checks: shuffled event rows and a reloaded norm",
+      "data": null,
+      "kind": "result",
+      "values": [
+        {
+          "key": "shuffled_events.preserved",
+          "quantity": "deviation values unchanged after shuffling the event-table rows (bundled examples)",
+          "printed": "yes",
+          "value": true,
+          "kind": "flag"
+        },
+        {
+          "key": "norm_reloaded.preserved",
+          "quantity": "case scores preserved after serialising and reloading the norm (bundled examples)",
+          "printed": "yes",
+          "value": true,
+          "kind": "flag"
+        }
+      ]
+    }
+  ]
+}

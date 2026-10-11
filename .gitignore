@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+
+# Environments
+.venv/
+venv/
+env/
+.env
+
+# Caches and tool output
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+htmlcov/
+coverage.xml
+junit.xml
+
+# Data: raw event logs stay local
+data/
+*.xes
+*.xes.gz
+*.parquet
+*.feather
+*.zip
+BPI_Challenge_2019.csv
+
+# Local evaluation outputs (comparison tables, figures)
+outputs/
+results/
+
+# Notebooks: checkpoints, working material and local notes
+.ipynb_checkpoints/
+notebooks/_*/
+notebooks/.venv/
+
+# Operating system and editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

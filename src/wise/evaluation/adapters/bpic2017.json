@@ -1,0 +1,42 @@
+{
+  "id": "loan_application_recorded_concerns_v1",
+  "version": "1",
+  "application": "bpic2017",
+  "freeze_statement": "Author-defined illustration frozen after schema and metadata inspection and before computing case scores or group rankings; not an elicited or validated business norm.",
+  "scope_of_this_file": "The application log of BPI Challenge 2017. The BPI Challenge 2012 application of the same configuration family is not part of this repository.",
+  "expected": {
+    "cases": 31509,
+    "events": 1202267,
+    "sha256": "183c5e5189282779c811c78c33ff936351b3dd201165d612211fc220936f8249"
+  },
+  "scored_unit": "application trace",
+  "mode": "flat",
+  "primary_reference": "mean score of all scored applications under the selected view",
+  "primary_gamma": 0,
+  "exposure": "one per scored application",
+  "rank_ties": "Priority Index descending; number of scored cases descending; group key ascending",
+  "missing_markers": ["", "UNKNOWN", "NONE", "NULL"],
+  "timestamp_policy": "Parse timezone-aware ISO timestamps to UTC. The span needs at least two events and valid timestamps throughout. Count and breadth criteria do not depend on the order of events; no lifecycle interval pairing or handover sequence is inferred.",
+  "primary_group": ["application_type", "loan_goal"],
+  "group_separator": " | ",
+  "offer_creation_activity": "O_Create Offer",
+  "offer_created_activity": "O_Created",
+  "offer_identity": "Distinct EventID on COMPLETE O_Create Offer; requires exact set equality with OfferID on COMPLETE O_Created, uniqueness of both lists, and every other O_ state OfferID belonging to that set.",
+  "criteria": {
+    "C01": {"feature": "observed_span_days", "layer": "Timing", "threshold": 30, "width": 30, "scope": "all applications", "evidence": "at least two events, every timestamp timezone-aware and valid", "meaning": "long recorded span; not completed cycle time or a service-level breach"},
+    "C02": {"feature": "repeated_work_starts", "layer": "Interaction", "threshold": 0, "width": 5, "scope": "all applications", "evidence": "all event activity and lifecycle values present", "meaning": "sum over W_ activities of max(number of START records minus one, 0); excludes resume, suspend, schedule, complete, withdraw and ate_abort; not an estimate of necessary or unnecessary work time"},
+    "C03": {"feature": "work_start_resource_breadth", "layer": "Interaction", "threshold": 2, "width": 5, "scope": "all applications", "evidence": "activity and lifecycle complete, every W_ START resource present; no starts yields an observed breadth of zero", "meaning": "distinct recorded W_ START resource identifiers; no human or batch classification and no ownership assertion"},
+    "C04": {"feature": "offer_multiplicity", "layer": "Offer", "threshold": 1, "width": 3, "scope": "any recorded O_ activity", "evidence": "activity and lifecycle complete and fully reconciled creation identifiers and offer-state identifiers", "meaning": "distinct observed offers associated with an application; legitimate options may create multiple offers"},
+    "C05": {"feature": "incomplete_state_records", "layer": "Interaction", "threshold": 0, "width": 3, "scope": "all applications", "evidence": "all event activity and lifecycle values present", "meaning": "number of COMPLETE A_Incomplete state records; an information follow-up indicator, not a control violation or inferred cause"}
+  },
+  "views": {
+    "Balanced": {"C01": 1, "C02": 1, "C03": 1, "C04": 1, "C05": 1},
+    "Timeliness": {"C01": 4, "C02": 1, "C03": 1, "C04": 1, "C05": 1},
+    "Interaction": {"C01": 1, "C02": 3, "C03": 3, "C04": 1, "C05": 3}
+  },
+  "limits": [
+    "No costs, causes, savings, loan risk, service-level or completion judgments.",
+    "Cancellation, refusal and decline are not penalised.",
+    "Resource and offer counts do not establish staffing cost or defective work."
+  ]
+}

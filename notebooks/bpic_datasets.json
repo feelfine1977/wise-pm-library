@@ -1,0 +1,3929 @@
+{
+  "version": "0.1.0",
+  "datasets": [
+    {
+      "dataset_id": "bpic2011",
+      "challenge": 2011,
+      "title": "Gynaecology patient pathways",
+      "source_schema": {
+        "path": "bpic2011/Hospital_log.xes.gz",
+        "format": "xes",
+        "case_id": "case:concept:name",
+        "activity": "concept:name",
+        "timestamp": "time:timestamp",
+        "group_by": [
+          "Diagnosis"
+        ],
+        "case_attributes": [
+          "Age",
+          "Diagnosis",
+          "Diagnosis code",
+          "Specialism code",
+          "Start date",
+          "End date",
+          "Diagnosis Treatment Combination ID"
+        ],
+        "qualified_fields": [],
+        "case_id_level": "trace",
+        "activity_level": "event",
+        "context_locations": {
+          "Age": "trace",
+          "Diagnosis": "trace",
+          "Diagnosis code": "trace",
+          "Specialism code": "trace",
+          "Start date": "trace",
+          "End date": "trace",
+          "Diagnosis Treatment Combination ID": "trace"
+        },
+        "case_context_policy": "Declared trace-level attributes retain their trace source. Event-level case context uses the library carrier; changing values are flagged and excluded from stable cohort grouping. Mixed typed stable values use distinct display keys in a grouping copy. Source witnesses retain original values.",
+        "timestamp_format": "mixed"
+      },
+      "norm": {
+        "schema_version": 3,
+        "name": "bpic2011",
+        "version": "0.1.0",
+        "description": "",
+        "scoring_mode": "layer_balanced",
+        "missing_values": "three_valued",
+        "metadata": {
+          "policy_status": "Draft diagnostic cut points; process-owner review required",
+          "source": "bpic2011"
+        },
+        "layers": [
+          {
+            "id": "Coordination",
+            "name": "Coordination",
+            "description": ""
+          },
+          {
+            "id": "Complexity",
+            "name": "Complexity",
+            "description": ""
+          },
+          {
+            "id": "Timing",
+            "name": "Timing",
+            "description": ""
+          }
+        ],
+        "views": [
+          {
+            "name": "Balanced",
+            "description": "",
+            "layer_weights": {
+              "Coordination": 1.0,
+              "Complexity": 1.0,
+              "Timing": 1.0
+            }
+          },
+          {
+            "name": "Timing",
+            "description": "",
+            "layer_weights": {
+              "Coordination": 3.0,
+              "Complexity": 1.0,
+              "Timing": 3.0
+            }
+          },
+          {
+            "name": "Complexity",
+            "description": "",
+            "layer_weights": {
+              "Coordination": 1.0,
+              "Complexity": 3.0,
+              "Timing": 1.0
+            }
+          }
+        ],
+        "constraints": [
+          {
+            "id": "H11_01",
+            "layer": "Coordination",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "1e consult poliklinisch"
+              ],
+              "k": 1,
+              "K": 2.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "More than one recorded initial outpatient consultation prompts review of episode boundaries and referral duplication."
+          },
+          {
+            "id": "H11_02",
+            "layer": "Coordination",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "telefonisch consult"
+              ],
+              "k": 3,
+              "K": 7.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "High telephone-contact volume prompts review of coordination burden, while retaining useful patient communication."
+          },
+          {
+            "id": "H11_03",
+            "layer": "Complexity",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "vervolgconsult poliklinisch"
+              ],
+              "k": 4,
+              "K": 8.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "A long follow-up sequence identifies a complex pathway for review; planned surveillance is a legitimate explanation."
+          },
+          {
+            "id": "H11_04",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "1e consult poliklinisch"
+              ],
+              "b": [
+                "vervolgconsult poliklinisch"
+              ],
+              "delta": 30.0,
+              "width": 60.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Review the first observed outpatient-to-follow-up interval. This interval may be a planned clinical schedule rather than waiting."
+          }
+        ]
+      },
+      "business_goal": "Reduce avoidable coordination waiting while retaining indicated care.",
+      "improvement": {
+        "owner": "Pathway coordinator",
+        "steps": [
+          "Link diagnosis-treatment phases in reviewed cases.",
+          "Classify high-contact records as planned support, missing information, duplicated routing or scheduling uncertainty.",
+          "If avoidable coordination is confirmed, trial one named contact and an agreed follow-up ownership record."
+        ],
+        "comparison": "Compare a declared comparable cohort or phased rollout with the pre-trial baseline. Retain whole-case context and required work.",
+        "outcomes": [
+          "Verified scheduling waiting",
+          "Unanswered coordination requests",
+          "Clinical follow-up and patient access"
+        ],
+        "decision_gate": "A recurring avoidable mechanism must be confirmed by case and source-record review before the change is trialled.",
+        "stop_condition": "Revise the trial if protected care, legal rights, access or correct financial handling deteriorates.",
+        "status": "Conditional process-improvement proposal; no trial or outcome is asserted."
+      },
+      "interpretation": [
+        "No staff resource identifiers are present in the local profile; org:group names a group, not an individual.",
+        "Repeated consultations, tests and radiotherapy are not treatment failures.",
+        "Date-only service events cannot support minute-level waiting claims.",
+        "The proposed follow-up range is descriptive and needs pathway-specific interpretation."
+      ],
+      "pending_checks": [
+        {
+          "id": "H11_P01",
+          "name": "Clinically appropriate follow-up schedule",
+          "policy_status": "awaits_clinical_pathway_and_episode_validation",
+          "required_evidence": [
+            "Diagnosis-treatment episode linkage",
+            "Treatment intention and clinical scheduling protocol",
+            "Documented patient-specific exceptions"
+          ],
+          "reason": "The patient trace spans overlapping phases; one global follow-up limit would mix different care intentions."
+        }
+      ],
+      "sources": [
+        {
+          "title": "BPIC2011 process and case description",
+          "url": "https://ais.win.tue.nl/bpi/2011/challenge.html",
+          "doi": "10.4121/uuid:d9769f3d-0ab0-4fb8-803b-0d1120ffcf54"
+        }
+      ]
+    },
+    {
+      "dataset_id": "bpic2015_1",
+      "challenge": 2015,
+      "title": "Building permits: municipality 1",
+      "source_schema": {
+        "path": "bpic2015/BPIC15_1.xes",
+        "format": "xes",
+        "case_id": "case:concept:name",
+        "activity": "concept:name",
+        "timestamp": "time:timestamp",
+        "group_by": [
+          "caseProcedure",
+          "requestComplete"
+        ],
+        "case_attributes": [
+          "caseProcedure",
+          "requestComplete",
+          "parts",
+          "Responsible_actor",
+          "startDate",
+          "endDate",
+          "endDatePlanned",
+          "termName",
+          "last_phase",
+          "caseStatus",
+          "SUMleges"
+        ],
+        "qualified_fields": [],
+        "case_id_level": "trace",
+        "activity_level": "event",
+        "context_locations": {
+          "caseProcedure": "trace",
+          "requestComplete": "trace",
+          "parts": "trace",
+          "Responsible_actor": "trace",
+          "startDate": "trace",
+          "endDate": "trace",
+          "endDatePlanned": "trace",
+          "termName": "trace",
+          "last_phase": "trace",
+          "caseStatus": "trace",
+          "SUMleges": "trace"
+        },
+        "case_context_policy": "Declared trace-level attributes retain their trace source. Event-level case context uses the library carrier; changing values are flagged and excluded from stable cohort grouping. Mixed typed stable values use distinct display keys in a grouping copy. Source witnesses retain original values.",
+        "timestamp_format": "mixed"
+      },
+      "norm": {
+        "schema_version": 3,
+        "name": "bpic2015_1",
+        "version": "0.1.0",
+        "description": "",
+        "scoring_mode": "layer_balanced",
+        "missing_values": "three_valued",
+        "metadata": {
+          "policy_status": "Draft diagnostic cut points; process-owner review required",
+          "source": "bpic2015_1"
+        },
+        "layers": [
+          {
+            "id": "Timing",
+            "name": "Timing",
+            "description": ""
+          },
+          {
+            "id": "Rework",
+            "name": "Rework",
+            "description": ""
+          }
+        ],
+        "views": [
+          {
+            "name": "Balanced",
+            "description": "",
+            "layer_weights": {
+              "Timing": 1.0,
+              "Rework": 1.0
+            }
+          },
+          {
+            "name": "Timing",
+            "description": "",
+            "layer_weights": {
+              "Timing": 3.0,
+              "Rework": 1.0
+            }
+          },
+          {
+            "name": "Rework",
+            "description": "",
+            "layer_weights": {
+              "Timing": 1.0,
+              "Rework": 3.0
+            }
+          }
+        ],
+        "constraints": [
+          {
+            "id": "M1_01",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "01_HOOFD_010"
+              ],
+              "b": [
+                "01_HOOFD_030_1"
+              ],
+              "delta": 3.0,
+              "width": 7.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Review the recorded submission-to-acknowledgment interval. The three-day review range is not a legal deadline."
+          },
+          {
+            "id": "M1_02",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "01_HOOFD_010"
+              ],
+              "b": [
+                "01_HOOFD_490_3",
+                "01_HOOFD_490_5"
+              ],
+              "delta": 90.0,
+              "width": 90.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Review time from registered submission to the first recorded main decision date; distinguish regular and extended procedures."
+          },
+          {
+            "id": "M1_03",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "01_HOOFD_490_3",
+                "01_HOOFD_490_5"
+              ],
+              "b": [
+                "01_HOOFD_510_2",
+                "01_HOOFD_510_3",
+                "01_HOOFD_510_4"
+              ],
+              "delta": 3.0,
+              "width": 7.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Review the first recorded decision-to-dispatch-date interval. It measures administrative recording, not verified receipt."
+          },
+          {
+            "id": "M1_04",
+            "layer": "Rework",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "01_HOOFD_490_1"
+              ],
+              "k": 1,
+              "K": 2.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Repeated decision-creation records prompt review of revision reasons, while preserving lawful corrections and objections."
+          },
+          {
+            "id": "M1_05",
+            "layer": "Rework",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "01_HOOFD_110",
+                "01_HOOFD_110_1"
+              ],
+              "k": 1,
+              "K": 2.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Repeated completeness-subcase treatment records prompt review of applicant-information requests and subcase structure."
+          }
+        ]
+      },
+      "business_goal": "Provide clear application handling with fewer avoidable completeness requests while preserving lawful assessment and objections.",
+      "improvement": {
+        "owner": "Municipality 1 permit-service manager",
+        "steps": [
+          "Review one procedure and comparable application class within this municipality.",
+          "Separate different completeness subcases from repeated requests for the same missing information.",
+          "If repeated requests are avoidable, trial one consolidated information request, confirmation and accountable case owner."
+        ],
+        "comparison": "Compare a declared comparable cohort or phased rollout with the pre-trial baseline. Retain whole-case context and required work.",
+        "outcomes": [
+          "Repeated requests for the same information",
+          "Verified waiting for missing information",
+          "Required consultation, lawful assessment and objection handling"
+        ],
+        "decision_gate": "A recurring avoidable mechanism must be confirmed by case and source-record review before the change is trialled.",
+        "stop_condition": "Revise the trial if protected care, legal rights, access or correct financial handling deteriorates.",
+        "status": "Conditional process-improvement proposal; no trial or outcome is asserted."
+      },
+      "interpretation": [
+        "Selected criterion codes and their English labels were checked over every event in this municipality file.",
+        "Some other activity codes have different English meanings in municipality 3; code prefixes and trailing numbers are not a universal conformance model.",
+        "Timestamp ties do not establish causal order.",
+        "Objections, consultation, suspensions and statutory safeguards are legitimate components, not avoidable rework by default.",
+        "Absence of a decision or dispatch in an incomplete trace is not scored as failure."
+      ],
+      "pending_checks": [
+        {
+          "id": "M1_P01",
+          "name": "Procedure-specific due-date assessment",
+          "policy_status": "awaits_term_semantics_and_historical_policy",
+          "required_evidence": [
+            "Meaning and history of dueDate, dateFinished, dateStop, endDatePlanned and termName",
+            "Regular or extended procedure",
+            "Suspensions and extensions",
+            "Verified decision clock and observation end"
+          ],
+          "reason": "Comparing endDate with one planned date could mix an appeal term with the decision term; statutory timing is not represented by a universal 90-day review range."
+        }
+      ],
+      "sources": [
+        {
+          "title": "BPIC2015 municipality 1 and process description",
+          "url": "https://ais.win.tue.nl/bpi/2015/challenge.html",
+          "doi": "10.4121/uuid:a0addfda-2044-4541-a450-fdcc9fe16d17"
+        }
+      ]
+    },
+    {
+      "dataset_id": "bpic2015_2",
+      "challenge": 2015,
+      "title": "Building permits: municipality 2",
+      "source_schema": {
+        "path": "bpic2015/BPIC15_2.xes",
+        "format": "xes",
+        "case_id": "case:concept:name",
+        "activity": "concept:name",
+        "timestamp": "time:timestamp",
+        "group_by": [
+          "caseProcedure",
+          "requestComplete"
+        ],
+        "case_attributes": [
+          "caseProcedure",
+          "requestComplete",
+          "parts",
+          "Responsible_actor",
+          "startDate",
+          "endDate",
+          "endDatePlanned",
+          "termName",
+          "last_phase",
+          "caseStatus",
+          "SUMleges"
+        ],
+        "qualified_fields": [],
+        "case_id_level": "trace",
+        "activity_level": "event",
+        "context_locations": {
+          "caseProcedure": "trace",
+          "requestComplete": "trace",
+          "parts": "trace",
+          "Responsible_actor": "trace",
+          "startDate": "trace",
+          "endDate": "trace",
+          "endDatePlanned": "trace",
+          "termName": "trace",
+          "last_phase": "trace",
+          "caseStatus": "trace",
+          "SUMleges": "trace"
+        },
+        "case_context_policy": "Declared trace-level attributes retain their trace source. Event-level case context uses the library carrier; changing values are flagged and excluded from stable cohort grouping. Mixed typed stable values use distinct display keys in a grouping copy. Source witnesses retain original values.",
+        "timestamp_format": "mixed"
+      },
+      "norm": {
+        "schema_version": 3,
+        "name": "bpic2015_2",
+        "version": "0.1.0",
+        "description": "",
+        "scoring_mode": "layer_balanced",
+        "missing_values": "three_valued",
+        "metadata": {
+          "policy_status": "Draft diagnostic cut points; process-owner review required",
+          "source": "bpic2015_2"
+        },
+        "layers": [
+          {
+            "id": "Timing",
+            "name": "Timing",
+            "description": ""
+          },
+          {
+            "id": "Rework",
+            "name": "Rework",
+            "description": ""
+          }
+        ],
+        "views": [
+          {
+            "name": "Balanced",
+            "description": "",
+            "layer_weights": {
+              "Timing": 1.0,
+              "Rework": 1.0
+            }
+          },
+          {
+            "name": "Timing",
+            "description": "",
+            "layer_weights": {
+              "Timing": 3.0,
+              "Rework": 1.0
+            }
+          },
+          {
+            "name": "Rework",
+            "description": "",
+            "layer_weights": {
+              "Timing": 1.0,
+              "Rework": 3.0
+            }
+          }
+        ],
+        "constraints": [
+          {
+            "id": "M2_01",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "01_HOOFD_010"
+              ],
+              "b": [
+                "01_HOOFD_030_1"
+              ],
+              "delta": 3.0,
+              "width": 7.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Review the recorded submission-to-acknowledgment interval. The three-day review range is not a legal deadline."
+          },
+          {
+            "id": "M2_02",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "01_HOOFD_010"
+              ],
+              "b": [
+                "01_HOOFD_490_3",
+                "01_HOOFD_490_5"
+              ],
+              "delta": 90.0,
+              "width": 90.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Review time from registered submission to the first recorded main decision date; distinguish regular and extended procedures."
+          },
+          {
+            "id": "M2_03",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "01_HOOFD_490_3",
+                "01_HOOFD_490_5"
+              ],
+              "b": [
+                "01_HOOFD_510_2",
+                "01_HOOFD_510_3",
+                "01_HOOFD_510_4"
+              ],
+              "delta": 3.0,
+              "width": 7.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Review the first recorded decision-to-dispatch-date interval. It measures administrative recording, not verified receipt."
+          },
+          {
+            "id": "M2_04",
+            "layer": "Rework",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "01_HOOFD_490_1"
+              ],
+              "k": 1,
+              "K": 2.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Repeated decision-creation records prompt review of revision reasons, while preserving lawful corrections and objections."
+          },
+          {
+            "id": "M2_05",
+            "layer": "Rework",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "01_HOOFD_110",
+                "01_HOOFD_110_1"
+              ],
+              "k": 1,
+              "K": 2.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Repeated completeness-subcase treatment records prompt review of applicant-information requests and subcase structure."
+          }
+        ]
+      },
+      "business_goal": "Provide clear application handling with fewer avoidable completeness requests while preserving lawful assessment and objections.",
+      "improvement": {
+        "owner": "Municipality 2 permit-service manager",
+        "steps": [
+          "Review one procedure and comparable application class within this municipality.",
+          "Separate different completeness subcases from repeated requests for the same missing information.",
+          "If repeated requests are avoidable, trial one consolidated information request, confirmation and accountable case owner."
+        ],
+        "comparison": "Compare a declared comparable cohort or phased rollout with the pre-trial baseline. Retain whole-case context and required work.",
+        "outcomes": [
+          "Repeated requests for the same information",
+          "Verified waiting for missing information",
+          "Required consultation, lawful assessment and objection handling"
+        ],
+        "decision_gate": "A recurring avoidable mechanism must be confirmed by case and source-record review before the change is trialled.",
+        "stop_condition": "Revise the trial if protected care, legal rights, access or correct financial handling deteriorates.",
+        "status": "Conditional process-improvement proposal; no trial or outcome is asserted."
+      },
+      "interpretation": [
+        "Selected criterion codes and their English labels were checked over every event in this municipality file.",
+        "Some other activity codes have different English meanings in municipality 3; code prefixes and trailing numbers are not a universal conformance model.",
+        "Timestamp ties do not establish causal order.",
+        "Objections, consultation, suspensions and statutory safeguards are legitimate components, not avoidable rework by default.",
+        "Absence of a decision or dispatch in an incomplete trace is not scored as failure."
+      ],
+      "pending_checks": [
+        {
+          "id": "M2_P01",
+          "name": "Procedure-specific due-date assessment",
+          "policy_status": "awaits_term_semantics_and_historical_policy",
+          "required_evidence": [
+            "Meaning and history of dueDate, dateFinished, dateStop, endDatePlanned and termName",
+            "Regular or extended procedure",
+            "Suspensions and extensions",
+            "Verified decision clock and observation end"
+          ],
+          "reason": "Comparing endDate with one planned date could mix an appeal term with the decision term; statutory timing is not represented by a universal 90-day review range."
+        }
+      ],
+      "sources": [
+        {
+          "title": "BPIC2015 municipality 2 and process description",
+          "url": "https://ais.win.tue.nl/bpi/2015/challenge.html",
+          "doi": "10.4121/uuid:63a8435a-077d-4ece-97cd-2c76d394d99c"
+        }
+      ]
+    },
+    {
+      "dataset_id": "bpic2015_3",
+      "challenge": 2015,
+      "title": "Building permits: municipality 3",
+      "source_schema": {
+        "path": "bpic2015/BPIC15_3.xes",
+        "format": "xes",
+        "case_id": "case:concept:name",
+        "activity": "concept:name",
+        "timestamp": "time:timestamp",
+        "group_by": [
+          "caseProcedure",
+          "requestComplete"
+        ],
+        "case_attributes": [
+          "caseProcedure",
+          "requestComplete",
+          "parts",
+          "Responsible_actor",
+          "startDate",
+          "endDate",
+          "endDatePlanned",
+          "termName",
+          "last_phase",
+          "caseStatus",
+          "SUMleges"
+        ],
+        "qualified_fields": [],
+        "case_id_level": "trace",
+        "activity_level": "event",
+        "context_locations": {
+          "caseProcedure": "trace",
+          "requestComplete": "trace",
+          "parts": "trace",
+          "Responsible_actor": "trace",
+          "startDate": "trace",
+          "endDate": "trace",
+          "endDatePlanned": "trace",
+          "termName": "trace",
+          "last_phase": "trace",
+          "caseStatus": "trace",
+          "SUMleges": "trace"
+        },
+        "case_context_policy": "Declared trace-level attributes retain their trace source. Event-level case context uses the library carrier; changing values are flagged and excluded from stable cohort grouping. Mixed typed stable values use distinct display keys in a grouping copy. Source witnesses retain original values.",
+        "timestamp_format": "mixed"
+      },
+      "norm": {
+        "schema_version": 3,
+        "name": "bpic2015_3",
+        "version": "0.1.0",
+        "description": "",
+        "scoring_mode": "layer_balanced",
+        "missing_values": "three_valued",
+        "metadata": {
+          "policy_status": "Draft diagnostic cut points; process-owner review required",
+          "source": "bpic2015_3"
+        },
+        "layers": [
+          {
+            "id": "Timing",
+            "name": "Timing",
+            "description": ""
+          },
+          {
+            "id": "Rework",
+            "name": "Rework",
+            "description": ""
+          }
+        ],
+        "views": [
+          {
+            "name": "Balanced",
+            "description": "",
+            "layer_weights": {
+              "Timing": 1.0,
+              "Rework": 1.0
+            }
+          },
+          {
+            "name": "Timing",
+            "description": "",
+            "layer_weights": {
+              "Timing": 3.0,
+              "Rework": 1.0
+            }
+          },
+          {
+            "name": "Rework",
+            "description": "",
+            "layer_weights": {
+              "Timing": 1.0,
+              "Rework": 3.0
+            }
+          }
+        ],
+        "constraints": [
+          {
+            "id": "M3_01",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "01_HOOFD_010"
+              ],
+              "b": [
+                "01_HOOFD_030_1"
+              ],
+              "delta": 3.0,
+              "width": 7.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Review the recorded submission-to-acknowledgment interval. The three-day review range is not a legal deadline."
+          },
+          {
+            "id": "M3_02",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "01_HOOFD_010"
+              ],
+              "b": [
+                "01_HOOFD_490_3",
+                "01_HOOFD_490_5"
+              ],
+              "delta": 90.0,
+              "width": 90.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Review time from registered submission to the first recorded main decision date; distinguish regular and extended procedures."
+          },
+          {
+            "id": "M3_03",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "01_HOOFD_490_3",
+                "01_HOOFD_490_5"
+              ],
+              "b": [
+                "01_HOOFD_510_2",
+                "01_HOOFD_510_3",
+                "01_HOOFD_510_4"
+              ],
+              "delta": 3.0,
+              "width": 7.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Review the first recorded decision-to-dispatch-date interval. It measures administrative recording, not verified receipt."
+          },
+          {
+            "id": "M3_04",
+            "layer": "Rework",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "01_HOOFD_490_1"
+              ],
+              "k": 1,
+              "K": 2.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Repeated decision-creation records prompt review of revision reasons, while preserving lawful corrections and objections."
+          },
+          {
+            "id": "M3_05",
+            "layer": "Rework",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "01_HOOFD_110",
+                "01_HOOFD_110_1"
+              ],
+              "k": 1,
+              "K": 2.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Repeated completeness-subcase treatment records prompt review of applicant-information requests and subcase structure."
+          }
+        ]
+      },
+      "business_goal": "Provide clear application handling with fewer avoidable completeness requests while preserving lawful assessment and objections.",
+      "improvement": {
+        "owner": "Municipality 3 permit-service manager",
+        "steps": [
+          "Review one procedure and comparable application class within this municipality.",
+          "Separate different completeness subcases from repeated requests for the same missing information.",
+          "If repeated requests are avoidable, trial one consolidated information request, confirmation and accountable case owner."
+        ],
+        "comparison": "Compare a declared comparable cohort or phased rollout with the pre-trial baseline. Retain whole-case context and required work.",
+        "outcomes": [
+          "Repeated requests for the same information",
+          "Verified waiting for missing information",
+          "Required consultation, lawful assessment and objection handling"
+        ],
+        "decision_gate": "A recurring avoidable mechanism must be confirmed by case and source-record review before the change is trialled.",
+        "stop_condition": "Revise the trial if protected care, legal rights, access or correct financial handling deteriorates.",
+        "status": "Conditional process-improvement proposal; no trial or outcome is asserted."
+      },
+      "interpretation": [
+        "Selected criterion codes and their English labels were checked over every event in this municipality file.",
+        "Some other activity codes have different English meanings in municipality 3; code prefixes and trailing numbers are not a universal conformance model.",
+        "Timestamp ties do not establish causal order.",
+        "Objections, consultation, suspensions and statutory safeguards are legitimate components, not avoidable rework by default.",
+        "Absence of a decision or dispatch in an incomplete trace is not scored as failure."
+      ],
+      "pending_checks": [
+        {
+          "id": "M3_P01",
+          "name": "Procedure-specific due-date assessment",
+          "policy_status": "awaits_term_semantics_and_historical_policy",
+          "required_evidence": [
+            "Meaning and history of dueDate, dateFinished, dateStop, endDatePlanned and termName",
+            "Regular or extended procedure",
+            "Suspensions and extensions",
+            "Verified decision clock and observation end"
+          ],
+          "reason": "Comparing endDate with one planned date could mix an appeal term with the decision term; statutory timing is not represented by a universal 90-day review range."
+        }
+      ],
+      "sources": [
+        {
+          "title": "BPIC2015 municipality 3 and process description",
+          "url": "https://ais.win.tue.nl/bpi/2015/challenge.html",
+          "doi": "10.4121/uuid:ed445cdd-27d5-4d77-a1f7-59fe7360cfbe"
+        }
+      ]
+    },
+    {
+      "dataset_id": "bpic2015_4",
+      "challenge": 2015,
+      "title": "Building permits: municipality 4",
+      "source_schema": {
+        "path": "bpic2015/BPIC15_4.xes",
+        "format": "xes",
+        "case_id": "case:concept:name",
+        "activity": "concept:name",
+        "timestamp": "time:timestamp",
+        "group_by": [
+          "caseProcedure",
+          "requestComplete"
+        ],
+        "case_attributes": [
+          "caseProcedure",
+          "requestComplete",
+          "parts",
+          "Responsible_actor",
+          "startDate",
+          "endDate",
+          "endDatePlanned",
+          "termName",
+          "last_phase",
+          "caseStatus",
+          "SUMleges"
+        ],
+        "qualified_fields": [],
+        "case_id_level": "trace",
+        "activity_level": "event",
+        "context_locations": {
+          "caseProcedure": "trace",
+          "requestComplete": "trace",
+          "parts": "trace",
+          "Responsible_actor": "trace",
+          "startDate": "trace",
+          "endDate": "trace",
+          "endDatePlanned": "trace",
+          "termName": "trace",
+          "last_phase": "trace",
+          "caseStatus": "trace",
+          "SUMleges": "trace"
+        },
+        "case_context_policy": "Declared trace-level attributes retain their trace source. Event-level case context uses the library carrier; changing values are flagged and excluded from stable cohort grouping. Mixed typed stable values use distinct display keys in a grouping copy. Source witnesses retain original values.",
+        "timestamp_format": "mixed"
+      },
+      "norm": {
+        "schema_version": 3,
+        "name": "bpic2015_4",
+        "version": "0.1.0",
+        "description": "",
+        "scoring_mode": "layer_balanced",
+        "missing_values": "three_valued",
+        "metadata": {
+          "policy_status": "Draft diagnostic cut points; process-owner review required",
+          "source": "bpic2015_4"
+        },
+        "layers": [
+          {
+            "id": "Timing",
+            "name": "Timing",
+            "description": ""
+          },
+          {
+            "id": "Rework",
+            "name": "Rework",
+            "description": ""
+          }
+        ],
+        "views": [
+          {
+            "name": "Balanced",
+            "description": "",
+            "layer_weights": {
+              "Timing": 1.0,
+              "Rework": 1.0
+            }
+          },
+          {
+            "name": "Timing",
+            "description": "",
+            "layer_weights": {
+              "Timing": 3.0,
+              "Rework": 1.0
+            }
+          },
+          {
+            "name": "Rework",
+            "description": "",
+            "layer_weights": {
+              "Timing": 1.0,
+              "Rework": 3.0
+            }
+          }
+        ],
+        "constraints": [
+          {
+            "id": "M4_01",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "01_HOOFD_010"
+              ],
+              "b": [
+                "01_HOOFD_030_1"
+              ],
+              "delta": 3.0,
+              "width": 7.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Review the recorded submission-to-acknowledgment interval. The three-day review range is not a legal deadline."
+          },
+          {
+            "id": "M4_02",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "01_HOOFD_010"
+              ],
+              "b": [
+                "01_HOOFD_490_3",
+                "01_HOOFD_490_5"
+              ],
+              "delta": 90.0,
+              "width": 90.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Review time from registered submission to the first recorded main decision date; distinguish regular and extended procedures."
+          },
+          {
+            "id": "M4_03",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "01_HOOFD_490_3",
+                "01_HOOFD_490_5"
+              ],
+              "b": [
+                "01_HOOFD_510_2",
+                "01_HOOFD_510_3",
+                "01_HOOFD_510_4"
+              ],
+              "delta": 3.0,
+              "width": 7.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Review the first recorded decision-to-dispatch-date interval. It measures administrative recording, not verified receipt."
+          },
+          {
+            "id": "M4_04",
+            "layer": "Rework",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "01_HOOFD_490_1"
+              ],
+              "k": 1,
+              "K": 2.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Repeated decision-creation records prompt review of revision reasons, while preserving lawful corrections and objections."
+          },
+          {
+            "id": "M4_05",
+            "layer": "Rework",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "01_HOOFD_110",
+                "01_HOOFD_110_1"
+              ],
+              "k": 1,
+              "K": 2.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Repeated completeness-subcase treatment records prompt review of applicant-information requests and subcase structure."
+          }
+        ]
+      },
+      "business_goal": "Provide clear application handling with fewer avoidable completeness requests while preserving lawful assessment and objections.",
+      "improvement": {
+        "owner": "Municipality 4 permit-service manager",
+        "steps": [
+          "Review one procedure and comparable application class within this municipality.",
+          "Separate different completeness subcases from repeated requests for the same missing information.",
+          "If repeated requests are avoidable, trial one consolidated information request, confirmation and accountable case owner."
+        ],
+        "comparison": "Compare a declared comparable cohort or phased rollout with the pre-trial baseline. Retain whole-case context and required work.",
+        "outcomes": [
+          "Repeated requests for the same information",
+          "Verified waiting for missing information",
+          "Required consultation, lawful assessment and objection handling"
+        ],
+        "decision_gate": "A recurring avoidable mechanism must be confirmed by case and source-record review before the change is trialled.",
+        "stop_condition": "Revise the trial if protected care, legal rights, access or correct financial handling deteriorates.",
+        "status": "Conditional process-improvement proposal; no trial or outcome is asserted."
+      },
+      "interpretation": [
+        "Selected criterion codes and their English labels were checked over every event in this municipality file.",
+        "Some other activity codes have different English meanings in municipality 3; code prefixes and trailing numbers are not a universal conformance model.",
+        "Timestamp ties do not establish causal order.",
+        "Objections, consultation, suspensions and statutory safeguards are legitimate components, not avoidable rework by default.",
+        "Absence of a decision or dispatch in an incomplete trace is not scored as failure."
+      ],
+      "pending_checks": [
+        {
+          "id": "M4_P01",
+          "name": "Procedure-specific due-date assessment",
+          "policy_status": "awaits_term_semantics_and_historical_policy",
+          "required_evidence": [
+            "Meaning and history of dueDate, dateFinished, dateStop, endDatePlanned and termName",
+            "Regular or extended procedure",
+            "Suspensions and extensions",
+            "Verified decision clock and observation end"
+          ],
+          "reason": "Comparing endDate with one planned date could mix an appeal term with the decision term; statutory timing is not represented by a universal 90-day review range."
+        }
+      ],
+      "sources": [
+        {
+          "title": "BPIC2015 municipality 4 and process description",
+          "url": "https://ais.win.tue.nl/bpi/2015/challenge.html",
+          "doi": "10.4121/uuid:679b11cf-47cd-459e-a6de-9ca614e25985"
+        }
+      ]
+    },
+    {
+      "dataset_id": "bpic2015_5",
+      "challenge": 2015,
+      "title": "Building permits: municipality 5",
+      "source_schema": {
+        "path": "bpic2015/BPIC15_5.xes",
+        "format": "xes",
+        "case_id": "case:concept:name",
+        "activity": "concept:name",
+        "timestamp": "time:timestamp",
+        "group_by": [
+          "caseProcedure",
+          "requestComplete"
+        ],
+        "case_attributes": [
+          "caseProcedure",
+          "requestComplete",
+          "parts",
+          "Responsible_actor",
+          "startDate",
+          "endDate",
+          "endDatePlanned",
+          "termName",
+          "last_phase",
+          "caseStatus",
+          "SUMleges"
+        ],
+        "qualified_fields": [],
+        "case_id_level": "trace",
+        "activity_level": "event",
+        "context_locations": {
+          "caseProcedure": "trace",
+          "requestComplete": "trace",
+          "parts": "trace",
+          "Responsible_actor": "trace",
+          "startDate": "trace",
+          "endDate": "trace",
+          "endDatePlanned": "trace",
+          "termName": "trace",
+          "last_phase": "trace",
+          "caseStatus": "trace",
+          "SUMleges": "trace"
+        },
+        "case_context_policy": "Declared trace-level attributes retain their trace source. Event-level case context uses the library carrier; changing values are flagged and excluded from stable cohort grouping. Mixed typed stable values use distinct display keys in a grouping copy. Source witnesses retain original values.",
+        "timestamp_format": "mixed"
+      },
+      "norm": {
+        "schema_version": 3,
+        "name": "bpic2015_5",
+        "version": "0.1.0",
+        "description": "",
+        "scoring_mode": "layer_balanced",
+        "missing_values": "three_valued",
+        "metadata": {
+          "policy_status": "Draft diagnostic cut points; process-owner review required",
+          "source": "bpic2015_5"
+        },
+        "layers": [
+          {
+            "id": "Timing",
+            "name": "Timing",
+            "description": ""
+          },
+          {
+            "id": "Rework",
+            "name": "Rework",
+            "description": ""
+          }
+        ],
+        "views": [
+          {
+            "name": "Balanced",
+            "description": "",
+            "layer_weights": {
+              "Timing": 1.0,
+              "Rework": 1.0
+            }
+          },
+          {
+            "name": "Timing",
+            "description": "",
+            "layer_weights": {
+              "Timing": 3.0,
+              "Rework": 1.0
+            }
+          },
+          {
+            "name": "Rework",
+            "description": "",
+            "layer_weights": {
+              "Timing": 1.0,
+              "Rework": 3.0
+            }
+          }
+        ],
+        "constraints": [
+          {
+            "id": "M5_01",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "01_HOOFD_010"
+              ],
+              "b": [
+                "01_HOOFD_030_1"
+              ],
+              "delta": 3.0,
+              "width": 7.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Review the recorded submission-to-acknowledgment interval. The three-day review range is not a legal deadline."
+          },
+          {
+            "id": "M5_02",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "01_HOOFD_010"
+              ],
+              "b": [
+                "01_HOOFD_490_3",
+                "01_HOOFD_490_5"
+              ],
+              "delta": 90.0,
+              "width": 90.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Review time from registered submission to the first recorded main decision date; distinguish regular and extended procedures."
+          },
+          {
+            "id": "M5_03",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "01_HOOFD_490_3",
+                "01_HOOFD_490_5"
+              ],
+              "b": [
+                "01_HOOFD_510_2",
+                "01_HOOFD_510_3",
+                "01_HOOFD_510_4"
+              ],
+              "delta": 3.0,
+              "width": 7.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Review the first recorded decision-to-dispatch-date interval. It measures administrative recording, not verified receipt."
+          },
+          {
+            "id": "M5_04",
+            "layer": "Rework",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "01_HOOFD_490_1"
+              ],
+              "k": 1,
+              "K": 2.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Repeated decision-creation records prompt review of revision reasons, while preserving lawful corrections and objections."
+          },
+          {
+            "id": "M5_05",
+            "layer": "Rework",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "01_HOOFD_110",
+                "01_HOOFD_110_1"
+              ],
+              "k": 1,
+              "K": 2.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Repeated completeness-subcase treatment records prompt review of applicant-information requests and subcase structure."
+          }
+        ]
+      },
+      "business_goal": "Provide clear application handling with fewer avoidable completeness requests while preserving lawful assessment and objections.",
+      "improvement": {
+        "owner": "Municipality 5 permit-service manager",
+        "steps": [
+          "Review one procedure and comparable application class within this municipality.",
+          "Separate different completeness subcases from repeated requests for the same missing information.",
+          "If repeated requests are avoidable, trial one consolidated information request, confirmation and accountable case owner."
+        ],
+        "comparison": "Compare a declared comparable cohort or phased rollout with the pre-trial baseline. Retain whole-case context and required work.",
+        "outcomes": [
+          "Repeated requests for the same information",
+          "Verified waiting for missing information",
+          "Required consultation, lawful assessment and objection handling"
+        ],
+        "decision_gate": "A recurring avoidable mechanism must be confirmed by case and source-record review before the change is trialled.",
+        "stop_condition": "Revise the trial if protected care, legal rights, access or correct financial handling deteriorates.",
+        "status": "Conditional process-improvement proposal; no trial or outcome is asserted."
+      },
+      "interpretation": [
+        "Selected criterion codes and their English labels were checked over every event in this municipality file.",
+        "Some other activity codes have different English meanings in municipality 3; code prefixes and trailing numbers are not a universal conformance model.",
+        "Timestamp ties do not establish causal order.",
+        "Objections, consultation, suspensions and statutory safeguards are legitimate components, not avoidable rework by default.",
+        "Absence of a decision or dispatch in an incomplete trace is not scored as failure."
+      ],
+      "pending_checks": [
+        {
+          "id": "M5_P01",
+          "name": "Procedure-specific due-date assessment",
+          "policy_status": "awaits_term_semantics_and_historical_policy",
+          "required_evidence": [
+            "Meaning and history of dueDate, dateFinished, dateStop, endDatePlanned and termName",
+            "Regular or extended procedure",
+            "Suspensions and extensions",
+            "Verified decision clock and observation end"
+          ],
+          "reason": "Comparing endDate with one planned date could mix an appeal term with the decision term; statutory timing is not represented by a universal 90-day review range."
+        }
+      ],
+      "sources": [
+        {
+          "title": "BPIC2015 municipality 5 and process description",
+          "url": "https://ais.win.tue.nl/bpi/2015/challenge.html",
+          "doi": "10.4121/uuid:b32c6fe5-f212-4286-9774-58dd53511cf8"
+        }
+      ]
+    },
+    {
+      "dataset_id": "bpic2018",
+      "challenge": 2018,
+      "title": "Annual direct-payment applications",
+      "source_schema": {
+        "path": "bpic2018/BPI Challenge 2018.xes.gz",
+        "format": "xes",
+        "case_id": "case:concept:name",
+        "activity": "concept:name",
+        "timestamp": "time:timestamp",
+        "group_by": [
+          "year",
+          "department"
+        ],
+        "case_attributes": [
+          "year",
+          "department",
+          "applicant",
+          "application",
+          "number_parcels",
+          "area",
+          "selected_random",
+          "selected_risk",
+          "selected_manually",
+          "rejected",
+          "amount_applied0",
+          "payment_actual0",
+          "penalty_amount0"
+        ],
+        "qualified_fields": [
+          "doctype",
+          "subprocess",
+          "activity"
+        ],
+        "case_id_level": "trace",
+        "activity_level": "event",
+        "context_locations": {
+          "year": "trace",
+          "department": "trace",
+          "applicant": "trace",
+          "application": "trace",
+          "number_parcels": "trace",
+          "area": "trace",
+          "selected_random": "trace",
+          "selected_risk": "trace",
+          "selected_manually": "trace",
+          "rejected": "trace",
+          "amount_applied0": "trace",
+          "payment_actual0": "trace",
+          "penalty_amount0": "trace"
+        },
+        "case_context_policy": "Declared trace-level attributes retain their trace source. Event-level case context uses the library carrier; changing values are flagged and excluded from stable cohort grouping. Mixed typed stable values use distinct display keys in a grouping copy. Source witnesses retain original values.",
+        "qualified_separator": "|",
+        "timestamp_format": "mixed"
+      },
+      "norm": {
+        "schema_version": 3,
+        "name": "bpic2018",
+        "version": "0.1.0",
+        "description": "",
+        "scoring_mode": "layer_balanced",
+        "missing_values": "three_valued",
+        "metadata": {
+          "policy_status": "Draft diagnostic cut points; process-owner review required",
+          "source": "bpic2018"
+        },
+        "layers": [
+          {
+            "id": "PaymentExceptions",
+            "name": "Paymentexceptions",
+            "description": ""
+          },
+          {
+            "id": "DecisionRevision",
+            "name": "Decisionrevision",
+            "description": ""
+          },
+          {
+            "id": "Coordination",
+            "name": "Coordination",
+            "description": ""
+          },
+          {
+            "id": "Amendments",
+            "name": "Amendments",
+            "description": ""
+          }
+        ],
+        "views": [
+          {
+            "name": "Balanced",
+            "description": "",
+            "layer_weights": {
+              "PaymentExceptions": 1.0,
+              "DecisionRevision": 1.0,
+              "Coordination": 1.0,
+              "Amendments": 1.0
+            }
+          },
+          {
+            "name": "Payment",
+            "description": "",
+            "layer_weights": {
+              "PaymentExceptions": 3.0,
+              "DecisionRevision": 1.0,
+              "Coordination": 3.0,
+              "Amendments": 1.0
+            }
+          },
+          {
+            "name": "Amendments",
+            "description": "",
+            "layer_weights": {
+              "PaymentExceptions": 1.0,
+              "DecisionRevision": 1.0,
+              "Coordination": 1.0,
+              "Amendments": 3.0
+            }
+          }
+        ],
+        "constraints": [
+          {
+            "id": "GR_01",
+            "layer": "PaymentExceptions",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "Payment application|Application|abort payment",
+                "Payment application|Change|abort payment",
+                "Payment application|Objection|abort payment"
+              ],
+              "k": 0,
+              "K": 1.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "An aborted payment attempt prompts inspection of the complete payment cycle and the eventual valid outcome."
+          },
+          {
+            "id": "GR_02",
+            "layer": "DecisionRevision",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "Payment application|Application|revoke decision",
+                "Payment application|Objection|revoke decision"
+              ],
+              "k": 0,
+              "K": 2.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Decision revocation prompts review of correction reasons and legal-objection context."
+          },
+          {
+            "id": "GR_03",
+            "layer": "DecisionRevision",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "Payment application|Application|decide"
+              ],
+              "k": 1,
+              "K": 2.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Repeated initial-application decisions prompt review of document versions and corrections; they are not presumed improper."
+          },
+          {
+            "id": "GR_04",
+            "layer": "Coordination",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "Payment application|Application|begin editing"
+              ],
+              "k": 3,
+              "K": 7.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Repeated editing starts identify applications with potential coordination burden or recording complexity."
+          },
+          {
+            "id": "GR_05",
+            "layer": "Amendments",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "Payment application|Change|begin payment"
+              ],
+              "k": 0,
+              "K": 2.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "A payment start in the Change subprocess identifies a revised-payment case for review of avoidable correction causes."
+          },
+          {
+            "id": "GR_06",
+            "layer": "Amendments",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "Payment application|Objection|begin payment"
+              ],
+              "k": 0,
+              "K": 2.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "A payment start in the Objection subprocess identifies a case requiring review while preserving the right to object."
+          }
+        ]
+      },
+      "business_goal": "Begin valid initial payments by the funding-year target while preserving required inspections and objection rights.",
+      "improvement": {
+        "owner": "Department payment-operation lead",
+        "steps": [
+          "Establish the surviving valid payment cycle for reviewed abort cases.",
+          "Separate inspection dependencies, reference-data gaps, justified objections and avoidable internal handoffs.",
+          "If readiness gaps are confirmed, trial a cross-document readiness check and one exception owner."
+        ],
+        "comparison": "Compare a declared comparable cohort or phased rollout with the pre-trial baseline. Retain whole-case context and required work.",
+        "outcomes": [
+          "Valid initial payment starts by year-end",
+          "Confirmed avoidable aborts",
+          "Required inspection, entitlement and objection handling"
+        ],
+        "decision_gate": "A recurring avoidable mechanism must be confirmed by case and source-record review before the change is trialled.",
+        "stop_condition": "Revise the trial if protected care, legal rights, access or correct financial handling deteriorates.",
+        "status": "Conditional process-improvement proposal; no trial or outcome is asserted."
+      },
+      "interpretation": [
+        "Qualified classifier is doctype|subprocess|activity; keep original concept:name, docid, docid_uuid and event identity as evidence.",
+        "All listed qualified activities were observed in the first 500 local application traces.",
+        "The primary target of timely valid payment is separate from the executable diagnostic count baseline.",
+        "Generic first decide-to-finish-payment pairing can cross documents or cycles and is not used in this baseline.",
+        "Applied amounts, received amounts and area are binned for anonymization; they are not exact balancing evidence.",
+        "Funding-year and department comparisons must account for the documented parcel-document replacements across years.",
+        "Reopened payment, financial penalties and legal objections are outcomes to investigate; none alone establishes an administrative error."
+      ],
+      "pending_checks": [
+        {
+          "id": "GR_P01",
+          "name": "Initial valid payment begun by funding-year end",
+          "policy_status": "source_owner_target_requires_cycle_aware_evaluator",
+          "source": "https://ais.win.tue.nl/bpi/2018/challenge.html",
+          "required_evidence": [
+            "Funding year",
+            "Qualified Payment application/Application begin payment",
+            "Subsequent abort payment paired to the same payment cycle and document",
+            "Observation coverage through the funding-year end"
+          ],
+          "severity": "Binary review flag for no surviving initial payment start by year-end in the eligible, sufficiently observed cohort. Rejected and withdrawn applications require separately approved applicability.",
+          "reason": "Native Lag has no calendar deadline or cancellation-aware cycle matching; generic occurrence counts cannot establish this target."
+        },
+        {
+          "id": "GR_P02",
+          "name": "Decision-to-valid-payment interval",
+          "policy_status": "awaits_document_cycle_evaluator",
+          "required_evidence": [
+            "Document identity",
+            "Decision version",
+            "Cancellation-aware payment matching",
+            "Approved operational review range"
+          ],
+          "reason": "Earliest generic activity timestamps can pair different documents or payment cycles."
+        }
+      ],
+      "sources": [
+        {
+          "title": "BPIC2018 process-owner questions and data dictionary",
+          "url": "https://ais.win.tue.nl/bpi/2018/challenge.html",
+          "doi": "10.4121/uuid:3301445f-95e8-4ff0-98a4-901f1f204972"
+        }
+      ]
+    },
+    {
+      "dataset_id": "bpic2012",
+      "challenge": 2012,
+      "title": "Loan application decisions",
+      "source_schema": {
+        "kind": "xes",
+        "case": "concept:name",
+        "activity": "concept:name",
+        "timestamp": "time:timestamp",
+        "lifecycle": "lifecycle:transition",
+        "context_attributes": [
+          "AMOUNT_REQ",
+          "REG_DATE"
+        ],
+        "path": "bpic2012/BPI_Challenge_2012.xes.gz",
+        "format": "xes",
+        "case_id": "case:concept:name",
+        "case_attributes": [
+          "AMOUNT_REQ",
+          "REG_DATE"
+        ],
+        "timestamp_format": "mixed",
+        "group_by": [
+          "case_start_month"
+        ]
+      },
+      "norm": {
+        "schema_version": 3,
+        "name": "bpic2012",
+        "version": "0.1.0",
+        "description": "",
+        "scoring_mode": "layer_balanced",
+        "missing_values": "three_valued",
+        "metadata": {
+          "policy_status": "Draft diagnostic cut points; process-owner review required",
+          "source": "BPIC2012"
+        },
+        "layers": [
+          {
+            "id": "Rework",
+            "name": "Rework",
+            "description": ""
+          },
+          {
+            "id": "Timing",
+            "name": "Timing",
+            "description": ""
+          }
+        ],
+        "views": [
+          {
+            "name": "Balanced",
+            "description": "",
+            "layer_weights": {
+              "Timing": 1.0,
+              "Rework": 1.0
+            }
+          },
+          {
+            "name": "Timeliness",
+            "description": "",
+            "layer_weights": {
+              "Timing": 3.0,
+              "Rework": 1.0
+            }
+          },
+          {
+            "name": "Rework focus",
+            "description": "",
+            "layer_weights": {
+              "Timing": 1.0,
+              "Rework": 2.0
+            }
+          }
+        ],
+        "constraints": [
+          {
+            "id": "L12_C01",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "A_SUBMITTED"
+              ],
+              "b": [
+                "A_PREACCEPTED"
+              ],
+              "delta": 1.0,
+              "width": 6.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Submission to preacceptance. Native first activation/first subsequent response only; missing endpoints unavailable, no final-completion or all-cycle interpretation."
+          },
+          {
+            "id": "L12_C02",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "A_SUBMITTED"
+              ],
+              "b": [
+                "A_ACTIVATED",
+                "A_DECLINED",
+                "A_CANCELLED"
+              ],
+              "delta": 7.0,
+              "width": 23.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Submission to first application terminal outcome; cancellation and decline are valid outcomes. Native first activation/first subsequent response only; missing endpoints unavailable, no final-completion or all-cycle interpretation."
+          },
+          {
+            "id": "L12_C03",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "O_SENT"
+              ],
+              "b": [
+                "O_SENT_BACK"
+              ],
+              "delta": 7.0,
+              "width": 23.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "First sent to first returned offer; customer-response time, not internal delay. Native first activation/first subsequent response only; missing endpoints unavailable, no final-completion or all-cycle interpretation."
+          },
+          {
+            "id": "L12_C04",
+            "layer": "Rework",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "O_CREATED"
+              ],
+              "k": 1,
+              "K": 3.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Multiple observed offer creations; legitimate choice is preserved, offer identity unavailable in observed schema."
+          }
+        ]
+      },
+      "business_goal": "Reach a clear decision promptly while preserving required checks and customer choice.",
+      "improvement": "If repeat calls concern the same documents, pilot one consolidated checklist and contact owner. Compare like outcome/amount cohorts; measure decision time, repeat requests and withdrawals while preserving checks.",
+      "interpretation": "Application, offer and work objects differ. Fraud assessment is necessary where required; declined/cancelled applications are not automatically bad performance.",
+      "pending_checks": [
+        {
+          "id": "L12_P01",
+          "layer": "Control",
+          "type": "precedence",
+          "activities": [
+            "A_APPROVED",
+            "A_ACTIVATED"
+          ],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "Activated applications with complete decisions.",
+          "evidence": "Approval before each activation, allowing equal timestamps; incomplete history is unavailable.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable."
+        },
+        {
+          "id": "L12_P02",
+          "layer": "Coordination",
+          "type": "lifecycle_count",
+          "activities": [
+            "W_Nabellen incomplete dossiers",
+            "W_Nabellen offertes"
+          ],
+          "threshold": 1,
+          "thresholdwidth": 3,
+          "applicability": "Reliable work lifecycle.",
+          "evidence": "Count COMPLETE observations per named activity; SCHEDULE/START/COMPLETE must not be three calls.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable."
+        }
+      ],
+      "sources": [
+        "https://research.tue.nl/en/datasets/bpi-challenge-2012/"
+      ]
+    },
+    {
+      "dataset_id": "bpic2013_open_problems",
+      "challenge": 2013,
+      "title": "Open Problems",
+      "source_schema": {
+        "kind": "xes",
+        "case": "concept:name",
+        "activity": "concept:name",
+        "timestamp": "time:timestamp",
+        "lifecycle": "lifecycle:transition",
+        "context_attributes": [
+          "product",
+          "impact",
+          "oranization country"
+        ],
+        "path": "BPI Challenge 2013/bpi_challenge_2013_open_problems.xes.gz",
+        "format": "xes",
+        "case_id": "case:concept:name",
+        "case_attributes": [
+          "product",
+          "impact",
+          "oranization country"
+        ],
+        "timestamp_format": "mixed",
+        "group_by": [
+          "product"
+        ]
+      },
+      "norm": {
+        "schema_version": 3,
+        "name": "bpic2013_open_problems",
+        "version": "0.1.0",
+        "description": "",
+        "scoring_mode": "layer_balanced",
+        "missing_values": "three_valued",
+        "metadata": {
+          "policy_status": "Draft diagnostic cut points; process-owner review required",
+          "source": "BPIC2013_OPEN_PROBLEMS"
+        },
+        "layers": [
+          {
+            "id": "Coordination",
+            "name": "Coordination",
+            "description": ""
+          },
+          {
+            "id": "Rework",
+            "name": "Rework",
+            "description": ""
+          },
+          {
+            "id": "Timing",
+            "name": "Timing",
+            "description": ""
+          }
+        ],
+        "views": [
+          {
+            "name": "Balanced",
+            "description": "",
+            "layer_weights": {
+              "Timing": 1.0,
+              "Coordination": 1.0,
+              "Rework": 1.0
+            }
+          },
+          {
+            "name": "Timeliness",
+            "description": "",
+            "layer_weights": {
+              "Timing": 3.0,
+              "Coordination": 1.0,
+              "Rework": 1.0
+            }
+          },
+          {
+            "name": "Rework focus",
+            "description": "",
+            "layer_weights": {
+              "Timing": 1.0,
+              "Coordination": 1.0,
+              "Rework": 2.0
+            }
+          }
+        ],
+        "constraints": [
+          {
+            "id": "V13O_C01",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "Queued"
+              ],
+              "b": [
+                "Accepted"
+              ],
+              "delta": 1.0,
+              "width": 6.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Queue to first acceptance, not total queue residence. Native first activation/first subsequent response only; missing endpoints unavailable, no final-completion or all-cycle interpretation."
+          },
+          {
+            "id": "V13O_C02",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "Accepted"
+              ],
+              "b": [
+                "Completed"
+              ],
+              "delta": 30.0,
+              "width": 60.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "First acceptance to first action completion; Completed is not verified closure. Native first activation/first subsequent response only; missing endpoints unavailable, no final-completion or all-cycle interpretation."
+          },
+          {
+            "id": "V13O_C03",
+            "layer": "Coordination",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "Queued"
+              ],
+              "k": 1,
+              "K": 3.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Queue-observation intensity; repeated observations do not prove distinct handoffs."
+          },
+          {
+            "id": "V13O_C04",
+            "layer": "Rework",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "Completed"
+              ],
+              "k": 1,
+              "K": 3.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Action-completion observations; verification, cancellation and closure can be legitimate repeats."
+          }
+        ]
+      },
+      "business_goal": "Investigate root causes and maintain useful workarounds.",
+      "improvement": "For incidents, pilot accepted diagnostic handoffs if returns concern missing information. For problems, assign one investigation owner and workaround review date. Measure preventable returns or linked repeat incidents; preserve specialist work.",
+      "interpretation": "Open/closed are selected populations. Open-problems also contains Completed/Closed observations. Problem management has no push-to-front goal. Active VINST support-team position affects action attribution.",
+      "pending_checks": [
+        {
+          "id": "V13O_P01",
+          "layer": "Coordination",
+          "type": "attribute_return",
+          "activities": [],
+          "threshold": 0,
+          "thresholdwidth": 2,
+          "applicability": "Known org:group sequence.",
+          "evidence": "Collapse consecutive groups and count A-B-A returns. Missing groups break patterns; mapping to actual support team requires validation.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable."
+        },
+        {
+          "id": "V13O_P02",
+          "layer": "Timing",
+          "type": "state_episodes",
+          "activities": [
+            "Accepted"
+          ],
+          "threshold": 1,
+          "thresholdwidth": 3,
+          "applicability": "Reliable lifecycle and episode boundaries.",
+          "evidence": "Wait or incident Wait - User/Wait - Customer entries after collapsing repeated observations; unfinished episodes are censored.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable."
+        },
+        {
+          "id": "V13O_P03",
+          "layer": "Timing",
+          "type": "verified_closure",
+          "activities": [
+            "Completed"
+          ],
+          "threshold": 30,
+          "thresholdwidth": 60,
+          "applicability": "Lifecycle Closed and ordered endpoints.",
+          "evidence": "First observed event to final Completed/Closed. Population filename does not establish closure.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable."
+        }
+      ],
+      "sources": [
+        "https://ais.win.tue.nl/bpi/2013/challenge.html",
+        "https://ais.win.tue.nl/bpi/2013/vinst_data_set.pdf",
+        "https://ais.win.tue.nl/bpi/2013/vinst_manual.pdf"
+      ]
+    },
+    {
+      "dataset_id": "bpic2013_closed_problems",
+      "challenge": 2013,
+      "title": "Closed Problems",
+      "source_schema": {
+        "kind": "xes",
+        "case": "concept:name",
+        "activity": "concept:name",
+        "timestamp": "time:timestamp",
+        "lifecycle": "lifecycle:transition",
+        "context_attributes": [
+          "product",
+          "impact",
+          "organization country"
+        ],
+        "path": "BPI Challenge 2013/bpi_challenge_2013_closed_problems.xes.gz",
+        "format": "xes",
+        "case_id": "case:concept:name",
+        "case_attributes": [
+          "product",
+          "impact",
+          "organization country"
+        ],
+        "timestamp_format": "mixed",
+        "group_by": [
+          "product"
+        ]
+      },
+      "norm": {
+        "schema_version": 3,
+        "name": "bpic2013_closed_problems",
+        "version": "0.1.0",
+        "description": "",
+        "scoring_mode": "layer_balanced",
+        "missing_values": "three_valued",
+        "metadata": {
+          "policy_status": "Draft diagnostic cut points; process-owner review required",
+          "source": "BPIC2013_CLOSED_PROBLEMS"
+        },
+        "layers": [
+          {
+            "id": "Coordination",
+            "name": "Coordination",
+            "description": ""
+          },
+          {
+            "id": "Rework",
+            "name": "Rework",
+            "description": ""
+          },
+          {
+            "id": "Timing",
+            "name": "Timing",
+            "description": ""
+          }
+        ],
+        "views": [
+          {
+            "name": "Balanced",
+            "description": "",
+            "layer_weights": {
+              "Timing": 1.0,
+              "Coordination": 1.0,
+              "Rework": 1.0
+            }
+          },
+          {
+            "name": "Timeliness",
+            "description": "",
+            "layer_weights": {
+              "Timing": 3.0,
+              "Coordination": 1.0,
+              "Rework": 1.0
+            }
+          },
+          {
+            "name": "Rework focus",
+            "description": "",
+            "layer_weights": {
+              "Timing": 1.0,
+              "Coordination": 1.0,
+              "Rework": 2.0
+            }
+          }
+        ],
+        "constraints": [
+          {
+            "id": "V13C_C01",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "Queued"
+              ],
+              "b": [
+                "Accepted"
+              ],
+              "delta": 1.0,
+              "width": 6.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Queue to first acceptance, not total queue residence. Native first activation/first subsequent response only; missing endpoints unavailable, no final-completion or all-cycle interpretation."
+          },
+          {
+            "id": "V13C_C02",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "Accepted"
+              ],
+              "b": [
+                "Completed"
+              ],
+              "delta": 30.0,
+              "width": 60.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "First acceptance to first action completion; Completed is not verified closure. Native first activation/first subsequent response only; missing endpoints unavailable, no final-completion or all-cycle interpretation."
+          },
+          {
+            "id": "V13C_C03",
+            "layer": "Coordination",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "Queued"
+              ],
+              "k": 1,
+              "K": 3.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Queue-observation intensity; repeated observations do not prove distinct handoffs."
+          },
+          {
+            "id": "V13C_C04",
+            "layer": "Rework",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "Completed"
+              ],
+              "k": 1,
+              "K": 3.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Action-completion observations; verification, cancellation and closure can be legitimate repeats."
+          }
+        ]
+      },
+      "business_goal": "Investigate root causes and maintain useful workarounds.",
+      "improvement": "For incidents, pilot accepted diagnostic handoffs if returns concern missing information. For problems, assign one investigation owner and workaround review date. Measure preventable returns or linked repeat incidents; preserve specialist work.",
+      "interpretation": "Open/closed are selected populations. Open-problems also contains Completed/Closed observations. Problem management has no push-to-front goal. Active VINST support-team position affects action attribution.",
+      "pending_checks": [
+        {
+          "id": "V13C_P01",
+          "layer": "Coordination",
+          "type": "attribute_return",
+          "activities": [],
+          "threshold": 0,
+          "thresholdwidth": 2,
+          "applicability": "Known org:group sequence.",
+          "evidence": "Collapse consecutive groups and count A-B-A returns. Missing groups break patterns; mapping to actual support team requires validation.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable."
+        },
+        {
+          "id": "V13C_P02",
+          "layer": "Timing",
+          "type": "state_episodes",
+          "activities": [
+            "Accepted"
+          ],
+          "threshold": 1,
+          "thresholdwidth": 3,
+          "applicability": "Reliable lifecycle and episode boundaries.",
+          "evidence": "Wait or incident Wait - User/Wait - Customer entries after collapsing repeated observations; unfinished episodes are censored.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable."
+        },
+        {
+          "id": "V13C_P03",
+          "layer": "Timing",
+          "type": "verified_closure",
+          "activities": [
+            "Completed"
+          ],
+          "threshold": 30,
+          "thresholdwidth": 60,
+          "applicability": "Lifecycle Closed and ordered endpoints.",
+          "evidence": "First observed event to final Completed/Closed. Population filename does not establish closure.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable."
+        }
+      ],
+      "sources": [
+        "https://ais.win.tue.nl/bpi/2013/challenge.html",
+        "https://ais.win.tue.nl/bpi/2013/vinst_data_set.pdf",
+        "https://ais.win.tue.nl/bpi/2013/vinst_manual.pdf"
+      ]
+    },
+    {
+      "dataset_id": "bpic2014_interactions",
+      "challenge": 2014,
+      "title": "Interactions case records",
+      "source_schema": {
+        "kind": "case_table",
+        "format": "csv",
+        "delimiter": ";",
+        "case": "Interaction ID",
+        "activity": null,
+        "timestamp": null,
+        "context_attributes": [
+          "Category",
+          "Priority",
+          "Service Comp WBS (aff)"
+        ],
+        "path": "bpic2014/Detail_Interaction.csv",
+        "case_id": "Interaction ID",
+        "case_attributes": [
+          "Category",
+          "Priority",
+          "Service Comp WBS (aff)"
+        ],
+        "timestamp_format": "mixed",
+        "group_by": [
+          "case_start_month"
+        ]
+      },
+      "norm": null,
+      "business_goal": "Handle service contacts with appropriate referral and reliable closure.",
+      "improvement": "If ownership is unclear, pilot explicit accepting owners. For confirmed planned-release overruns, pilot readiness/dependency checks. Measure verified intervals or window excess with comparable baseline and service quality.",
+      "interpretation": "Case table, not event history. Validate identities/links without multiplying observations. CAB requirement lacks observed approval decision; first-call referral can be justified; association does not prove change causation.",
+      "pending_checks": [
+        {
+          "id": "B14I_P01",
+          "layer": "Timing",
+          "type": "case_field_test",
+          "activities": [],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "Valid source fields and verified required-field/link/deadline semantics.",
+          "evidence": "Use Open Time (First Touch), Close Time with source row evidence. Counters never summed across snapshots; dates require ordered endpoints; missing declared relationships require extract-completeness checks.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable.",
+          "source_fields": [
+            "Open Time (First Touch)",
+            "Close Time"
+          ]
+        },
+        {
+          "id": "B14I_P02",
+          "layer": "Coordination",
+          "type": "case_field_test",
+          "activities": [],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "Valid source fields and verified required-field/link/deadline semantics.",
+          "evidence": "Use First Call Resolution with source row evidence. Counters never summed across snapshots; dates require ordered endpoints; missing declared relationships require extract-completeness checks.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable.",
+          "source_fields": [
+            "First Call Resolution"
+          ]
+        },
+        {
+          "id": "B14I_P03",
+          "layer": "Control",
+          "type": "case_field_test",
+          "activities": [],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "Valid source fields and verified required-field/link/deadline semantics.",
+          "evidence": "Use Status, Close Time, Closure Code with source row evidence. Counters never summed across snapshots; dates require ordered endpoints; missing declared relationships require extract-completeness checks.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable.",
+          "source_fields": [
+            "Status",
+            "Close Time",
+            "Closure Code"
+          ]
+        },
+        {
+          "id": "B14I_P04",
+          "layer": "Control",
+          "type": "case_field_test",
+          "activities": [],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "Valid source fields and verified required-field/link/deadline semantics.",
+          "evidence": "Use Related Incident with source row evidence. Counters never summed across snapshots; dates require ordered endpoints; missing declared relationships require extract-completeness checks.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable.",
+          "source_fields": [
+            "Related Incident"
+          ]
+        }
+      ],
+      "sources": [
+        "https://research.tue.nl/en/datasets/bpi-challenge-2014-interaction-details/"
+      ]
+    },
+    {
+      "dataset_id": "bpic2014_incidents",
+      "challenge": 2014,
+      "title": "Incidents case records",
+      "source_schema": {
+        "kind": "case_table",
+        "format": "csv",
+        "delimiter": ";",
+        "case": "Incident ID",
+        "activity": null,
+        "timestamp": null,
+        "context_attributes": [
+          "Category",
+          "Priority",
+          "Service Component WBS (aff)"
+        ],
+        "path": "bpic2014/Detail_Incident.csv",
+        "case_id": "Incident ID",
+        "case_attributes": [
+          "Category",
+          "Priority",
+          "Service Component WBS (aff)"
+        ],
+        "timestamp_format": "mixed",
+        "group_by": [
+          "case_start_month"
+        ]
+      },
+      "norm": null,
+      "business_goal": "Restore service and preserve resolution/reopening evidence.",
+      "improvement": "If ownership is unclear, pilot explicit accepting owners. For confirmed planned-release overruns, pilot readiness/dependency checks. Measure verified intervals or window excess with comparable baseline and service quality.",
+      "interpretation": "Case table, not event history. Validate identities/links without multiplying observations. CAB requirement lacks observed approval decision; first-call referral can be justified; association does not prove change causation.",
+      "pending_checks": [
+        {
+          "id": "B14I_P01",
+          "layer": "Coordination",
+          "type": "case_field_test",
+          "activities": [],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "Valid source fields and verified required-field/link/deadline semantics.",
+          "evidence": "Use # Reassignments with source row evidence. Counters never summed across snapshots; dates require ordered endpoints; missing declared relationships require extract-completeness checks.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable.",
+          "source_fields": [
+            "# Reassignments"
+          ]
+        },
+        {
+          "id": "B14I_P02",
+          "layer": "Rework",
+          "type": "case_field_test",
+          "activities": [],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "Valid source fields and verified required-field/link/deadline semantics.",
+          "evidence": "Use Reopen Time with source row evidence. Counters never summed across snapshots; dates require ordered endpoints; missing declared relationships require extract-completeness checks.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable.",
+          "source_fields": [
+            "Reopen Time"
+          ]
+        },
+        {
+          "id": "B14I_P03",
+          "layer": "Timing",
+          "type": "case_field_test",
+          "activities": [],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "Valid source fields and verified required-field/link/deadline semantics.",
+          "evidence": "Use Open Time, Resolved Time with source row evidence. Counters never summed across snapshots; dates require ordered endpoints; missing declared relationships require extract-completeness checks.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable.",
+          "source_fields": [
+            "Open Time",
+            "Resolved Time"
+          ]
+        },
+        {
+          "id": "B14I_P04",
+          "layer": "Timing",
+          "type": "case_field_test",
+          "activities": [],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "Valid source fields and verified required-field/link/deadline semantics.",
+          "evidence": "Use Resolved Time, Close Time with source row evidence. Counters never summed across snapshots; dates require ordered endpoints; missing declared relationships require extract-completeness checks.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable.",
+          "source_fields": [
+            "Resolved Time",
+            "Close Time"
+          ]
+        },
+        {
+          "id": "B14I_P05",
+          "layer": "Control",
+          "type": "case_field_test",
+          "activities": [],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "Valid source fields and verified required-field/link/deadline semantics.",
+          "evidence": "Use Status, Closure Code with source row evidence. Counters never summed across snapshots; dates require ordered endpoints; missing declared relationships require extract-completeness checks.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable.",
+          "source_fields": [
+            "Status",
+            "Closure Code"
+          ]
+        },
+        {
+          "id": "B14I_P06",
+          "layer": "Control",
+          "type": "case_field_test",
+          "activities": [],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "Valid source fields and verified required-field/link/deadline semantics.",
+          "evidence": "Use Related Change with source row evidence. Counters never summed across snapshots; dates require ordered endpoints; missing declared relationships require extract-completeness checks.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable.",
+          "source_fields": [
+            "Related Change"
+          ]
+        }
+      ],
+      "sources": [
+        "https://research.tue.nl/en/datasets/bpi-challenge-2014-incident-details/"
+      ]
+    },
+    {
+      "dataset_id": "bpic2014_changes",
+      "challenge": 2014,
+      "title": "Changes case records",
+      "source_schema": {
+        "kind": "case_table",
+        "format": "csv",
+        "delimiter": ";",
+        "case": "Change ID",
+        "activity": null,
+        "timestamp": null,
+        "context_attributes": [
+          "Change Type",
+          "Risk Assessment",
+          "Emergency Change",
+          "CAB-approval needed",
+          "Service Component WBS (aff)"
+        ],
+        "path": "bpic2014/Detail_Change.csv",
+        "case_id": "Change ID",
+        "case_attributes": [
+          "Change Type",
+          "Risk Assessment",
+          "Emergency Change",
+          "CAB-approval needed",
+          "Service Component WBS (aff)"
+        ],
+        "timestamp_format": "mixed",
+        "group_by": [
+          "case_start_month"
+        ]
+      },
+      "norm": null,
+      "business_goal": "Deliver changes within agreed windows and reduce avoidable disruption.",
+      "improvement": "If ownership is unclear, pilot explicit accepting owners. For confirmed planned-release overruns, pilot readiness/dependency checks. Measure verified intervals or window excess with comparable baseline and service quality.",
+      "interpretation": "Case table, not event history. Validate identities/links without multiplying observations. CAB requirement lacks observed approval decision; first-call referral can be justified; association does not prove change causation.",
+      "pending_checks": [
+        {
+          "id": "B14C_P01",
+          "layer": "Timing",
+          "type": "case_field_test",
+          "activities": [],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "Valid source fields and verified required-field/link/deadline semantics.",
+          "evidence": "Use Planned End, Actual End with source row evidence. Counters never summed across snapshots; dates require ordered endpoints; missing declared relationships require extract-completeness checks.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable.",
+          "source_fields": [
+            "Planned End",
+            "Actual End"
+          ]
+        },
+        {
+          "id": "B14C_P02",
+          "layer": "Timing",
+          "type": "case_field_test",
+          "activities": [],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "Valid source fields and verified required-field/link/deadline semantics.",
+          "evidence": "Use Requested End Date, Actual End with source row evidence. Counters never summed across snapshots; dates require ordered endpoints; missing declared relationships require extract-completeness checks.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable.",
+          "source_fields": [
+            "Requested End Date",
+            "Actual End"
+          ]
+        },
+        {
+          "id": "B14C_P03",
+          "layer": "Coordination",
+          "type": "case_field_test",
+          "activities": [],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "Valid source fields and verified required-field/link/deadline semantics.",
+          "evidence": "Use # Related Incidents with source row evidence. Counters never summed across snapshots; dates require ordered endpoints; missing declared relationships require extract-completeness checks.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable.",
+          "source_fields": [
+            "# Related Incidents"
+          ]
+        },
+        {
+          "id": "B14C_P04",
+          "layer": "Coordination",
+          "type": "case_field_test",
+          "activities": [],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "Valid source fields and verified required-field/link/deadline semantics.",
+          "evidence": "Use # Related Interactions with source row evidence. Counters never summed across snapshots; dates require ordered endpoints; missing declared relationships require extract-completeness checks.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable.",
+          "source_fields": [
+            "# Related Interactions"
+          ]
+        },
+        {
+          "id": "B14C_P05",
+          "layer": "Control",
+          "type": "case_field_test",
+          "activities": [],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "Valid source fields and verified required-field/link/deadline semantics.",
+          "evidence": "Use Change record Close Time, Actual Start, Actual End with source row evidence. Counters never summed across snapshots; dates require ordered endpoints; missing declared relationships require extract-completeness checks.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable.",
+          "source_fields": [
+            "Change record Close Time",
+            "Actual Start",
+            "Actual End"
+          ]
+        }
+      ],
+      "sources": [
+        "https://research.tue.nl/en/datasets/bpi-challenge-2014-change-details/"
+      ]
+    },
+    {
+      "dataset_id": "bpic2014_activities",
+      "challenge": 2014,
+      "title": "Detailed incident activities",
+      "source_schema": {
+        "kind": "event_log",
+        "format": "csv",
+        "delimiter": ";",
+        "case": "Incident ID",
+        "activity": "IncidentActivity_Type",
+        "timestamp": "DateStamp",
+        "event_id": "IncidentActivity_Number",
+        "context_attributes": [],
+        "joins": [
+          {
+            "source_path": "bpic2014/Detail_Incident.csv",
+            "key": "Incident ID",
+            "context": [
+              "Priority",
+              "Category",
+              "Service Component WBS (aff)"
+            ]
+          }
+        ],
+        "path": "bpic2014/Detail_Incident_Activity.csv",
+        "case_id": "Incident ID",
+        "case_attributes": [],
+        "timestamp_format": "%d-%m-%Y %H:%M:%S",
+        "group_by": [
+          "Category",
+          "Priority"
+        ]
+      },
+      "norm": {
+        "schema_version": 3,
+        "name": "bpic2014_activities",
+        "version": "0.1.0",
+        "description": "",
+        "scoring_mode": "layer_balanced",
+        "missing_values": "three_valued",
+        "metadata": {
+          "policy_status": "Draft diagnostic cut points; process-owner review required",
+          "source": "BPIC2014_ACTIVITIES"
+        },
+        "layers": [
+          {
+            "id": "Coordination",
+            "name": "Coordination",
+            "description": ""
+          },
+          {
+            "id": "Rework",
+            "name": "Rework",
+            "description": ""
+          },
+          {
+            "id": "Timing",
+            "name": "Timing",
+            "description": ""
+          }
+        ],
+        "views": [
+          {
+            "name": "Balanced",
+            "description": "",
+            "layer_weights": {
+              "Timing": 1.0,
+              "Coordination": 1.0,
+              "Rework": 1.0
+            }
+          },
+          {
+            "name": "Timeliness",
+            "description": "",
+            "layer_weights": {
+              "Timing": 3.0,
+              "Coordination": 1.0,
+              "Rework": 1.0
+            }
+          },
+          {
+            "name": "Rework focus",
+            "description": "",
+            "layer_weights": {
+              "Timing": 1.0,
+              "Coordination": 1.0,
+              "Rework": 2.0
+            }
+          }
+        ],
+        "constraints": [
+          {
+            "id": "ACT14_C01",
+            "layer": "Coordination",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "Reassignment",
+                "External Vendor Reassignment"
+              ],
+              "k": 1,
+              "K": 4.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Recorded reassignments; legitimate expertise/vendor referral preserved."
+          },
+          {
+            "id": "ACT14_C02",
+            "layer": "Rework",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "Reopen"
+              ],
+              "k": 0,
+              "K": 2.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Explicit Reopen observations; inspect previous closure and caller reason."
+          },
+          {
+            "id": "ACT14_C03",
+            "layer": "Timing",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "Pending vendor"
+              ],
+              "k": 1,
+              "K": 3.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Vendor-pending observations, not distinct episode count or residence."
+          },
+          {
+            "id": "ACT14_C04",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "Open"
+              ],
+              "b": [
+                "Assignment"
+              ],
+              "delta": 1.0,
+              "width": 6.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "First open to first assignment, not hands-on work. Native first activation/first subsequent response only; missing endpoints unavailable, no final-completion or all-cycle interpretation."
+          }
+        ]
+      },
+      "business_goal": "Reduce preventable coordination loops and review vendor waiting.",
+      "improvement": "Pilot accepted handoffs and shared diagnostic summaries if returns reflect missing information. For vendor waits lacking follow-up, assign liaison and review date. Track avoidable returns while preserving justified referrals.",
+      "interpretation": "Join stable incident context before service comparisons. Sparse Resolved activities do not prove absent resolution; incident case table has Resolved Time. DateStamp ties need stable declared order. Updates are not effort.",
+      "pending_checks": [
+        {
+          "id": "ACT14_P01",
+          "layer": "Coordination",
+          "type": "attribute_return",
+          "activities": [],
+          "threshold": 0,
+          "thresholdwidth": 2,
+          "applicability": "Known Assignment Group sequence.",
+          "evidence": "Collapse groups and count A-B-A returns; missing groups break patterns.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable."
+        },
+        {
+          "id": "ACT14_P02",
+          "layer": "Control",
+          "type": "declared_links",
+          "activities": [],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "Complete linked incident/interaction extracts.",
+          "evidence": "Validate Incident ID and nonempty Interaction ID without multiplying histories.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable."
+        }
+      ],
+      "sources": [
+        "https://research.tue.nl/en/datasets/bpi-challenge-2014-activity-log-for-incidents/"
+      ]
+    },
+    {
+      "dataset_id": "bpic2020_domestic",
+      "challenge": 2020,
+      "title": "DomesticDeclarations expense workflow",
+      "source_schema": {
+        "kind": "xes",
+        "case": "concept:name",
+        "activity": "concept:name",
+        "timestamp": "time:timestamp",
+        "lifecycle": "lifecycle:transition",
+        "context_attributes": [
+          "Amount",
+          "BudgetNumber",
+          "DeclarationNumber"
+        ],
+        "path": "bpic2020/DomesticDeclarations.xes.gz",
+        "format": "xes",
+        "case_id": "case:concept:name",
+        "case_attributes": [
+          "Amount",
+          "BudgetNumber",
+          "DeclarationNumber"
+        ],
+        "timestamp_format": "mixed",
+        "group_by": [
+          "case_start_month"
+        ]
+      },
+      "norm": {
+        "schema_version": 3,
+        "name": "bpic2020_domestic",
+        "version": "0.1.0",
+        "description": "",
+        "scoring_mode": "layer_balanced",
+        "missing_values": "three_valued",
+        "metadata": {
+          "policy_status": "Draft diagnostic cut points; process-owner review required",
+          "source": "BPIC2020_DOMESTIC"
+        },
+        "layers": [
+          {
+            "id": "Rework",
+            "name": "Rework",
+            "description": ""
+          },
+          {
+            "id": "Timing",
+            "name": "Timing",
+            "description": ""
+          }
+        ],
+        "views": [
+          {
+            "name": "Balanced",
+            "description": "",
+            "layer_weights": {
+              "Timing": 1.0,
+              "Rework": 1.0
+            }
+          },
+          {
+            "name": "Timeliness",
+            "description": "",
+            "layer_weights": {
+              "Timing": 3.0,
+              "Rework": 1.0
+            }
+          },
+          {
+            "name": "Rework focus",
+            "description": "",
+            "layer_weights": {
+              "Timing": 1.0,
+              "Rework": 2.0
+            }
+          }
+        ],
+        "constraints": [
+          {
+            "id": "T20_DOMESTIC_C01",
+            "layer": "Rework",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "Declaration SUBMITTED by EMPLOYEE"
+              ],
+              "k": 1,
+              "K": 3.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Repeated case-document submissions; preserve legitimate resubmission and employee rejection."
+          },
+          {
+            "id": "T20_DOMESTIC_C02",
+            "layer": "Rework",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "Declaration REJECTED by ADMINISTRATION",
+                "Declaration REJECTED by SUPERVISOR",
+                "Declaration REJECTED by BUDGET OWNER",
+                "Declaration REJECTED by PRE_APPROVER"
+              ],
+              "k": 0,
+              "K": 2.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Reviewer rejection observations; a rejection may be a necessary control."
+          },
+          {
+            "id": "T20_DOMESTIC_C03",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "Declaration SUBMITTED by EMPLOYEE"
+              ],
+              "b": [
+                "Declaration FINAL_APPROVED by SUPERVISOR"
+              ],
+              "delta": 7.0,
+              "width": 23.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "First submission to first positive approval at or after first submission. Native first activation/first subsequent response only; missing endpoints unavailable, no final-completion or all-cycle interpretation."
+          },
+          {
+            "id": "T20_DOMESTIC_C04",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "Request Payment"
+              ],
+              "b": [
+                "Payment Handled"
+              ],
+              "delta": 2.0,
+              "width": 5.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "First payment request to first handled payment; not verified settlement. Native first activation/first subsequent response only; missing endpoints unavailable, no final-completion or all-cycle interpretation."
+          }
+        ]
+      },
+      "business_goal": "Reimburse eligible expenses promptly while preserving applicable authorisation.",
+      "improvement": "If approval waits reflect unclear ownership, pilot explicit responsibility and reminders. If repeat submissions reflect omitted fields, use checklist and clear rejection reasons. Measure approval/payment interval and avoidable resubmission with control exceptions.",
+      "interpretation": "Separate 2017 pilot and 2018. Trip dates are estimated and staff are anonymised. Approver routes vary; employee rejection can terminate a case legitimately. PermitLog overlaps related request/declaration extracts; amounts are anonymised.",
+      "pending_checks": [
+        {
+          "id": "T20_DOMESTIC_P01",
+          "layer": "Control",
+          "type": "cycle_precedence",
+          "activities": [
+            "Declaration FINAL_APPROVED by SUPERVISOR",
+            "Request Payment",
+            "Payment Handled"
+          ],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "Complete document-cycle identity and coverage.",
+          "evidence": "Require applicable approval before each payment; alternative director/budget-owner/consolidated supervisor routes recognised. Permit has no payment obligation.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable."
+        },
+        {
+          "id": "T20_DOMESTIC_P02",
+          "layer": "Control",
+          "type": "role_coverage",
+          "activities": [
+            "Declaration REJECTED by MISSING"
+          ],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "Approval-path role observations.",
+          "evidence": "MISSING/UNDEFINED roles are evidence gaps; generic resources do not identify people.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable."
+        }
+      ],
+      "sources": [
+        "https://icpmconference.org/2020/bpi-challenge/"
+      ]
+    },
+    {
+      "dataset_id": "bpic2020_international",
+      "challenge": 2020,
+      "title": "InternationalDeclarations expense workflow",
+      "source_schema": {
+        "kind": "xes",
+        "case": "concept:name",
+        "activity": "concept:name",
+        "timestamp": "time:timestamp",
+        "lifecycle": "lifecycle:transition",
+        "context_attributes": [
+          "Amount",
+          "BudgetNumber",
+          "Permit OrganizationalEntity",
+          "Permit ProjectNumber",
+          "DeclarationNumber"
+        ],
+        "path": "bpic2020/InternationalDeclarations.xes.gz",
+        "format": "xes",
+        "case_id": "case:concept:name",
+        "case_attributes": [
+          "Amount",
+          "BudgetNumber",
+          "Permit OrganizationalEntity",
+          "Permit ProjectNumber",
+          "DeclarationNumber"
+        ],
+        "timestamp_format": "mixed",
+        "group_by": [
+          "case_start_month"
+        ]
+      },
+      "norm": {
+        "schema_version": 3,
+        "name": "bpic2020_international",
+        "version": "0.1.0",
+        "description": "",
+        "scoring_mode": "layer_balanced",
+        "missing_values": "three_valued",
+        "metadata": {
+          "policy_status": "Draft diagnostic cut points; process-owner review required",
+          "source": "BPIC2020_INTERNATIONAL"
+        },
+        "layers": [
+          {
+            "id": "Rework",
+            "name": "Rework",
+            "description": ""
+          },
+          {
+            "id": "Timing",
+            "name": "Timing",
+            "description": ""
+          }
+        ],
+        "views": [
+          {
+            "name": "Balanced",
+            "description": "",
+            "layer_weights": {
+              "Timing": 1.0,
+              "Rework": 1.0
+            }
+          },
+          {
+            "name": "Timeliness",
+            "description": "",
+            "layer_weights": {
+              "Timing": 3.0,
+              "Rework": 1.0
+            }
+          },
+          {
+            "name": "Rework focus",
+            "description": "",
+            "layer_weights": {
+              "Timing": 1.0,
+              "Rework": 2.0
+            }
+          }
+        ],
+        "constraints": [
+          {
+            "id": "T20_INTERNATIONAL_C01",
+            "layer": "Rework",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "Declaration SUBMITTED by EMPLOYEE"
+              ],
+              "k": 1,
+              "K": 3.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Repeated case-document submissions; preserve legitimate resubmission and employee rejection."
+          },
+          {
+            "id": "T20_INTERNATIONAL_C02",
+            "layer": "Rework",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "Declaration REJECTED by ADMINISTRATION",
+                "Declaration REJECTED by SUPERVISOR",
+                "Declaration REJECTED by BUDGET OWNER",
+                "Declaration REJECTED by PRE_APPROVER"
+              ],
+              "k": 0,
+              "K": 2.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Reviewer rejection observations; a rejection may be a necessary control."
+          },
+          {
+            "id": "T20_INTERNATIONAL_C03",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "Declaration SUBMITTED by EMPLOYEE"
+              ],
+              "b": [
+                "Declaration FINAL_APPROVED by SUPERVISOR",
+                "Declaration FINAL_APPROVED by DIRECTOR"
+              ],
+              "delta": 7.0,
+              "width": 23.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "First submission to first positive approval at or after first submission. Native first activation/first subsequent response only; missing endpoints unavailable, no final-completion or all-cycle interpretation."
+          },
+          {
+            "id": "T20_INTERNATIONAL_C04",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "Request Payment"
+              ],
+              "b": [
+                "Payment Handled"
+              ],
+              "delta": 2.0,
+              "width": 5.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "First payment request to first handled payment; not verified settlement. Native first activation/first subsequent response only; missing endpoints unavailable, no final-completion or all-cycle interpretation."
+          }
+        ]
+      },
+      "business_goal": "Reimburse eligible expenses promptly while preserving applicable authorisation.",
+      "improvement": "If approval waits reflect unclear ownership, pilot explicit responsibility and reminders. If repeat submissions reflect omitted fields, use checklist and clear rejection reasons. Measure approval/payment interval and avoidable resubmission with control exceptions.",
+      "interpretation": "Separate 2017 pilot and 2018. Trip dates are estimated and staff are anonymised. Approver routes vary; employee rejection can terminate a case legitimately. PermitLog overlaps related request/declaration extracts; amounts are anonymised.",
+      "pending_checks": [
+        {
+          "id": "T20_INTERNATIONAL_P01",
+          "layer": "Control",
+          "type": "cycle_precedence",
+          "activities": [
+            "Declaration FINAL_APPROVED by SUPERVISOR",
+            "Declaration FINAL_APPROVED by DIRECTOR",
+            "Request Payment",
+            "Payment Handled"
+          ],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "Complete document-cycle identity and coverage.",
+          "evidence": "Require applicable approval before each payment; alternative director/budget-owner/consolidated supervisor routes recognised. Permit has no payment obligation.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable."
+        },
+        {
+          "id": "T20_INTERNATIONAL_P02",
+          "layer": "Control",
+          "type": "role_coverage",
+          "activities": [
+            "Declaration REJECTED by MISSING"
+          ],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "Approval-path role observations.",
+          "evidence": "MISSING/UNDEFINED roles are evidence gaps; generic resources do not identify people.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable."
+        },
+        {
+          "id": "T20_INTERNATIONAL_P03",
+          "layer": "Control",
+          "type": "international_permit",
+          "activities": [
+            "Permit SUBMITTED by EMPLOYEE",
+            "Permit FINAL_APPROVED by SUPERVISOR",
+            "Permit FINAL_APPROVED by DIRECTOR"
+          ],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "International permit-linked requests only.",
+          "evidence": "Check permission before arrangements using validated linked permit. Estimated trip dates are only proxies. Domestic and non-travel requests exempt.",
+          "policy_status": "Published international permission requirement; date/link completeness validation pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable."
+        },
+        {
+          "id": "T20_INTERNATIONAL_P04",
+          "layer": "Timing",
+          "type": "calendar_deadline",
+          "activities": [
+            "End trip",
+            "Declaration SUBMITTED by EMPLOYEE"
+          ],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "Trip-linked declaration with verified cost timing.",
+          "evidence": "Submission by estimated End trip plus two calendar months, not 60 days. Early claims for paid costs may be legitimate.",
+          "policy_status": "Published submission period; estimated dates and actual applicability need validation",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable."
+        }
+      ],
+      "sources": [
+        "https://icpmconference.org/2020/bpi-challenge/"
+      ]
+    },
+    {
+      "dataset_id": "bpic2020_permit",
+      "challenge": 2020,
+      "title": "Permit expense workflow",
+      "source_schema": {
+        "kind": "xes",
+        "case": "concept:name",
+        "activity": "concept:name",
+        "timestamp": "time:timestamp",
+        "lifecycle": "lifecycle:transition",
+        "context_attributes": [
+          "OrganizationalEntity",
+          "ProjectNumber",
+          "BudgetNumber",
+          "RequestedBudget"
+        ],
+        "path": "bpic2020/PermitLog.xes.gz",
+        "format": "xes",
+        "case_id": "case:concept:name",
+        "case_attributes": [
+          "OrganizationalEntity",
+          "ProjectNumber",
+          "BudgetNumber",
+          "RequestedBudget"
+        ],
+        "timestamp_format": "mixed",
+        "group_by": [
+          "case_start_month"
+        ]
+      },
+      "norm": {
+        "schema_version": 3,
+        "name": "bpic2020_permit",
+        "version": "0.1.0",
+        "description": "",
+        "scoring_mode": "layer_balanced",
+        "missing_values": "three_valued",
+        "metadata": {
+          "policy_status": "Draft diagnostic cut points; process-owner review required",
+          "source": "BPIC2020_PERMIT"
+        },
+        "layers": [
+          {
+            "id": "Coordination",
+            "name": "Coordination",
+            "description": ""
+          },
+          {
+            "id": "Rework",
+            "name": "Rework",
+            "description": ""
+          },
+          {
+            "id": "Timing",
+            "name": "Timing",
+            "description": ""
+          }
+        ],
+        "views": [
+          {
+            "name": "Balanced",
+            "description": "",
+            "layer_weights": {
+              "Timing": 1.0,
+              "Coordination": 1.0,
+              "Rework": 1.0
+            }
+          },
+          {
+            "name": "Timeliness",
+            "description": "",
+            "layer_weights": {
+              "Timing": 3.0,
+              "Coordination": 1.0,
+              "Rework": 1.0
+            }
+          },
+          {
+            "name": "Rework focus",
+            "description": "",
+            "layer_weights": {
+              "Timing": 1.0,
+              "Coordination": 1.0,
+              "Rework": 2.0
+            }
+          }
+        ],
+        "constraints": [
+          {
+            "id": "T20_PERMIT_C01",
+            "layer": "Rework",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "Permit SUBMITTED by EMPLOYEE"
+              ],
+              "k": 1,
+              "K": 3.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Repeated case-document submissions; preserve legitimate resubmission and employee rejection."
+          },
+          {
+            "id": "T20_PERMIT_C02",
+            "layer": "Rework",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "Permit REJECTED by ADMINISTRATION",
+                "Permit REJECTED by SUPERVISOR",
+                "Permit REJECTED by BUDGET OWNER",
+                "Permit REJECTED by PRE_APPROVER"
+              ],
+              "k": 0,
+              "K": 2.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Reviewer rejection observations; a rejection may be a necessary control."
+          },
+          {
+            "id": "T20_PERMIT_C03",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "Permit SUBMITTED by EMPLOYEE"
+              ],
+              "b": [
+                "Permit FINAL_APPROVED by SUPERVISOR",
+                "Permit FINAL_APPROVED by DIRECTOR"
+              ],
+              "delta": 7.0,
+              "width": 23.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "First submission to first positive approval at or after first submission. Native first activation/first subsequent response only; missing endpoints unavailable, no final-completion or all-cycle interpretation."
+          },
+          {
+            "id": "T20_PERMIT_C04",
+            "layer": "Coordination",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "Send Reminder"
+              ],
+              "k": 1,
+              "K": 3.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Permit-level reminders; multiple linked declarations are legitimate."
+          }
+        ]
+      },
+      "business_goal": "Reimburse eligible expenses promptly while preserving applicable authorisation.",
+      "improvement": "If approval waits reflect unclear ownership, pilot explicit responsibility and reminders. If repeat submissions reflect omitted fields, use checklist and clear rejection reasons. Measure approval/payment interval and avoidable resubmission with control exceptions.",
+      "interpretation": "Separate 2017 pilot and 2018. Trip dates are estimated and staff are anonymised. Approver routes vary; employee rejection can terminate a case legitimately. PermitLog overlaps related request/declaration extracts; amounts are anonymised.",
+      "pending_checks": [
+        {
+          "id": "T20_PERMIT_P01",
+          "layer": "Control",
+          "type": "cycle_precedence",
+          "activities": [
+            "Permit FINAL_APPROVED by SUPERVISOR",
+            "Permit FINAL_APPROVED by DIRECTOR"
+          ],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "Complete document-cycle identity and coverage.",
+          "evidence": "Require applicable approval before each payment; alternative director/budget-owner/consolidated supervisor routes recognised. Permit has no payment obligation.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable."
+        },
+        {
+          "id": "T20_PERMIT_P02",
+          "layer": "Control",
+          "type": "role_coverage",
+          "activities": [
+            "Permit REJECTED by MISSING"
+          ],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "Approval-path role observations.",
+          "evidence": "MISSING/UNDEFINED roles are evidence gaps; generic resources do not identify people.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable."
+        },
+        {
+          "id": "T20_PERMIT_P03",
+          "layer": "Control",
+          "type": "international_permit",
+          "activities": [
+            "Permit SUBMITTED by EMPLOYEE",
+            "Permit FINAL_APPROVED by SUPERVISOR",
+            "Permit FINAL_APPROVED by DIRECTOR"
+          ],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "International permit-linked requests only.",
+          "evidence": "Check permission before arrangements using validated linked permit. Estimated trip dates are only proxies. Domestic and non-travel requests exempt.",
+          "policy_status": "Published international permission requirement; date/link completeness validation pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable."
+        }
+      ],
+      "sources": [
+        "https://icpmconference.org/2020/bpi-challenge/"
+      ]
+    },
+    {
+      "dataset_id": "bpic2020_prepaid",
+      "challenge": 2020,
+      "title": "PrepaidTravelCost expense workflow",
+      "source_schema": {
+        "kind": "xes",
+        "case": "concept:name",
+        "activity": "concept:name",
+        "timestamp": "time:timestamp",
+        "lifecycle": "lifecycle:transition",
+        "context_attributes": [
+          "OrganizationalEntity",
+          "Project",
+          "Cost Type",
+          "RequestedAmount",
+          "RfpNumber"
+        ],
+        "path": "bpic2020/PrepaidTravelCost.xes.gz",
+        "format": "xes",
+        "case_id": "case:concept:name",
+        "case_attributes": [
+          "OrganizationalEntity",
+          "Project",
+          "Cost Type",
+          "RequestedAmount",
+          "RfpNumber"
+        ],
+        "timestamp_format": "mixed",
+        "group_by": [
+          "case_start_month"
+        ]
+      },
+      "norm": {
+        "schema_version": 3,
+        "name": "bpic2020_prepaid",
+        "version": "0.1.0",
+        "description": "",
+        "scoring_mode": "layer_balanced",
+        "missing_values": "three_valued",
+        "metadata": {
+          "policy_status": "Draft diagnostic cut points; process-owner review required",
+          "source": "BPIC2020_PREPAID"
+        },
+        "layers": [
+          {
+            "id": "Rework",
+            "name": "Rework",
+            "description": ""
+          },
+          {
+            "id": "Timing",
+            "name": "Timing",
+            "description": ""
+          }
+        ],
+        "views": [
+          {
+            "name": "Balanced",
+            "description": "",
+            "layer_weights": {
+              "Timing": 1.0,
+              "Rework": 1.0
+            }
+          },
+          {
+            "name": "Timeliness",
+            "description": "",
+            "layer_weights": {
+              "Timing": 3.0,
+              "Rework": 1.0
+            }
+          },
+          {
+            "name": "Rework focus",
+            "description": "",
+            "layer_weights": {
+              "Timing": 1.0,
+              "Rework": 2.0
+            }
+          }
+        ],
+        "constraints": [
+          {
+            "id": "T20_PREPAID_C01",
+            "layer": "Rework",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "Request For Payment SUBMITTED by EMPLOYEE"
+              ],
+              "k": 1,
+              "K": 3.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Repeated case-document submissions; preserve legitimate resubmission and employee rejection."
+          },
+          {
+            "id": "T20_PREPAID_C02",
+            "layer": "Rework",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "Request For Payment REJECTED by ADMINISTRATION",
+                "Request For Payment REJECTED by SUPERVISOR",
+                "Request For Payment REJECTED by BUDGET OWNER",
+                "Request For Payment REJECTED by PRE_APPROVER"
+              ],
+              "k": 0,
+              "K": 2.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Reviewer rejection observations; a rejection may be a necessary control."
+          },
+          {
+            "id": "T20_PREPAID_C03",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "Request For Payment SUBMITTED by EMPLOYEE"
+              ],
+              "b": [
+                "Request For Payment FINAL_APPROVED by SUPERVISOR",
+                "Request For Payment FINAL_APPROVED by DIRECTOR"
+              ],
+              "delta": 7.0,
+              "width": 23.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "First submission to first positive approval at or after first submission. Native first activation/first subsequent response only; missing endpoints unavailable, no final-completion or all-cycle interpretation."
+          },
+          {
+            "id": "T20_PREPAID_C04",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "Request Payment"
+              ],
+              "b": [
+                "Payment Handled"
+              ],
+              "delta": 2.0,
+              "width": 5.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "First payment request to first handled payment; not verified settlement. Native first activation/first subsequent response only; missing endpoints unavailable, no final-completion or all-cycle interpretation."
+          }
+        ]
+      },
+      "business_goal": "Reimburse eligible expenses promptly while preserving applicable authorisation.",
+      "improvement": "If approval waits reflect unclear ownership, pilot explicit responsibility and reminders. If repeat submissions reflect omitted fields, use checklist and clear rejection reasons. Measure approval/payment interval and avoidable resubmission with control exceptions.",
+      "interpretation": "Separate 2017 pilot and 2018. Trip dates are estimated and staff are anonymised. Approver routes vary; employee rejection can terminate a case legitimately. PermitLog overlaps related request/declaration extracts; amounts are anonymised.",
+      "pending_checks": [
+        {
+          "id": "T20_PREPAID_P01",
+          "layer": "Control",
+          "type": "cycle_precedence",
+          "activities": [
+            "Request For Payment FINAL_APPROVED by SUPERVISOR",
+            "Request For Payment FINAL_APPROVED by DIRECTOR",
+            "Request Payment",
+            "Payment Handled"
+          ],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "Complete document-cycle identity and coverage.",
+          "evidence": "Require applicable approval before each payment; alternative director/budget-owner/consolidated supervisor routes recognised. Permit has no payment obligation.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable."
+        },
+        {
+          "id": "T20_PREPAID_P02",
+          "layer": "Control",
+          "type": "role_coverage",
+          "activities": [
+            "Request For Payment REJECTED by MISSING"
+          ],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "Approval-path role observations.",
+          "evidence": "MISSING/UNDEFINED roles are evidence gaps; generic resources do not identify people.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable."
+        },
+        {
+          "id": "T20_PREPAID_P03",
+          "layer": "Control",
+          "type": "international_permit",
+          "activities": [
+            "Permit SUBMITTED by EMPLOYEE",
+            "Permit FINAL_APPROVED by SUPERVISOR",
+            "Permit FINAL_APPROVED by DIRECTOR"
+          ],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "International permit-linked requests only.",
+          "evidence": "Check permission before arrangements using validated linked permit. Estimated trip dates are only proxies. Domestic and non-travel requests exempt.",
+          "policy_status": "Published international permission requirement; date/link completeness validation pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable."
+        }
+      ],
+      "sources": [
+        "https://icpmconference.org/2020/bpi-challenge/"
+      ]
+    },
+    {
+      "dataset_id": "bpic2020_payment",
+      "challenge": 2020,
+      "title": "RequestForPayment expense workflow",
+      "source_schema": {
+        "kind": "xes",
+        "case": "concept:name",
+        "activity": "concept:name",
+        "timestamp": "time:timestamp",
+        "lifecycle": "lifecycle:transition",
+        "context_attributes": [
+          "OrganizationalEntity",
+          "Project",
+          "Cost Type",
+          "RequestedAmount",
+          "RfpNumber"
+        ],
+        "path": "bpic2020/RequestForPayment.xes.gz",
+        "format": "xes",
+        "case_id": "case:concept:name",
+        "case_attributes": [
+          "OrganizationalEntity",
+          "Project",
+          "Cost Type",
+          "RequestedAmount",
+          "RfpNumber"
+        ],
+        "timestamp_format": "mixed",
+        "group_by": [
+          "case_start_month"
+        ]
+      },
+      "norm": {
+        "schema_version": 3,
+        "name": "bpic2020_payment",
+        "version": "0.1.0",
+        "description": "",
+        "scoring_mode": "layer_balanced",
+        "missing_values": "three_valued",
+        "metadata": {
+          "policy_status": "Draft diagnostic cut points; process-owner review required",
+          "source": "BPIC2020_PAYMENT"
+        },
+        "layers": [
+          {
+            "id": "Rework",
+            "name": "Rework",
+            "description": ""
+          },
+          {
+            "id": "Timing",
+            "name": "Timing",
+            "description": ""
+          }
+        ],
+        "views": [
+          {
+            "name": "Balanced",
+            "description": "",
+            "layer_weights": {
+              "Timing": 1.0,
+              "Rework": 1.0
+            }
+          },
+          {
+            "name": "Timeliness",
+            "description": "",
+            "layer_weights": {
+              "Timing": 3.0,
+              "Rework": 1.0
+            }
+          },
+          {
+            "name": "Rework focus",
+            "description": "",
+            "layer_weights": {
+              "Timing": 1.0,
+              "Rework": 2.0
+            }
+          }
+        ],
+        "constraints": [
+          {
+            "id": "T20_PAYMENT_C01",
+            "layer": "Rework",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "Request For Payment SUBMITTED by EMPLOYEE"
+              ],
+              "k": 1,
+              "K": 3.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Repeated case-document submissions; preserve legitimate resubmission and employee rejection."
+          },
+          {
+            "id": "T20_PAYMENT_C02",
+            "layer": "Rework",
+            "type": "singularity",
+            "params": {
+              "activity": [
+                "Request For Payment REJECTED by ADMINISTRATION",
+                "Request For Payment REJECTED by SUPERVISOR",
+                "Request For Payment REJECTED by BUDGET OWNER",
+                "Request For Payment REJECTED by PRE_APPROVER"
+              ],
+              "k": 0,
+              "K": 2.0
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "Reviewer rejection observations; a rejection may be a necessary control."
+          },
+          {
+            "id": "T20_PAYMENT_C03",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "Request For Payment SUBMITTED by EMPLOYEE"
+              ],
+              "b": [
+                "Request For Payment FINAL_APPROVED by SUPERVISOR",
+                "Request For Payment FINAL_APPROVED by DIRECTOR",
+                "Request For Payment FINAL_APPROVED by BUDGET OWNER"
+              ],
+              "delta": 7.0,
+              "width": 23.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "First submission to first positive approval at or after first submission. Native first activation/first subsequent response only; missing endpoints unavailable, no final-completion or all-cycle interpretation."
+          },
+          {
+            "id": "T20_PAYMENT_C04",
+            "layer": "Timing",
+            "type": "lag",
+            "params": {
+              "a": [
+                "Request Payment"
+              ],
+              "b": [
+                "Payment Handled"
+              ],
+              "delta": 2.0,
+              "width": 5.0,
+              "unit": "D",
+              "missing_a": "skip",
+              "missing_b": "skip"
+            },
+            "weight": 1.0,
+            "applicability": {},
+            "description": "First payment request to first handled payment; not verified settlement. Native first activation/first subsequent response only; missing endpoints unavailable, no final-completion or all-cycle interpretation."
+          }
+        ]
+      },
+      "business_goal": "Reimburse eligible expenses promptly while preserving applicable authorisation.",
+      "improvement": "If approval waits reflect unclear ownership, pilot explicit responsibility and reminders. If repeat submissions reflect omitted fields, use checklist and clear rejection reasons. Measure approval/payment interval and avoidable resubmission with control exceptions.",
+      "interpretation": "Separate 2017 pilot and 2018. Trip dates are estimated and staff are anonymised. Approver routes vary; employee rejection can terminate a case legitimately. PermitLog overlaps related request/declaration extracts; amounts are anonymised.",
+      "pending_checks": [
+        {
+          "id": "T20_PAYMENT_P01",
+          "layer": "Control",
+          "type": "cycle_precedence",
+          "activities": [
+            "Request For Payment FINAL_APPROVED by SUPERVISOR",
+            "Request For Payment FINAL_APPROVED by DIRECTOR",
+            "Request For Payment FINAL_APPROVED by BUDGET OWNER",
+            "Request Payment",
+            "Payment Handled"
+          ],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "Complete document-cycle identity and coverage.",
+          "evidence": "Require applicable approval before each payment; alternative director/budget-owner/consolidated supervisor routes recognised. Permit has no payment obligation.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable."
+        },
+        {
+          "id": "T20_PAYMENT_P02",
+          "layer": "Control",
+          "type": "role_coverage",
+          "activities": [
+            "Request For Payment REJECTED by MISSING"
+          ],
+          "threshold": 0,
+          "thresholdwidth": 1,
+          "applicability": "Approval-path role observations.",
+          "evidence": "MISSING/UNDEFINED roles are evidence gaps; generic resources do not identify people.",
+          "policy_status": "Specified diagnostic; source adapter or verified local policy pending",
+          "severity": "Counts/time: clip((value-threshold)/thresholdwidth,0,1); binary tests: 0/1 within scope; missing evidence unavailable."
+        }
+      ],
+      "sources": [
+        "https://icpmconference.org/2020/bpi-challenge/"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "id": "wise-bpic2013-transfer-six-v1",
+  "version": "1",
+  "application": "bpic2013_incidents",
+  "status": "frozen after schema and document inspection, before assessment or group ranking",
+  "scope_of_this_file": "The incident log of BPI Challenge 2013. The open-problem and closed-problem logs of the challenge are not part of this repository.",
+  "expected": {
+    "cases": 7554,
+    "events": 65533,
+    "sha256": "6ec2136c607648608655802486df97a866f351668751b7ecbca51e1f8715d522"
+  },
+  "field_mapping": {
+    "team": "org:group",
+    "status": "concept:name",
+    "substatus": "lifecycle:transition",
+    "product": "product"
+  },
+  "criteria": [
+    {
+      "id": "C01",
+      "name": "Observed support-team changes",
+      "layer": "Routing",
+      "threshold": 2,
+      "width": 4,
+      "feature": "team_changes"
+    },
+    {
+      "id": "C02",
+      "name": "Immediate return to prior support team (compressed A-B-A)",
+      "layer": "Routing",
+      "threshold": 0,
+      "width": 2,
+      "feature": "team_returns"
+    },
+    {
+      "id": "C03",
+      "name": "Repeated substatus observations beyond first occurrence",
+      "layer": "Recorded patterns",
+      "threshold": 2,
+      "width": 8,
+      "feature": "repeated_substatus"
+    },
+    {
+      "id": "C04",
+      "name": "Wait - User observed (not abuse)",
+      "layer": "Recorded patterns",
+      "threshold": 0,
+      "width": 1,
+      "feature": "wait_user_count"
+    },
+    {
+      "id": "C05",
+      "name": "Long observed trace span (not resolution or service-level time)",
+      "layer": "Timing",
+      "threshold": 7,
+      "width": 23,
+      "unit": "days",
+      "feature": "span_days"
+    },
+    {
+      "id": "C06",
+      "name": "Active status observed after Completed (not certified failed resolution)",
+      "layer": "Reactivation",
+      "threshold": 0,
+      "width": 1,
+      "feature": "post_completed_active"
+    }
+  ],
+  "views": {
+    "Balanced": {"Routing": 1, "Recorded patterns": 1, "Timing": 1, "Reactivation": 1},
+    "Routing": {"Routing": 3, "Recorded patterns": 1, "Timing": 1, "Reactivation": 1},
+    "Timing": {"Routing": 1, "Recorded patterns": 1, "Timing": 3, "Reactivation": 2}
+  },
+  "view_weight_policy": "Each criterion receives its layer's stated raw weight; these are per-criterion weights, not target layer totals.",
+  "primary_mode": "flat",
+  "primary_gamma": 0,
+  "ordering": "Parse all timestamps as UTC; sort by timestamp, then original event position. Sequence criteria are unavailable when any timestamp is invalid or when tied timestamps carry different relevant sequence values. A missing team or status is never dropped to join the surrounding observations.",
+  "grouping": "Stable product across all events of the incident; otherwise an explicit missing or multiple-values label. No responsible owner is assigned.",
+  "missing_group_labels": {"missing": "(missing attribute)", "multiple": "(multiple values)"},
+  "missing_markers": ["", "0", "none", "nan", "null", "unknown", "?"],
+  "active_statuses": ["Accepted", "Queued"],
+  "completed_status": "Completed",
+  "wait_user_substatus": "Wait - User",
+  "tie_policy": "descending Priority Index, then descending number of scored cases, then ascending group key",
+  "claims": "Illustrative recorded concerns; no service-level compliance, actual cost, causal ping-pong, wait-user abuse or fault of closure is established."
+}

@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "scope": "The three applications reported in the paper: BPI Challenge 2019 (Sections 5.1 to 5.4), BPI Challenge 2013 incidents and BPI Challenge 2017 (Section 5.5). One input file each.",
+  "data_folder_environment": "WISE_PAPER_DATA",
+  "path_resolution": "Inputs are looked up by file name (case-insensitive) anywhere below the data folder the user supplies. No path of a workstation is stored.",
+  "source_files_policy": "No input is part of this repository. An input is read only after its size and SHA-256 match this catalogue; a different export requires its own adapter configuration.",
+  "data_licence_policy": "The licence of this repository covers its code and configurations. The logs keep the terms of their publishers.",
+  "datasets": [
+    {
+      "id": "bpic2019",
+      "title": "BPI Challenge 2019",
+      "assessment_unit": "purchase-order item",
+      "citation": "van Dongen, B.F. (2019): BPI Challenge 2019. 4TU.Centre for Research Data. Dataset.",
+      "identifier": "https://doi.org/10.4121/uuid:d06aff4b-79f0-45e6-8ec8-e19730c248f1",
+      "acquisition": {
+        "page": "https://icpmconference.org/2019/icpm-2019/contests-challenges/bpi-challenge-2019/",
+        "archive": "BPIChallenge2019CSV.zip",
+        "archive_bytes": 36720297,
+        "archive_sha256": "372b5a15c30f4a21b370db25b1912cc60ad1104d4198cfd34f8aecb2f4c2425a",
+        "member": "BPI_Challenge_2019.csv",
+        "note": "The adapter reads the CSV export of the challenge, the single member of the CSV archive linked from the official challenge page. The XES file of the dataset record is not read; no conversion from XES is provided."
+      },
+      "file": {
+        "name": "BPI_Challenge_2019.csv",
+        "bytes": 527457189,
+        "sha256": "7d592fb425690d13011d1b874fe2af63f61a66acfc368ecf87b4ed266e6cdb00",
+        "rows": 1595923,
+        "encoding": "cp1252",
+        "timestamp_format": "%d-%m-%Y %H:%M:%S.%f"
+      },
+      "redistribution": "not redistributed here; no specific redistribution licence was verified",
+      "adapter": "adapters/bpic2019.py",
+      "configuration": "adapters/bpic2019.json",
+      "native_norm": "norms/native/bpic2019.json"
+    },
+    {
+      "id": "bpic2013_incidents",
+      "title": "BPI Challenge 2013, incidents",
+      "assessment_unit": "incident",
+      "citation": "Steeman, W. (2013): BPI Challenge 2013, incidents. Ghent University. Dataset.",
+      "identifier": "https://doi.org/10.4121/uuid:500573e6-accc-4b0c-9576-aa5468b10cee",
+      "acquisition": {
+        "page": "https://doi.org/10.4121/uuid:500573e6-accc-4b0c-9576-aa5468b10cee",
+        "note": "The gzip-compressed XES file of the dataset record."
+      },
+      "file": {
+        "name": "BPI_Challenge_2013_incidents.xes.gz",
+        "bytes": 1322247,
+        "sha256": "6ec2136c607648608655802486df97a866f351668751b7ecbca51e1f8715d522",
+        "traces": 7554,
+        "events": 65533
+      },
+      "redistribution": "not redistributed here; no specific redistribution licence was verified",
+      "adapter": "adapters/bpic2013.py",
+      "configuration": "adapters/bpic2013.json",
+      "native_norm": "norms/native/bpic2013_incidents.json"
+    },
+    {
+      "id": "bpic2017",
+      "title": "BPI Challenge 2017",
+      "assessment_unit": "loan application",
+      "citation": "van Dongen, B.F. (2017): BPI Challenge 2017. Eindhoven University of Technology. Dataset.",
+      "identifier": "https://doi.org/10.4121/uuid:5f3067df-f10b-45da-b98b-86ae4c7a310b",
+      "acquisition": {
+        "page": "https://doi.org/10.4121/uuid:5f3067df-f10b-45da-b98b-86ae4c7a310b",
+        "note": "The gzip-compressed XES file of the application log of the dataset record."
+      },
+      "file": {
+        "name": "BPI Challenge 2017.xes.gz",
+        "bytes": 29658747,
+        "sha256": "183c5e5189282779c811c78c33ff936351b3dd201165d612211fc220936f8249",
+        "traces": 31509,
+        "events": 1202267
+      },
+      "redistribution": "not redistributed here; no specific redistribution licence was verified",
+      "adapter": "adapters/bpic2017.py",
+      "configuration": "adapters/bpic2017.json",
+      "native_norm": "norms/native/bpic2017.json"
+    }
+  ]
+}
