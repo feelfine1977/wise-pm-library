@@ -1,6 +1,6 @@
 # Process analysis notebooks
 
-Start with the notebook for the challenge of interest. Each challenge analysis follows PM² from the business question through source checks, measured deviations, case evidence and proposals for a feasible process-improvement pilot.
+For the paper evaluation, start with [WISE_Section_V_Evaluation.ipynb](WISE_Section_V_Evaluation.ipynb). The separate challenge notebooks follow PM² from the business question through source checks, measured deviations, case evidence and proposals for a process-improvement pilot.
 
 Use the isolated **WISE paper (frozen)** environment for this repository. It prevents the frozen `wise` import from colliding with another package using the same import name.
 
@@ -17,7 +17,14 @@ bash start_jupyter.sh DATA_FOLDER
 
 ## Process evaluation
 
-[WISE_Evaluation.ipynb](WISE_Evaluation.ipynb) calls the library for the 38 result items and draws Figures 4–6 from the verified purchase-to-pay dataset. Its comparison tables distinguish agreement, numerical differences and values that could not be computed.
+| Notebook | Contents |
+|---|---|
+| [Section V evaluation](WISE_Section_V_Evaluation.ipynb) | Connected investigation of the purchase-to-pay log: source records, criteria, evidence coverage, priorities, Packaging and Logistics, document shortlists, ranking choices, numerical checks and the two secondary applications. Supplements cover event-log diagnostics, threshold and weight sensitivity, and priority concentration. |
+| [Paper result catalogue](WISE_Evaluation.ipynb) | All 38 paper result items, Figures 4–6 and comparison of 259 computed values with the paper. |
+
+Both notebooks contain saved results and use the three source logs in the [dataset catalogue](../README.md#data). To reproduce them, run all cells in the frozen kernel. The data folder is supplied to the launcher; no notebook code needs editing. Missing inputs or failed numerical comparisons stop verification.
+
+The walkthrough calls the paper API for the primary assessment. [evaluation_analysis.py](evaluation_analysis.py) contains the supplementary criterion decomposition and sensitivity calculations, including checks against the native baseline. Sensitivity experiments retain the declared primary configuration and are labelled separately from the paper results. The notebook's original event rows come from the public source log; they are distinct from the prepared assessment carrier.
 
 ## BPIC challenge analyses
 
@@ -47,8 +54,10 @@ Case context belongs to the entire case. Start month, last-observed month and ob
 
 Each dataset has its own norm; its scores and priorities should be interpreted within that assessment. The separate [library extension guidance](LIBRARY_EXTENSION_HANDOFF.md) is intended for software developers.
 
-## Sharing and outputs
+## Outputs
 
-Run all cells to obtain current tables, figures and the execution journal from the supplied data. The evaluation notebook contains saved results from a verified run; the nine challenge notebooks are saved without outputs. Compare source identity and norm with your current run before using saved results. Exports are optional. In the current saved configuration, `WISE_Evaluation.ipynb` enables figure export (`SAVE_FIGURES = True`), and the BPIC 2013, 2017 and 2019 notebooks enable result export (`SAVE_OUTPUTS = True`). Export is disabled in the BPIC 2011, 2012, 2014, 2015, 2018 and 2020 notebooks (`SAVE_OUTPUTS = False` or `EXPORT_RESULTS = False`). Set the relevant flag to `False` to display results without writing exports, or to `True` to create the local output folder declared by that notebook and save computed evidence there. Exported files are created when the notebook runs. Review saved case evidence and clear outputs as appropriate before sharing or committing.
+The two evaluation notebooks contain saved outputs from verified runs; the nine challenge notebooks are saved without outputs. The Section V walkthrough writes tables, PNG/SVG figures, complete PO-item assessments and calculation records to `outputs/section_v/`. The paper catalogue writes its figures to `outputs/`. Source hashes and package versions identify each execution.
+
+The challenge notebooks retain their own export flags: `SAVE_OUTPUTS = True` for BPIC 2013, 2017 and 2019, and export disabled by default for the remaining challenges. Their output directories are declared in the notebooks.
 
 Keep raw logs, configured data-folder values, environments, caches, extracted manuscript text and temporary executed notebooks out of version control.

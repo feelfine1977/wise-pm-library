@@ -28,4 +28,4 @@ for folder in "$JUPYTER_CONFIG_DIR" "$JUPYTER_DATA_DIR" "$JUPYTER_RUNTIME_DIR" "
     mkdir -p "$folder"
 done
 cd -- "$notebook_folder"
-exec "$notebook_folder/.venv/bin/jupyter" lab WISE_Evaluation.ipynb
+exec "$notebook_folder/.venv/bin/jupyter" lab WISE_Section_V_Evaluation.ipynb

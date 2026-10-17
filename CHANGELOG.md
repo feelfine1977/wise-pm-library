@@ -1,10 +1,16 @@
 # Changelog
 
-This repository is frozen at the state of the paper *WISE: Actionable Norm-Based Scoring for Process Mining* and changes only as numbered versions. A version is tied to a state of the paper: any change of a printed number, a norm, an adapter configuration or an expected value is a new version, and tags are never moved. Use the newest version listed below; each entry says what differs from the version before it.
+The method and primary evaluation are frozen to the paper *WISE: Actionable Norm-Based Scoring for Process Mining*. A change to a printed number, norm, adapter configuration or expected value requires a new numbered version; tags are never moved. Notebook and documentation revisions that preserve those results are recorded separately below. Use the newest version listed below; each entry says what differs from the version before it.
 
 ## 1.0.1
 
 The same method, evaluation settings, computed values and expected values as version 1.0.0 (manuscript dated 11 October 2026). The norm files, adapter configurations and scripts are those of 1.0.0.
+
+### Notebook revision — 17 October 2026
+
+- Added an executed Section V walkthrough with source-log diagnostics, criterion explanations, original event records, comparisons and separately labelled parameter sensitivity. The primary configuration and expected paper values remain unchanged.
+- Simplified the paper result notebook's setup and explanations. Both evaluation notebooks contain plain Python cells, identify Urszula Jessen as notebook author and fail verification when required results are missing or differ.
+- The Jupyter launcher opens the walkthrough. The existing result catalogue remains available for all 38 result items.
 
 ### Fixed
 

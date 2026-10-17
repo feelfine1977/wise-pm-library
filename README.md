@@ -93,7 +93,7 @@ paper.table_b1()                          # the ten criteria of the purchase-to-
 paper.item_41_illustration()              # the illustration of Section 3; needs no log
 ```
 
-**The notebooks.** `notebooks/` holds the paper's notebook, which walks through the evaluation in the order of the paper and shows each computed value beside the printed one, and further analysis notebooks. The paper's notebook calls the functions above; no result of the paper is computed only inside a notebook.
+**The notebooks.** Start with [WISE_Section_V_Evaluation.ipynb](notebooks/WISE_Section_V_Evaluation.ipynb) for the investigation walkthrough: source-log checks, criteria and coverage, group priorities, original event records, perspective comparisons and sensitivity analyses. [WISE_Evaluation.ipynb](notebooks/WISE_Evaluation.ipynb) provides all 38 paper result items and their numerical verification. Both contain executed outputs and run without editing their code after the environment and data folder have been configured. All paper results call the library functions above; supplementary criterion attribution and sensitivity calculations are in `notebooks/evaluation_analysis.py`.
 
 **The tests.** Unit tests of the method and constructed contract tests of the evaluation need no data. The dataset evaluation test compares each computed result with the expected values and is skipped, with a message that says why, when a log is not supplied:
 
@@ -145,7 +145,7 @@ notebooks/                    the paper's notebook and further analysis notebook
 tests/                        unit tests, constructed contract tests (tests/evaluation), dataset evaluation test
 ```
 
-Not part of the repository: the raw logs, prepared case assessments, source records of individual cases, and what a run writes into the output folder (comparison tables, calculation records, figures).
+Full source logs, complete prepared case assessments and generated output folders are not distributed in the repository. Saved notebook outputs include selected records from the cited public logs, aggregate tables and figures. Each execution writes the complete tables and calculation records locally.
 
 ### How the applications are computed
 

@@ -30,7 +30,7 @@ export WISE_PAPER_DATA="DATA_FOLDER"
 bash start_jupyter.sh
 ```
 
-The browser should open JupyterLab with `WISE_Evaluation.ipynb`. If it does not open automatically, copy the complete local browser URL printed in Terminal, including its access token, into your browser. Keep that Terminal window open while working.
+The browser should open JupyterLab with `WISE_Section_V_Evaluation.ipynb`. The complete result catalogue is in `WISE_Evaluation.ipynb`, available from the file browser. If JupyterLab does not open automatically, copy the complete local browser URL printed in Terminal, including its access token, into your browser. Keep that Terminal window open while working.
 
 In JupyterLab, select **WISE paper (frozen)** from the kernel menu. Open a dataset notebook from the file browser on the left:
 
