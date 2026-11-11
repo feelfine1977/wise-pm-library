@@ -200,6 +200,13 @@ def assess(path: str | Path) -> Assessment:
     path = Path(path)
     digest = sha256(path)
     events = read_events(path, cfg, digest=digest)
+    return assess_events(events, cfg, path, digest)
+
+
+def assess_events(
+    events: pd.DataFrame, cfg: dict[str, Any], path: Path, digest: str
+) -> Assessment:
+    """Prepare the baseline from events already verified by read_events."""
     features = features_from_events(events, cfg)
     severity, scope, state, raw = assessment_matrices(features, cfg)
     source = {

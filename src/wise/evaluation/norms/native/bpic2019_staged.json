@@ -1,0 +1,149 @@
+{
+  "schema_version": 3,
+  "name": "wise-bpic19-staged-v2",
+  "version": "2",
+  "description": "Prepared-assessment norm: identity metric constraints preserve the declared severities and scope.",
+  "scoring_mode": "flat",
+  "missing_values": "three_valued",
+  "metadata": {
+    "input_kind": "prepared_assessment_matrix",
+    "carrier": "One non-process assessment record per case; source traces are separate.",
+    "raw_operator_equivalence_claimed": false,
+    "application": "bpic2019_staged",
+    "criteria_defined_in": "adapters/bpic2019_staged.json"
+  },
+  "layers": [
+    {
+      "id": "Completion",
+      "name": "",
+      "description": ""
+    },
+    {
+      "id": "Timing",
+      "name": "",
+      "description": ""
+    },
+    {
+      "id": "Rework",
+      "name": "",
+      "description": ""
+    }
+  ],
+  "views": [
+    {
+      "name": "Cross-functional Review",
+      "description": "",
+      "constraint_weights": {
+        "S01": 1.0,
+        "C04": 1.0,
+        "C05": 1.0,
+        "C06": 1.0,
+        "C07": 1.0
+      }
+    },
+    {
+      "name": "Finance & Accounts Payable",
+      "description": "",
+      "constraint_weights": {
+        "S01": 3.0,
+        "C04": 2.0,
+        "C05": 2.0,
+        "C06": 1.0,
+        "C07": 1.0
+      }
+    },
+    {
+      "name": "Logistics & Operations",
+      "description": "",
+      "constraint_weights": {
+        "S01": 1.0,
+        "C04": 1.0,
+        "C05": 1.0,
+        "C06": 2.0,
+        "C07": 2.0
+      }
+    }
+  ],
+  "constraints": [
+    {
+      "id": "S01",
+      "layer": "Completion",
+      "type": "metric",
+      "params": {
+        "attribute": "assessment_value__S01",
+        "threshold": 0.0,
+        "width": 1.0
+      },
+      "weight": 1.0,
+      "applicability": {
+        "attr": "assessment_scope__S01",
+        "eq": true
+      },
+      "description": "Identity mapping of an externally evaluated bounded severity; source evidence remains with the adapter."
+    },
+    {
+      "id": "C04",
+      "layer": "Timing",
+      "type": "metric",
+      "params": {
+        "attribute": "assessment_value__C04",
+        "threshold": 0.0,
+        "width": 1.0
+      },
+      "weight": 1.0,
+      "applicability": {
+        "attr": "assessment_scope__C04",
+        "eq": true
+      },
+      "description": "Identity mapping of an externally evaluated bounded severity; source evidence remains with the adapter."
+    },
+    {
+      "id": "C05",
+      "layer": "Timing",
+      "type": "metric",
+      "params": {
+        "attribute": "assessment_value__C05",
+        "threshold": 0.0,
+        "width": 1.0
+      },
+      "weight": 1.0,
+      "applicability": {
+        "attr": "assessment_scope__C05",
+        "eq": true
+      },
+      "description": "Identity mapping of an externally evaluated bounded severity; source evidence remains with the adapter."
+    },
+    {
+      "id": "C06",
+      "layer": "Rework",
+      "type": "metric",
+      "params": {
+        "attribute": "assessment_value__C06",
+        "threshold": 0.0,
+        "width": 1.0
+      },
+      "weight": 1.0,
+      "applicability": {
+        "attr": "assessment_scope__C06",
+        "eq": true
+      },
+      "description": "Identity mapping of an externally evaluated bounded severity; source evidence remains with the adapter."
+    },
+    {
+      "id": "C07",
+      "layer": "Rework",
+      "type": "metric",
+      "params": {
+        "attribute": "assessment_value__C07",
+        "threshold": 0.0,
+        "width": 1.0
+      },
+      "weight": 1.0,
+      "applicability": {
+        "attr": "assessment_scope__C07",
+        "eq": true
+      },
+      "description": "Identity mapping of an externally evaluated bounded severity; source evidence remains with the adapter."
+    }
+  ]
+}

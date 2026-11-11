@@ -60,7 +60,7 @@ import wise
 
 from . import data as _data
 from . import native, reference
-from .adapters import Assessment, bpic2013, bpic2017, bpic2019
+from .adapters import Assessment, bpic2013, bpic2017, bpic2019, bpic2019_staged
 
 __all__ = ["ADAPTERS", "APPLICATIONS", "CONTEXT", "GAMMAS", "MODES", "TOLERANCE", "assess", "consistency", "further_checks", "main"]
 
@@ -75,6 +75,7 @@ ADAPTERS = {
 APPLICATIONS = tuple(ADAPTERS)
 CONTEXT = {
     bpic2019.APPLICATION: ("document", "vendor", "flow"),
+    bpic2019_staged.APPLICATION: ("document", "vendor", "flow"),
     bpic2013.APPLICATION: ("product_group",),
     bpic2017.APPLICATION: ("application_type", "loan_goal"),
 }
@@ -85,6 +86,8 @@ _GROUP_COLUMNS = ["n_cases", "volume", "mean_score", "gap", "PI", "stable_mean",
 
 def assess(application: str, data: str | Path | None = None) -> Assessment:
     """Run the adapter of ``application`` on its verified log in the data folder."""
+    if application == bpic2019_staged.APPLICATION:
+        return bpic2019_staged.assess(_data.locate(bpic2019.APPLICATION, data))
     if application not in ADAPTERS:
         raise KeyError(f"unknown application {application!r}; known: {list(ADAPTERS)}")
     return ADAPTERS[application].assess(_data.locate(application, data))
@@ -267,7 +270,8 @@ def main(argv: list[str] | None = None) -> int:
         "and make the three further checks (cases reordered, norm read back, whole-case context attached)."
     )
     parser.add_argument("--data", type=Path, default=None, help=f"folder with the public logs (default: ${_data.DATA_ENVIRONMENT})")
-    parser.add_argument("--application", action="append", choices=APPLICATIONS, help="repeatable; default: all three")
+    parser.add_argument("--application", action="append", choices=(*APPLICATIONS, bpic2019_staged.APPLICATION),
+                        help="repeatable; default: the three frozen paper applications")
     parser.add_argument("--output", type=Path, default=None, help="folder for one verification file per application")
     parser.add_argument("--write-norms", type=Path, default=None, help="folder to write the native norm of each application to")
     args = parser.parse_args(argv)

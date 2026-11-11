@@ -61,3 +61,41 @@ The two evaluation notebooks contain saved outputs from verified runs; the nine 
 The challenge notebooks retain their own export flags: `SAVE_OUTPUTS = True` for BPIC 2013, 2017 and 2019, and export disabled by default for the remaining challenges. Their output directories are declared in the notebooks.
 
 Keep raw logs, configured data-folder values, environments, caches, extracted manuscript text and temporary executed notebooks out of version control.
+
+## BPIC’19 staged research profile
+
+Run the revised profile and its frozen comparison on the audited CSV:
+
+```sh
+python -m wise.evaluation.staged --data DATA_FOLDER --output outputs/bpic2019_staged
+```
+
+The command recalculates item scores, coverage, criterion states, ranked
+documents, business groups and vendors, signed layer attribution, shortlist
+overlap, priority concentration and worked items. It also checks native
+scoring against reference arithmetic and verifies reordering, norm round-trip
+and context attachment. The public CSV stays outside the repository.
+
+The staged profile uses **Cross-functional Review**, **Finance & Accounts Payable**
+and **Logistics & Operations**. A joint Completion criterion screens required
+receipt markers by 90 days from PO-item creation. If both are recorded but
+clearing is absent, it allows 90 days from the later required marker (invoice
+receipt for two-way) before scoring the recorded clearing gap. The declared
+conservative follow-up boundary is 28 January 2019. Deletion markers,
+contradictory chronology and insufficient observation are explicit states.
+
+Timing uses the full recorded history and requires exactly one of each required
+milestone. It starts at the later receipt marker, or invoice receipt for
+two-way. When Completion already flags clearing absence after the post-receipt
+horizon, the elapsed time is retained as evidence and carries no additional
+Timing penalty. The existing DF1 ordering, invoice cancellation and price or
+quantity edit criteria still use the full trace. This is a retrospective screen
+with declared weights and horizons. It supports investigation of recorded
+behavior.
+
+Goods-receipt reversal, strict DF2 clearing-before-receipt candidates, repeated
+invoices and user activity are exported as review evidence. The DF2 check
+compares calendar dates on a single-milestone item and excludes selected
+reversal, subsequent invoice, debit and deletion markers. The review export
+includes event IDs for reversal and chronology leads. The frozen
+paper evaluation continues to use its historical ten-criterion profile.
