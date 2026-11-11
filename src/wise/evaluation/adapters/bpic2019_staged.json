@@ -1,0 +1,36 @@
+{
+  "id": "wise-bpic19-staged-v2",
+  "version": "2",
+  "application": "bpic2019_staged",
+  "evidence_status": "Illustrative research profile for parallel review",
+  "source_configuration": "bpic2019",
+  "completion": {
+    "horizon_days_from_creation": 90,
+    "clearing_horizon_days_from_receipt_markers": 90,
+    "follow_up_boundary": "2019-01-28",
+    "boundary_basis": "Conservative analysis boundary from the challenge publication announcement"
+  },
+  "criteria": [
+    {"id": "S01", "name": "Required recorded milestones by the review horizon", "layer": "Completion"},
+    {"id": "C04", "name": "Elapsed time after both required receipt markers", "layer": "Timing", "threshold": 30, "width": 60},
+    {"id": "C05", "name": "Invoice precedes goods or service receipt", "layer": "Timing"},
+    {"id": "C06", "name": "Invoice-receipt cancellation recorded", "layer": "Rework"},
+    {"id": "C07", "name": "Price or quantity edits recorded", "layer": "Rework"}
+  ],
+  "views": {
+    "Cross-functional Review": {"Completion": 1, "Timing": 1, "Rework": 1},
+    "Finance & Accounts Payable": {"Completion": 3, "Timing": 2, "Rework": 1},
+    "Logistics & Operations": {"Completion": 1, "Timing": 1, "Rework": 2}
+  },
+  "baseline_views": {
+    "Cross-functional Review": "Balanced",
+    "Finance & Accounts Payable": "Completion",
+    "Logistics & Operations": "Operations"
+  },
+  "review_signals": [
+    "Goods-receipt reversal",
+    "DF2 clearing before required receipt",
+    "Repeated invoice receipt",
+    "Recorded user activity with coverage"
+  ]
+}

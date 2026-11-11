@@ -120,6 +120,20 @@ One printed value is compared by its order of magnitude and not by its digits: t
 
 The figures are drawn by `wise.evaluation.figures` from the computed values, in the design of the printed figures (size, type, axes, ticks, labels, legend wording, number formats).
 
+### Revised BPIC’19 research profile
+
+The staged BPIC’19 profile adds a joint Completion screen, a timing clock
+after the required receipt markers, and review signals with source event IDs.
+It uses the illustrative **Cross-functional Review**, **Finance & Accounts
+Payable** and **Logistics & Operations** views.
+
+```sh
+python -m wise.evaluation.staged --data DATA_FOLDER --output outputs/bpic2019_staged
+```
+
+See the [profile definition and comparison outputs](notebooks/README.md#bpic19-staged-research-profile).
+The paper reproduction command uses the historical profile and expected values.
+
 ## What is in this repository
 
 ```
