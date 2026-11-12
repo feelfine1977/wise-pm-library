@@ -11,6 +11,8 @@ The same method, evaluation settings, computed values and expected values as ver
 - Added the evaluation notebook `notebooks/WISE_BPIC19_Evaluation_Story.ipynb` with its functions in `notebooks/wise_story.py`. It applies WISE to the BPI Challenge 2019 log step by step and is the notebook to start with. It defines its norms itself and does not change the package.
 - The analysis notebooks for the other BPI Challenge logs moved to `notebooks/additional_datasets/` together with `bpic_analysis.py` and `bpic_datasets.json`.
 - Removed `WISE_Evaluation.ipynb`, `WISE_Section_V_Evaluation.ipynb`, `evaluation_analysis.py`, `BPIC2019_PurchaseToPay_Extended.ipynb`, the notebook guide, the Mac guide, the extension notes and the two environment scripts. They remain available in the state tagged 1.0.1. Installation and data are described in the README, which is now the only guide.
+- `EVALUATION.md` now summarises the evaluation on BPI Challenge 2019 that the notebook carries out. The tables of expected values of the reference assessments moved to `tests/evaluation/EXPECTED_VALUES.md`.
+- The evaluation notebook explains the reason for each step and uses the terms of the method throughout.
 - The package, the scripts, the tests, the norm files, the adapter configurations and the expected values are unchanged.
 
 ### Notebook revision — 17 October 2026

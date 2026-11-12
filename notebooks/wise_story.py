@@ -430,7 +430,7 @@ def story_graph():
     ax.plot([15, 87], [11.8, 11.8], color=MUTED, lw=1.0)
     arrow(26, 11.8, 26, 10.0)
     ax.text(99.5, 21.5, "Section\n7", fontsize=6.8, ha="left", va="center", color=BLUE, fontweight="bold")
-    box(4, -1.5, 44, 11.5, "Checks", ["63 slicing schemes per layer; 8 settings; one case traced to its recorded events."], FQ, wrap=40, tag="Section 8")
+    box(4, -1.5, 44, 11.5, "Checks", ["63 slicing schemes per layer; 7 changed settings; one case traced to its recorded events."], FQ, wrap=40, tag="Section 8")
     box(54, -1.5, 44, 11.5, "Close", ["Answers to the five parts of the question, next steps for the company, and what stays open."], FQ, wrap=40, tag="Section 9")
     arrow(48, 4.2, 54, 4.2)
     return fig

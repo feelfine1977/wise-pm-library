@@ -41,7 +41,7 @@ Extras: `figures` (Matplotlib), `notebook` (Matplotlib and Jupyter), `test` (pyt
 | 8 | Checks: slicing scheme, sensitivity to assessment settings, drill-down to the recorded events |
 | 9 | Close: answers, next steps for the company, what stays open |
 
-The notebook is saved with its outputs and can be read without running it. The norms are defined in the notebook itself, so every constraint can be read where it is used; the functions it calls are in [`notebooks/wise_story.py`](notebooks/wise_story.py). Its last cell compares the numbers quoted in the text with the computed values and stops with an error if one differs.
+The notebook is saved with its outputs and can be read without running it. [EVALUATION.md](EVALUATION.md) summarises its questions, norms, results and findings. The norms are defined in the notebook itself, so every constraint can be read where it is used; the functions it calls are in [`notebooks/wise_story.py`](notebooks/wise_story.py). Its last cell compares the numbers quoted in the text with the computed values and stops with an error if one differs.
 
 To run it, supply the BPI Challenge 2019 log as described under [Data](#data), then:
 
@@ -98,7 +98,7 @@ These parts test the library on further data. They are separate from the evaluat
 
 ### Reference assessments of three logs
 
-The subpackage `wise.evaluation` holds reference assessments of BPI Challenge 2019, BPI Challenge 2013 (incidents) and BPI Challenge 2017: a domain adapter with its configuration for each log, the serialised norms, and expected values recorded with version 1.0.0 of this library. They serve as regression tests of scoring, prioritisation and layer contributions on real logs. [EVALUATION.md](EVALUATION.md) lists every expected value beside the computed one, with the result-item numbering of that version. The purchase-to-pay norm used here has ten criteria and differs from the norms of the evaluation notebook.
+The subpackage `wise.evaluation` holds reference assessments of BPI Challenge 2019, BPI Challenge 2013 (incidents) and BPI Challenge 2017: a domain adapter with its configuration for each log, the serialised norms, and expected values recorded with version 1.0.0 of this library. They serve as regression tests of scoring, prioritisation and layer contributions on real logs. [`tests/evaluation/EXPECTED_VALUES.md`](tests/evaluation/EXPECTED_VALUES.md) lists every expected value beside the computed one, with the result-item numbering of that version. The purchase-to-pay norm used here has ten criteria and differs from the norms of the evaluation notebook.
 
 Everything at once: prints every expected value beside the computed one, and writes `comparison.csv`, `summary.csv`, one calculation record per log and three figures to the output folder. The command exits with status 1 if a value differs, a numerical check fails or a required input is missing.
 
@@ -172,8 +172,8 @@ notebooks/
   WISE_BPIC19_Evaluation_Story.ipynb   the evaluation notebook
   wise_story.py                        functions used by it
   additional_datasets/                 analysis notebooks for eight further BPI Challenge logs
-tests/                        unit tests, constructed contract tests (tests/evaluation), dataset test
-EVALUATION.md                 expected and computed values of the reference assessments
+tests/                        unit tests, constructed contract tests (tests/evaluation), dataset test; expected values of the reference assessments
+EVALUATION.md                 summary of the evaluation on BPI Challenge 2019
 CHANGELOG.md, CITATION.cff, LICENSE
 ```
 
