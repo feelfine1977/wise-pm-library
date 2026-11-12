@@ -6,6 +6,13 @@ The method and primary evaluation are frozen to the paper *WISE: Actionable Norm
 
 The same method, evaluation settings, computed values and expected values as version 1.0.0 (manuscript dated 11 October 2026). The norm files, adapter configurations and scripts are those of 1.0.0.
 
+### Repository revision — 12 November 2026
+
+- Added the evaluation notebook `notebooks/WISE_BPIC19_Evaluation_Story.ipynb` with its functions in `notebooks/wise_story.py`. It applies WISE to the BPI Challenge 2019 log step by step and is the notebook to start with. It defines its norms itself and does not change the package.
+- The analysis notebooks for the other BPI Challenge logs moved to `notebooks/additional_datasets/` together with `bpic_analysis.py` and `bpic_datasets.json`.
+- Removed `WISE_Evaluation.ipynb`, `WISE_Section_V_Evaluation.ipynb`, `evaluation_analysis.py`, `BPIC2019_PurchaseToPay_Extended.ipynb`, the notebook guide, the Mac guide, the extension notes and the two environment scripts. They remain available in the state tagged 1.0.1. Installation and data are described in the README, which is now the only guide.
+- The package, the scripts, the tests, the norm files, the adapter configurations and the expected values are unchanged.
+
 ### Notebook revision — 17 October 2026
 
 - Added an executed Section V walkthrough with source-log diagnostics, criterion explanations, original event records, comparisons and separately labelled parameter sensitivity. The primary configuration and expected paper values remain unchanged.

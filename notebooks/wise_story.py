@@ -6,6 +6,8 @@ case score = 1 - weighted mean deviation score of the evaluated constraints; Pri
 The norms themselves are defined in the notebook.
 """
 import hashlib
+import os
+import pathlib
 import textwrap
 from types import SimpleNamespace
 
@@ -16,6 +18,7 @@ from matplotlib.colors import LinearSegmentedColormap
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
 
 SHA256 = "7d592fb425690d13011d1b874fe2af63f61a66acfc368ecf87b4ed266e6cdb00"
+LOG_NAME = "BPI_Challenge_2019.csv"
 T_MIN, T_MAX = pd.Timestamp("2017-01-01"), pd.Timestamp("2020-01-01")   # plausible timestamps
 END = pd.Timestamp("2019-01-28")                                       # publication of the log: observation boundary
 COLS = {
@@ -42,6 +45,17 @@ def style():
 
 
 # ---------------------------------------------------------------------------------------------- data
+def locate_log():
+    """Path of the event log: in the folder named by WISE_PAPER_DATA (searched with its sub-folders), else in data/ beside the notebook."""
+    folder = os.environ.get("WISE_PAPER_DATA")
+    candidates = sorted(pathlib.Path(folder).rglob(LOG_NAME)) if folder else []
+    candidates.append(pathlib.Path("data") / LOG_NAME)
+    for path in candidates:
+        if path.is_file():
+            return str(path)
+    raise FileNotFoundError(f"{LOG_NAME} was not found. Set WISE_PAPER_DATA to the folder that holds it, or put it into data/ (see the README).")
+
+
 def sha256(path):
     h = hashlib.sha256()
     with open(path, "rb") as f:
